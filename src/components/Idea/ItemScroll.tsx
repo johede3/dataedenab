@@ -11,7 +11,7 @@ export function ItemScroll({ dict }: { dict: Record<string, string> | undefined 
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="mb-2 text-4xl font-semibold text-black dark:text-white">
+            <h1 className="mb-2 text-4xl font-semibold text-black md:mb-10 dark:text-white">
               {dict?.first_text}
               <br />
               <span className="mt-1 text-4xl leading-none font-bold md:text-6xl">
