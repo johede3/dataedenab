@@ -22,7 +22,8 @@ const Header: React.FC = () => {
       <Container className="mx-auto w-full max-w-7xl !px-0 px-5">
         <nav className="mx-auto flex h-16 items-center justify-between bg-white px-5 py-2 shadow-md md:bg-transparent md:py-10 md:shadow-none">
           {/* Logo */}
-          <Link href="/" className="ml-4 flex items-center gap-2 sm:ml-0">
+          <Link href="/" className="flex items-center sm:ml-0">
+            <img src="/mainSmall.png" alt="Logo" className="h-20 w-auto" />
             <span className="manrope text-foreground cursor-pointer text-xl font-semibold">{siteDetails.siteName}</span>
           </Link>
 

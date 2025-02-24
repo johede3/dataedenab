@@ -14,12 +14,12 @@ const Footer: React.FC = () => {
     <footer className="bg-hero-background text-foreground py-10">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3">
         {/* Logo & Beskrivning */}
-        <div>
-          <Link href="/" className="flex items-center gap-2">
-            <h3 className="manrope cursor-pointer text-xl font-semibold">{siteDetails.siteName}</h3>
+        <div className="">
+          <Link href="/" className="flex items-center">
+            <img src="/mainImage.png" alt="Logo" className="h-32 w-auto" />
           </Link>
-          <p className="text-foreground-accent mt-3.5">{footerDetails.subheading}</p>
         </div>
+        <p className="text-foreground-accent mt-3.5">{footerDetails.subheading}</p>
 
         {/* Snabblänkar */}
         <div>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               {Object.keys(footerDetails.socials).map((platformName) => {
                 if (platformName && footerDetails.socials[platformName]) {
                   return (
-                    <Link href={footerDetails.socials[platformName]} key={platformName} aria-label={platformName}>
+                    <Link href={footerDetails.socials[platformName] ?? ""} key={platformName} aria-label={platformName}>
                       {getPlatformIconByName(platformName)}
                     </Link>
                   )

@@ -37,9 +37,8 @@ export const metadata = {
     siteName: siteDetails.siteName,
   },
   icons: {
-    icon: "/logo.svg",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    shortcut: "favi/favicon-16x16.png",
+    apple: "favi/apple-touch-icon.png",
   },
   metadataBase: new URL(siteDetails.siteUrl),
 }
