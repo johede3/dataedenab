@@ -9,5 +9,5 @@ export const siteDetails = {
   language: "sv-SE",
   locale: "sv-SE",
   siteLogo: `${process.env.BASE_PATH || ""}/images/logo.png`, // Uppdatera vid behov
-  googleAnalyticsId: "", // Lägg till om du har en GA-ID
+  googleAnalyticsId: "G-0VVXKGSRFN", // Lägg till om du har en GA-ID
 }

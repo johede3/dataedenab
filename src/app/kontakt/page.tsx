@@ -55,7 +55,7 @@ function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="w-full rounded-lg bg-purple-600 py-3 font-medium text-white transition-all hover:bg-purple-700"
+        className="w-full rounded-lg bg-purple-600 py-3 font-medium text-white transition-all hover:cursor-pointer hover:bg-purple-700"
       >
         {state.submitting ? "Skickar..." : "Skicka meddelande"}
       </button>
