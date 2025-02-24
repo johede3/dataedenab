@@ -1,37 +1,25 @@
-import { IPricing } from "@/types";
-
-export const tiers: IPricing[] = [
-    {
-        name: 'Starter',
-        price: 29,
-        features: [
-            'Basic cloud integration',
-            'Up to 5 team members',
-            '20GB storage',
-            'Email support',
-        ],
-    },
-    {
-        name: 'Pro',
-        price: 99,
-        features: [
-            'Advanced cloud integration',
-            'Up to 20 team members',
-            '100GB storage',
-            'Priority email & phone support',
-            'Advanced analytics',
-        ],
-    },
-    {
-        name: 'Enterprise',
-        price: 'Custom',
-        features: [
-            'Full cloud integration',
-            'Unlimited team members',
-            'Unlimited storage',
-            '24/7 dedicated support',
-            'Custom solutions',
-            'On-site training',
-        ],
-    },
+export const pricingPlans = [
+  {
+    title: "Enkel webbplats",
+    description: "En professionell, responsiv hemsida som presenterar ditt företag.",
+    features: ["✔ Mobilanpassad design", "✔ Grundläggande SEO", "✔ Kontaktformulär"],
+  },
+  {
+    title: "Avancerad webbtjänst",
+    description: "Skräddarsydd lösning med interaktiva funktioner och integrationer.",
+    features: [
+      "✔ API-integrationer (ex. Stripe, bokningssystem)",
+      "✔ CMS för enkel hantering",
+      "✔ Egenutvecklade funktioner",
+    ],
+  },
+  {
+    title: "Långsiktig drift",
+    description: "Hosting, uppdateringar och teknisk support efter lansering.",
+    features: ["✔ Säker hosting & SSL", "✔ Regelbundna uppdateringar", "✔ Support & underhåll"],
+  },
 ]
+
+export const pricingDetails = {
+  offertCTA: "Få en kostnadsfri offert",
+}

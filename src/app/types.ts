@@ -53,3 +53,16 @@ export interface ISocials {
   x?: string
   [key: string]: string | undefined
 }
+
+export interface ILanding {
+  id: string
+  title: string
+  description: string
+}
+
+export interface iSEO {
+  id: string
+  title: string
+  description: string
+  content?: string[]
+}

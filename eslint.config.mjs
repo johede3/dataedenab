@@ -1,10 +1,9 @@
-import * as fs from "fs"
-
 // https://github.com/francoismassart/eslint-plugin-tailwindcss/pull/381
 // import eslintPluginTailwindcss from "eslint-plugin-tailwindcss"
-import eslintPluginImport from "eslint-plugin-import"
 import eslintPluginNext from "@next/eslint-plugin-next"
+import eslintPluginImport from "eslint-plugin-import"
 import eslintPluginStorybook from "eslint-plugin-storybook"
+import * as fs from "fs"
 import typescriptEslint from "typescript-eslint"
 
 const eslintIgnore = [
@@ -66,7 +65,7 @@ const config = typescriptEslint.config(
       "import/order": [
         "warn",
         {
-          groups: ["external", "builtin", "internal", "sibling", "parent", "index"],
+          groups: ["external", "builtin", "sibling", "parent", "internal", "index"],
           pathGroups: [
             ...getDirectoriesToSort().map((singleDir) => ({
               pattern: `${singleDir}/**`,

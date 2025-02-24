@@ -7,7 +7,7 @@ interface SectionTitleProps {
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = ({ children }) => {
-  return <div className="text-3xl font-bold lg:text-5xl lg:leading-tight">{children}</div>
+  return <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{children}</h2>
 }
 
 export default SectionTitle

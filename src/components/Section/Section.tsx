@@ -13,11 +13,12 @@ const Section: React.FC<React.PropsWithChildren<Props>> = ({
   children,
 }: React.PropsWithChildren<Props>) => {
   return (
-    <section id={id} className="py-10 lg:py-20">
-      <SectionTitle>
-        <h2 className="mb-4 text-center">{title}</h2>
-      </SectionTitle>
-      <p className="mb-12 text-center">{description}</p>
+    <section id={id} className="py-10 lg:pt-20">
+      <div className="mx-auto max-w-4xl text-center">
+        <SectionTitle>{title}</SectionTitle>
+        <p className="mt-3 text-gray-600 dark:text-gray-300">{description}</p>
+      </div>
+
       {children}
     </section>
   )

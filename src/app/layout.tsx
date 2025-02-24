@@ -1,8 +1,9 @@
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Manrope, Source_Sans_3 } from "next/font/google"
 import "styles/tailwind.css"
-import Footer from "../components/Shared/Footer"
-import Header from "../components/Shared/Header"
+
+import Footer from "../components/UI/Shared/Footer"
+import Header from "../components/UI/Shared/Header"
 import { siteDetails } from "./data/siteDetails"
 
 const manrope = Manrope({ subsets: ["latin"], display: "swap" })

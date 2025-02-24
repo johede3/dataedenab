@@ -1,17 +1,18 @@
 import { Metadata } from "next"
+import Link from "next/link"
 
 import Benefits from "../components/Benefits/Benefits"
-import Container from "../components/Container/Container"
-import { Comments } from "../components/Landing/comments"
-import CTA from "../components/Landing/CTA"
-import FAQ from "../components/Landing/FAQ"
-import Hero from "../components/Landing/Hero"
-import Logos from "../components/Landing/Logos"
-import Stats from "../components/Landing/Stats"
-import Testimonials from "../components/Landing/Testimonials"
-import { VideoScroll } from "../components/Landing/VideoScroll"
+import CTA from "../components/CTA/CTA"
+import FAQ from "../components/FAQ/FAQ"
+import { landingSections } from "./data/landing"
+
+import Hero from "../components/Hero/Hero"
+import { ItemScroll } from "../components/Idea/ItemScroll"
 import Pricing from "../components/Pricing/Pricing"
+import { Projects } from "../components/Projects/Projects"
 import Section from "../components/Section/Section"
+import SEOSection from "../components/SEO/SEOSection"
+import Container from "../components/UI/Container/Container"
 
 export const metadata: Metadata = {
   title: "Dataeden – Skräddarsydda Webb- och Applösningar för Småföretag",
@@ -42,54 +43,54 @@ export default function Web() {
     <>
       <Hero />
 
-      <Logos />
       <Container>
-        <Benefits />
+        {landingSections.map((section) => (
+          <Section key={section.id} id={section.id} title={section.title} description={section.description}>
+            {section.id === "features" && <Benefits />}
+            {section.id === "seo" && <SEOSection />}
 
-        <Section
-          id="pricing"
-          title="Priser"
-          description="Transparenta priser utan dolda avgifter. Anpassade lösningar för ditt företag."
-        >
-          <Pricing />
-        </Section>
+            {section.id === "idea" && (
+              <ItemScroll
+                dict={{
+                  first_text: "Från idé till verklighet –",
+                  second_text1: "Din hemsida kan vara redo på ",
+                  second_text2: "!",
+                  time_text: "några dagar",
+                }}
+              />
+            )}
+            {section.id === "pricing" && <Pricing />}
+            {section.id === "projects" && (
+              <div className="w-full overflow-x-hidden">
+                <Projects />
+              </div>
+            )}
+            {section.id === "about" && (
+              <div className="mx-auto max-w-3xl text-center">
+                <div className="text-lg text-gray-600">
+                  <strong>Dataeden</strong> drivs av <strong>Johannes Edenholm</strong>, en erfaren webbutvecklare med
+                  en passion för att hjälpa småföretag synas online. Vi skapar moderna, skräddarsydda hemsidor och
+                  digitala lösningar som är snabba, användarvänliga och anpassade efter dina behov.
+                  <br />
+                  <br />
+                  Oavsett om du behöver en helt ny hemsida, en uppdatering av din nuvarande eller en specialbyggd
+                  webbapp, så hjälper vi dig – från idé till färdig lösning.
+                </div>
 
-        <section className="container pt-8">
-          <VideoScroll
-            dict={{
-              first_text: "Watch a Video, then",
-              second_text1: "build your App in ",
-              second_text2: "",
-              time_text: "1 hour",
-            }}
-          />
-        </section>
-
-        <section className="w-full px-8 pt-10 sm:px-0 sm:pt-24 md:px-0 md:pt-24 xl:px-0 xl:pt-24">
-          <div className="flex h-full w-full flex-col items-center pt-10 pb-[100px]">
-            <div>
-              <h1 className="mb-6 text-center text-3xl font-bold md:text-5xl dark:text-zinc-100">
-                What People Are Saying
-              </h1>
-            </div>
-            <div className="mb-6 text-lg text-neutral-500 dark:text-neutral-400">
-              Don’t just take our word for it. Here’s what real people are saying about Saasfly.
-            </div>
-
-            <div className="w-full overflow-x-hidden">
-              <Comments />
-            </div>
-          </div>
-        </section>
-
-        <Section id="testimonials" title="Vad våra kunder säger" description="Se vad våra kunder tycker om oss.">
-          <Testimonials />
-        </Section>
+                <div className="mt-6 flex justify-center">
+                  <Link
+                    href="/kontakt"
+                    className="rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
+                  >
+                    Kontakta oss
+                  </Link>
+                </div>
+              </div>
+            )}
+          </Section>
+        ))}
 
         <FAQ />
-
-        <Stats />
-
         <CTA />
       </Container>
     </>

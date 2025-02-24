@@ -1,37 +1,28 @@
-import { IMenuItem, ISocials } from "@/types";
+import { IMenuItem, ISocials } from "../types"
+
+const baseUrl = "/"
 
 export const footerDetails: {
-    subheading: string;
-    quickLinks: IMenuItem[];
-    email: string;
-    telephone: string;
-    socials: ISocials;
+  subheading: string
+  quickLinks: IMenuItem[]
+  email: string
+  telephone?: string
+  socials: ISocials
+  contactHeader: string
+  quickLinksHeader: string
 } = {
-    subheading: "Empowering businesses with cutting-edge financial technology solutions.",
-    quickLinks: [
-        {
-            text: "Features",
-            url: "#features"
-        },
-        {
-            text: "Pricing",
-            url: "#pricing"
-        },
-        {
-            text: "Testimonials",
-            url: "#testimonials"
-        }
-    ],
-    email: 'address@yoursite.com',
-    telephone: '+1 (123) 456-7890',
-    socials: {
-        // github: 'https://github.com',
-        // x: 'https://twitter.com/x',
-        twitter: 'https://twitter.com/Twitter',
-        facebook: 'https://facebook.com',
-        // youtube: 'https://youtube.com',
-        linkedin: 'https://www.linkedin.com',
-        // threads: 'https://www.threads.net',
-        instagram: 'https://www.instagram.com',
-    }
+  subheading: "Bygger skräddarsydda webb- och applösningar för företag och entreprenörer.",
+  quickLinks: [
+    { text: "Varför oss?", url: `${baseUrl}#features` },
+    { text: "Projekt", url: `${baseUrl}#projects` },
+    { text: "Om oss", url: `${baseUrl}#about` },
+    { text: "FAQ", url: `${baseUrl}#faq` },
+    { text: "Kontakt", url: `${baseUrl}#cta` },
+  ],
+  email: "kontakt@dataeden.se",
+  socials: {
+    linkedin: "https://www.linkedin.com/in/johannesedenholm",
+  },
+  contactHeader: "Kontakt",
+  quickLinksHeader: "Snabblänkar",
 }

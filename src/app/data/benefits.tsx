@@ -1,84 +1,83 @@
 import {
-  FiBarChart2,
-  FiBriefcase,
-  FiDollarSign,
+  FiCode,
+  FiGlobe,
   FiLock,
-  FiPieChart,
-  FiShield,
-  FiTarget,
+  FiMonitor,
+  FiSettings,
+  FiSmartphone,
   FiTrendingUp,
-  FiUser,
+  FiUsers,
+  FiZap,
 } from "react-icons/fi"
 import { IBenefit } from "../types"
 
 export const benefits: IBenefit[] = [
   {
-    title: "Smart Budgeting",
+    title: "Modern och responsiv webbutveckling",
     description:
-      "Take the guesswork out of managing your money. Our AI-powered budgeting tool adapts to your lifestyle and helps you stay on track.",
+      "Vi skapar skräddarsydda, mobilvänliga och snabboptimerade webbplatser för företag som vill sticka ut online.",
     bullets: [
       {
-        title: "Intelligent Categorization",
-        description: "Automatically sorts your transactions for crystal-clear insights.",
-        icon: <FiBarChart2 size={26} />,
+        title: "Mobilanpassning & SEO",
+        description: "Dina kunder hittar dig lättare och får en sömlös upplevelse på alla enheter.",
+        icon: <FiSmartphone size={26} />,
       },
       {
-        title: "Customizable Goals",
-        description: "Set and track financial objectives that matter to you.",
-        icon: <FiTarget size={26} />,
+        title: "Snabb laddningstid",
+        description: "Våra optimerade lösningar ser till att din webbplats laddas blixtsnabbt.",
+        icon: <FiZap size={26} />,
       },
       {
-        title: "Predictive Analysis",
-        description: "Get ahead of your finances with spending forecasts and alerts.",
-        icon: <FiTrendingUp size={26} />,
+        title: "Skräddarsydd design",
+        description: "Unik design anpassad efter ditt varumärke och dina affärsbehov.",
+        icon: <FiMonitor size={26} />,
       },
     ],
-    imageSrc: "/images/mockup-1.webp",
+    imageSrc: "/images/web-development.png",
   },
   {
-    title: "Seamless Investing",
-    description:
-      "Start building wealth today, no financial degree required. Finwise makes investing accessible and straightforward.",
+    title: "Apputveckling för iOS & Android",
+    description: "Vi bygger användarvänliga och prestandaoptimerade appar – från idé till lansering.",
     bullets: [
       {
-        title: "Micro-Investing",
-        description: "Begin with as little as $1 and watch your money grow.",
-        icon: <FiDollarSign size={26} />,
+        title: "Native & Hybrid-appar",
+        description: "Vi utvecklar både plattformsspecifika och korsplattformslösningar.",
+        icon: <FiGlobe size={26} />,
       },
       {
-        title: "Expert Portfolios",
-        description: "Choose from investment strategies tailored to your risk tolerance.",
-        icon: <FiBriefcase size={26} />,
+        title: "Användarfokuserad UX/UI",
+        description: "Vi designar appar som är enkla och engagerande att använda.",
+        icon: <FiUsers size={26} />,
       },
       {
-        title: "Real-Time Performance",
-        description: "Track your investments with easy-to-understand metrics and visuals.",
-        icon: <FiPieChart size={26} />,
+        title: "Integrationer & API:er",
+        description: "Vi kopplar din app till externa tjänster och databaser för maximal funktionalitet.",
+        icon: <FiCode size={26} />,
       },
     ],
-    imageSrc: "/images/mockup-2.webp",
+    imageSrc: "/images/app-development.png",
   },
   {
-    title: "Bank-Grade Security",
+    title: "Säkerhet & prestanda",
     description:
-      "Your financial data deserves the best protection. Rest easy knowing Finwise employs cutting-edge security measures.",
+      "Vi säkerställer att din webbplats eller app är snabb, säker och optimerad för både användare och sökmotorer.",
     bullets: [
       {
-        title: "Military-Grade Encryption",
-        description: "Your information is safeguarded with the highest level of encryption.",
+        title: "SSL & dataskydd",
+        description: "Vi implementerar bästa säkerhetspraxis för att skydda din och dina kunders data.",
         icon: <FiLock size={26} />,
       },
       {
-        title: "Biometric Authentication",
-        description: "Access your account securely with fingerprint or facial recognition.",
-        icon: <FiUser size={26} />,
+        title: "Hosting & drift",
+        description: "Vi hjälper dig att välja en stabil hostinglösning med hög prestanda.",
+        icon: <FiSettings size={26} />,
       },
       {
-        title: "Real-Time Fraud Detection",
-        description: "Our system constantly monitors for suspicious activity to keep your money safe.",
-        icon: <FiShield size={26} />,
+        title: "Prestandaanalys",
+        description: "Vi mäter och optimerar för att säkerställa snabba laddningstider och stabil drift.",
+        icon: <FiTrendingUp size={26} />,
       },
     ],
-    imageSrc: "/images/mockup-1.webp",
+    imageSrc: "/images/security-performance.png",
   },
 ]

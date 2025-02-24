@@ -1,6 +1,9 @@
 export const heroDetails = {
-  heading: "Skräddarsydda Webb- och Applösningar",
+  heading: "Din partner för",
+  highlight: "webb och appar",
   subheading:
-    "Vi hjälper företag i Göteborg att växa online med moderna och optimerade webblösningar. Från hemsidor till appar – vi har dig täckt.",
-  centerImageSrc: "/images/hero-mockup.webp",
+    "Vi skapar moderna, mobilanpassade webb- och app-lösningar som hjälper småföretag i Göteborg att växa online.",
+  centerImageSrc: "/images/BSHsmall.webp",
+  offertCTA: "Få en offert",
+  servicesCTA: "Se våra tjänster",
 }

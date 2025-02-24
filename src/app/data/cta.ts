@@ -1,6 +1,7 @@
 export const ctaDetails = {
-    heading: 'Join Over 1 Million Users To Transform Your Finances',
-    subheading: 'Your journey to financial freedom starts here. Download Finwise today and take the first step towards a brighter financial future!',
-    appStoreUrl: '#',
-    googlePlayUrl: '#'
+  heading: "Ta ditt företag online med en skräddarsydd webblösning.",
+  subheading:
+    "Oavsett om du behöver en ny hemsida, en app eller teknisk rådgivning – vi hjälper dig att hitta rätt lösning. Boka en gratis konsultation idag!",
+  consultationCTA: "Boka gratis konsultation",
+  servicesCTA: "Se våra tjänster",
 }
