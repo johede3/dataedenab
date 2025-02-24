@@ -1,5 +1,6 @@
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Manrope, Source_Sans_3 } from "next/font/google"
+import Script from "next/script"
 import "styles/tailwind.css"
 
 import Footer from "../components/UI/Shared/Footer"
@@ -46,6 +47,34 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sv-SE">
+      <head>
+        {/* Schema Markup för Google */}
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Dataeden",
+              url: "https://dataeden.se",
+              logo: "https://dataeden.se/logo.png",
+              description: "Skräddarsydda webblösningar för företag i Göteborg.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Göteborg",
+                addressCountry: "SE",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                email: "kontakt@dataeden.se",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className={`${manrope.className} ${sourceSans.className} antialiased`}>
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />
