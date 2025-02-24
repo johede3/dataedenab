@@ -1,5 +1,6 @@
 import {
   FiCode,
+  FiEdit,
   FiGlobe,
   FiLock,
   FiMonitor,
@@ -32,9 +33,15 @@ export const benefits: IBenefit[] = [
         description: "Unik design anpassad efter ditt varumärke och dina affärsbehov.",
         icon: <FiMonitor size={26} />,
       },
+      {
+        title: "Ingen WordPress – 100% skräddarsytt",
+        description: "Vi bygger dina lösningar från grunden utan tunga sidbyggare eller onödiga plugins.",
+        icon: <FiEdit size={26} />,
+      },
     ],
     imageSrc: "/images/web-development.png",
   },
+
   {
     title: "Apputveckling för iOS & Android",
     description: "Vi bygger användarvänliga och prestandaoptimerade appar – från idé till lansering.",
@@ -55,7 +62,7 @@ export const benefits: IBenefit[] = [
         icon: <FiCode size={26} />,
       },
     ],
-    imageSrc: "/images/app-development.png",
+    imageSrc: "/images/app-development2.png",
   },
   {
     title: "Säkerhet & prestanda",

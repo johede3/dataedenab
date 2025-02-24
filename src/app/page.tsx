@@ -73,6 +73,12 @@ export default function Web() {
                   digitala lösningar som är snabba, användarvänliga och anpassade efter dina behov.
                   <br />
                   <br />
+                  Vi tror på att kombinationen av <strong>snygg design och intuitiv UX</strong> är nyckeln till att
+                  engagera besökare och stärka varumärken online. Med ett öga för detaljer och en förståelse för hur
+                  människor interagerar med digitala gränssnitt, skapar vi lösningar som är både visuellt tilltalande
+                  och enkla att använda.
+                  <br />
+                  <br />
                   Oavsett om du behöver en helt ny hemsida, en uppdatering av din nuvarande eller en specialbyggd
                   webbapp, så hjälper vi dig – från idé till färdig lösning.
                 </div>

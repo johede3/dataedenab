@@ -9,7 +9,7 @@ export const projects = [
     name: "Go Sing Girl",
     description: "Ett partyspel där du sjunger och gissar låtar – perfekt för spelkvällar!",
     img: "/images/projects/goSingGirl.webp",
-    url: "https://gosinggirl.com", // Korrigera länken om det behövs
+    url: "https://gosinggirl.com",
   },
   {
     name: "Beautyshelfhub",
@@ -19,8 +19,14 @@ export const projects = [
   },
   {
     name: "Clap Count",
-    description: "En diskret och rolig app för att logga intima upplevelser.",
+    description: "En gamifierad tracking-app för att logga upplevelser och statistik.",
     url: "https://clapcount.com",
     img: "/images/projects/ClapCount.webp",
+  },
+  {
+    name: "Dataeden.se",
+    description: "Den här sidan? Ja, den har jag också byggt.",
+    img: "/images/projects/dataeden.png",
+    url: "https://dataeden.se",
   },
 ]

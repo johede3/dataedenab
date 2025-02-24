@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React from "react"
@@ -16,7 +17,7 @@ const Footer: React.FC = () => {
         {/* Logo & Beskrivning */}
         <div className="">
           <Link href="/" className="flex items-center">
-            <img src="/mainImage.png" alt="Logo" className="h-32 w-auto" />
+            <Image src="/mainImage.png" alt="Logo" height={528} width={528} className="h-32 w-auto" />
           </Link>
         </div>
         <p className="text-foreground-accent mt-3.5">{footerDetails.subheading}</p>

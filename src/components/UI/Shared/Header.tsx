@@ -1,6 +1,7 @@
 "use client"
 
 import { Transition } from "@headlessui/react"
+import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
 import { HiBars3, HiOutlineXMark } from "react-icons/hi2"
@@ -23,7 +24,7 @@ const Header: React.FC = () => {
         <nav className="mx-auto flex h-16 items-center justify-between bg-white px-5 py-2 shadow-md md:bg-transparent md:py-10 md:shadow-none">
           {/* Logo */}
           <Link href="/" className="flex items-center sm:ml-0">
-            <img src="/mainSmall.png" alt="Logo" className="h-20 w-auto" />
+            <Image src="/mainSmall.png" alt="Logo" height={528} width={528} className="h-20 w-auto" />
             <span className="manrope text-foreground cursor-pointer text-xl font-semibold">{siteDetails.siteName}</span>
           </Link>
 
@@ -51,7 +52,7 @@ const Header: React.FC = () => {
             <button
               onClick={toggleMenu}
               type="button"
-              className="bg-primary flex h-10 w-10 items-center justify-center rounded-full text-black focus:outline-none"
+              className="bg-primary flex h-10 w-10 items-center justify-center rounded-full text-white focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
