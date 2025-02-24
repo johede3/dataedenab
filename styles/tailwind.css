@@ -1,5 +1,4 @@
-@import 'tailwindcss';
-
+@import "tailwindcss";
 @config '../tailwind.config.js';
 
 /*
@@ -18,4 +17,58 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+}
+
+:root {
+  --background: #fff;
+  --foreground: #171717;
+  --primary: #9810fa;
+  --secondary: #304fff;
+  --primary-accent: #9810fa;
+  --foreground-accent: #454545;
+  --hero-background: #f3f3f5;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-[rgb(var(--background))] font-sans text-lg text-[rgb(var(--foreground))];
+
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.manrope {
+  @apply font-[Manrope];
+
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-[Manrope];
+
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#logos svg {
+  @apply h-10 w-fit sm:h-12;
+}
+
+.benefit-section:last-of-type > div {
+  @apply mb-10;
 }
