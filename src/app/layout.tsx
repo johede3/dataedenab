@@ -36,10 +36,25 @@ export const metadata = {
     title: siteDetails.metadata.title,
     description: siteDetails.metadata.description,
     siteName: siteDetails.siteName,
+    images: [
+      {
+        url: "https://dataeden.se/favi/android-chrome-512x512.png", // Replace with your OG image URL
+        width: 1200,
+        height: 630,
+        alt: "A preview image for Dataeden",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteDetails.metadata.title,
+    description: siteDetails.metadata.description,
+    images: ["https://dataeden.se/favi/android-chrome-512x512.png"], // Same OG image for Twitter
   },
   icons: {
     shortcut: "favi/favicon-16x16.png",
     apple: "favi/apple-touch-icon.png",
+    logo: "/logo.png",
   },
   metadataBase: new URL(siteDetails.siteUrl),
 }
