@@ -1,5 +1,10 @@
 {
   "tailwindCSS.experimental.classRegex": [
     ["cva(?:<[^>]*>)?(([^)]*))", "[\"'`]([^\"'`]*).*?[\"'`]", "(?:twMerge|twJoin)\\(([^\\);]*)[\\);]"]
-  ]
+  ],
+  "prettier.configPath": ". prettierrc",
+  "eslint.options": {
+    "overrideConfigFile": ".eslintrc.cjs"
+  },
+  "cSpell.words": ["Aiuli", "DDMMYYY", "Iatas", "Jsons", "slerp"]
 }

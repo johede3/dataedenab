@@ -1,11 +1,9 @@
-import Image from "next/image"
 import React from "react"
-import { testimonials } from "../../app/data/testimonials"
 
 const Testimonials: React.FC = () => {
   return (
     <div className="mx-auto grid w-full max-w-lg gap-14 lg:max-w-full lg:grid-cols-3 lg:gap-8">
-      {testimonials.map((testimonial, index) => (
+      {/* {testimonials.map((testimonial, index) => (
         <div key={index} className="">
           <div className="mb-4 flex w-full items-center justify-center lg:justify-start">
             <Image
@@ -22,7 +20,7 @@ const Testimonials: React.FC = () => {
           </div>
           <p className="text-foreground-accent text-center lg:text-left">&quot;{testimonial.message}&quot;</p>
         </div>
-      ))}
+      ))} */}
     </div>
   )
 }

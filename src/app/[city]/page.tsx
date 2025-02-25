@@ -1,19 +1,18 @@
-import { Metadata } from "next"
-import { notFound } from "next/navigation"
-import About from "../../components/About/About"
-import Benefits, { replaceCityPlaceholder } from "../../components/Benefits/Benefits"
-import CTA from "../../components/CTA/CTA"
-import FAQ from "../../components/FAQ/FAQ"
-import Hero from "../../components/Hero/Hero"
-import { ItemScroll } from "../../components/Idea/ItemScroll"
-import Pricing from "../../components/Pricing/Pricing"
-import { Projects } from "../../components/Projects/Projects"
-import Section from "../../components/Section/Section"
-import SEOSection from "../../components/SEO/SEOSection"
-import Container from "../../components/UI/Container/Container"
-import { landingSections } from "../data/landing"
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import About from "../../components/About/About";
+import Benefits, { replaceCityPlaceholder } from "../../components/Benefits/Benefits";
+import CTA from "../../components/CTA/CTA";
+import FAQ from "../../components/FAQ/FAQ";
+import Hero from "../../components/Hero/Hero";
+import { ItemScroll } from "../../components/Idea/ItemScroll";
+import Pricing from "../../components/Pricing/Pricing";
+import { Projects } from "../../components/Projects/Projects";
+import Section from "../../components/Section/Section";
+import SEOSection from "../../components/SEO/SEOSection";
+import Container from "../../components/UI/Container/Container";
+import { landingSections } from "../data/landing";
 
-// Definiera alla städer du vill stödja
 const cities = {
   goteborg: {
     name: "Göteborg",
@@ -35,15 +34,16 @@ const cities = {
     title: "Dataeden – Webbutveckling i Kungsbacka",
     description: "Vi hjälper företag i Kungsbacka att etablera sig online med professionella hemsidor.",
   },
-}
+};
 
-type Props = { params: { city: keyof typeof cities } }
-
-// SEO Metadata för varje stad
-// 📌 **Dynamiskt generera metadata**
-export function generateMetadata({ params }: Props): Metadata {
-  const cityData = cities[params.city]
-  if (!cityData) return notFound()
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ city: keyof typeof cities }>;
+}): Promise<Metadata> {
+  const { city } = await params;
+  const cityData = cities[city];
+  if (!cityData) return notFound();
 
   return {
     title: cityData.title,
@@ -59,7 +59,7 @@ export function generateMetadata({ params }: Props): Metadata {
       "E-handelslösningar",
     ],
     openGraph: {
-      url: `https://dataeden.se/${params.city}`,
+      url: `https://dataeden.se/${city}`,
       title: cityData.title,
       description: cityData.description,
       siteName: "Dataeden",
@@ -67,7 +67,7 @@ export function generateMetadata({ params }: Props): Metadata {
         {
           width: 1200,
           height: 630,
-          url: "https://dataeden.se/images/og-image.jpg", // Uppdatera till din bild
+          url: "https://dataeden.se/images/og-image.jpg",
           alt: `Webbutveckling i ${cityData.name}`,
         },
       ],
@@ -76,14 +76,15 @@ export function generateMetadata({ params }: Props): Metadata {
       card: "summary_large_image",
       title: cityData.title,
       description: cityData.description,
-      images: ["https://dataeden.se/images/og-image.jpg"], // Samma som OG-bild
+      images: ["https://dataeden.se/images/og-image.jpg"],
     },
-  }
+  };
 }
 
-export default function CityPage({ params }: Props) {
-  const cityData = cities[params.city]
-  if (!cityData) return notFound()
+export default async function CityPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
+  const { city } = await params;
+  const cityData = cities[city];
+  if (!cityData) return notFound();
 
   return (
     <>
@@ -98,7 +99,6 @@ export default function CityPage({ params }: Props) {
           >
             {section.id === "features" && <Benefits city={cityData.name} />}
             {section.id === "seo" && <SEOSection />}
-
             {section.id === "idea" && (
               <ItemScroll
                 dict={{
@@ -118,15 +118,13 @@ export default function CityPage({ params }: Props) {
             {section.id === "about" && <About />}
           </Section>
         ))}
-
         <FAQ city={cityData.name} />
         <CTA city={cityData.name} />
       </Container>
     </>
-  )
+  );
 }
 
-// Generera statiska sidor vid build-time
-export function generateStaticParams() {
-  return Object.keys(cities).map((city) => ({ city }))
+export async function generateStaticParams() {
+  return Object.keys(cities).map((city) => ({ city }));
 }

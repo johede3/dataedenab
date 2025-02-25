@@ -1,10 +1,8 @@
 import Image from "next/image"
-import { testimonials } from "../../app/data/testimonials"
-import Marquee from "../marquee"
 import { cn } from "../UI/utils/cn"
 
-const firstRow = testimonials.slice(0, testimonials.length / 2)
-const secondRow = testimonials.slice(testimonials.length / 2)
+// const firstRow = testimonials.slice(0, testimonials.length / 2)
+// const secondRow = testimonials.slice(testimonials.length / 2)
 
 const ReviewCard = ({
   avatar,
@@ -40,7 +38,7 @@ const ReviewCard = ({
 const Comments = () => {
   return (
     <div className="bg-background relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg py-4 sm:py-20 md:py-20 xl:py-20">
-      <Marquee pauseOnHover className="[--duration:20s]">
+      {/* <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((testimonial, index) => (
           <ReviewCard key={index} {...testimonial} />
         ))}
@@ -49,7 +47,7 @@ const Comments = () => {
         {secondRow.map((testimonial, index) => (
           <ReviewCard key={index} {...testimonial} />
         ))}
-      </Marquee>
+      </Marquee> */}
       <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"></div>
       <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"></div>
     </div>
