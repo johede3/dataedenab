@@ -31,7 +31,6 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.mjs",
-    "jest.config.js",
     ".next/types/**/*.ts",
     "eslint.config.mjs"
   ],
