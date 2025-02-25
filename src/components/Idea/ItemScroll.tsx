@@ -16,8 +16,9 @@ export function ItemScroll({ dict }: { dict: Record<string, string> | undefined 
               <br />
               <span className="mt-1 text-4xl leading-none font-bold md:text-6xl">
                 {dict?.second_text1}
-                <ColourfulText text={dict?.time_text ?? ""} />
-                {dict?.second_text2}
+                <span className="block">
+                  <ColourfulText text={`${dict?.time_text}${dict?.second_text2}`} />
+                </span>
               </span>
             </h1>
           </>
