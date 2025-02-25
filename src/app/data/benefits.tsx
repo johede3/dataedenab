@@ -14,9 +14,9 @@ import { IBenefit } from "../types"
 
 export const benefits: IBenefit[] = [
   {
-    title: "Modern och responsiv webbutveckling",
+    title: "Modern och responsiv webbutveckling i Göteborg",
     description:
-      "Vi skapar skräddarsydda, mobilvänliga och snabboptimerade webbplatser för företag som vill sticka ut online.",
+      "Vi skapar skräddarsydda, SEO-optimerade och mobilvänliga webbplatser för företag i Göteborg och Sverige som vill synas och växa online.",
     bullets: [
       {
         title: "Mobilanpassning & SEO",
@@ -24,13 +24,14 @@ export const benefits: IBenefit[] = [
         icon: <FiSmartphone size={26} />,
       },
       {
-        title: "Snabb laddningstid",
-        description: "Våra optimerade lösningar ser till att din webbplats laddas blixtsnabbt.",
+        title: "Snabb laddningstid & prestandaoptimering",
+        description:
+          "Vi bygger snabba, lätta och optimerade webbplatser för bättre användarupplevelse och högre ranking.",
         icon: <FiZap size={26} />,
       },
       {
-        title: "Skräddarsydd design",
-        description: "Unik design anpassad efter ditt varumärke och dina affärsbehov.",
+        title: "Skräddarsydd design efter ditt varumärke",
+        description: "Unik design och UX/UI-anpassning för att matcha din affärsmodell och målgrupp.",
         icon: <FiMonitor size={26} />,
       },
       {
@@ -43,8 +44,9 @@ export const benefits: IBenefit[] = [
   },
 
   {
-    title: "Apputveckling för iOS & Android",
-    description: "Vi bygger användarvänliga och prestandaoptimerade appar – från idé till lansering.",
+    title: "Apputveckling för iOS & Android – Göteborg & Sverige",
+    description:
+      "Vi bygger prestandaoptimerade, användarvänliga appar för företag som vill expandera digitalt– från idé till lansering.",
     bullets: [
       {
         title: "Native & Hybrid-appar",
@@ -53,35 +55,35 @@ export const benefits: IBenefit[] = [
       },
       {
         title: "Användarfokuserad UX/UI",
-        description: "Vi designar appar som är enkla och engagerande att använda.",
+        description: "Intuitiv och snygg appdesign som engagerar och ökar konverteringarna.",
         icon: <FiUsers size={26} />,
       },
       {
         title: "Integrationer & API:er",
-        description: "Vi kopplar din app till externa tjänster och databaser för maximal funktionalitet.",
+        description: "Koppla din app till betalningslösningar, externa system och databaser för full funktionalitet.",
         icon: <FiCode size={26} />,
       },
     ],
     imageSrc: "/images/app-development2.png",
   },
   {
-    title: "Säkerhet & prestanda",
+    title: "Säkerhet & prestanda för din hemsida eller app",
     description:
-      "Vi säkerställer att din webbplats eller app är snabb, säker och optimerad för både användare och sökmotorer.",
+      "Vi säkerställer att din hemsida eller app är snabb, säker och optimerad för både användare och sökmotorer.",
     bullets: [
       {
         title: "SSL & dataskydd",
-        description: "Vi implementerar bästa säkerhetspraxis för att skydda din och dina kunders data.",
+        description: "Skydda din webbplats med SSL-certifikat och GDPR-anpassad datasäkerhet.",
         icon: <FiLock size={26} />,
       },
       {
-        title: "Hosting & drift",
-        description: "Vi hjälper dig att välja en stabil hostinglösning med hög prestanda.",
+        title: "Hosting & drift med hög prestanda",
+        description: "Vi hjälper dig att välja rätt hostinglösning för stabil och snabb drift.",
         icon: <FiSettings size={26} />,
       },
       {
-        title: "Prestandaanalys",
-        description: "Vi mäter och optimerar för att säkerställa snabba laddningstider och stabil drift.",
+        title: "Prestandaanalys & optimering",
+        description: "Analysera och förbättra din webbplats hastighet med PageSpeed Insights och avancerad optimering.",
         icon: <FiTrendingUp size={26} />,
       },
     ],

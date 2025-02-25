@@ -19,7 +19,7 @@ const ProjectCard = ({
     <Link href={url} target="_blank" rel="noopener noreferrer">
       <div
         className={cn(
-          "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 transition hover:shadow-lg",
+          "relative w-70 cursor-pointer overflow-hidden rounded-xl border p-4 transition hover:shadow-lg",
           "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
           "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
         )}

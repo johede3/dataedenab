@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "SEO för småföretag i Göteborg. Få en hemsida som syns på Google och ökar din trafik.",
     images: [
       {
-        url: "https://dataeden.se/images/seo-optimization.webp",
+        url: "https://dataeden.se/favi/android-chrome-512x512.png",
         width: 1200,
         height: 630,
       },
@@ -26,48 +26,55 @@ export const metadata: Metadata = {
 export default function SEOPage() {
   return (
     <Container className="mt-20">
-      {seoSections.map((section) => (
-        <Section key={section.id} id={section.id} title={section.title} description={section.description}>
-          {section.content && (
-            <div className="mx-auto max-w-3xl px-6 text-left lg:px-12">
-              {section.content.map((paragraph, index) => (
-                <p key={index} className="mt-3 text-gray-600 dark:text-gray-300">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          )}
+      <Section id="seo-content" title="" description="">
+        {seoSections.map((section) => (
+          <div key={section.id} className="mx-auto max-w-4xl px-4 lg:px-0">
+            <h2 className="mt-10 text-2xl font-bold text-gray-900 dark:text-gray-100">{section.title}</h2>
 
-          {section.id === "seo-benefits" && (
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-6 lg:grid-cols-3">
-              {seoBenefits.map((item, index) => {
-                const IconComponent =
-                  item.icon === "FiTrendingUp" ? FiTrendingUp : item.icon === "FiGlobe" ? FiGlobe : FiSearch
-                return (
-                  <div key={index} className="mt-4 flex flex-col items-center rounded-xl border p-6 shadow-lg">
-                    <div className="text-primary mb-4">
-                      <IconComponent size={26} />
+            {section.description && (
+              <p className="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">{section.description}</p>
+            )}
+
+            {section.content && (
+              <div className="mt-6 space-y-4">
+                {section.content.map((paragraph, index) => (
+                  <p key={index} className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            )}
+
+            {section.id === "seo-benefits" && (
+              <div className="mt-10 grid grid-cols-1 gap-8 px-4 lg:grid-cols-3">
+                {seoBenefits.map((item, index) => {
+                  const IconComponent =
+                    item.icon === "FiTrendingUp" ? FiTrendingUp : item.icon === "FiGlobe" ? FiGlobe : FiSearch
+
+                  return (
+                    <div key={index} className="flex flex-col items-center rounded-lg border p-6 shadow-md">
+                      <div className="text-primary mb-3">
+                        <IconComponent size={32} />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{item.title}</h3>
+                      <p className="mt-2 text-center text-gray-600 dark:text-gray-400">{item.description}</p>
                     </div>
-                    <h3 className="text-lg font-semibold">{item.title}</h3>
-                    <p className="mt-2 text-center text-gray-600">{item.description}</p>
-                  </div>
-                )
-              })}
-            </div>
-          )}
+                  )
+                })}
+              </div>
+            )}
+          </div>
+        ))}
 
-          {section.id === "seo-cta" && (
-            <div className="mt-8 flex justify-center">
-              <Link
-                href="/kontakt"
-                className="rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
-              >
-                Kontakta oss
-              </Link>
-            </div>
-          )}
-        </Section>
-      ))}
+        <div className="mt-16 flex justify-center">
+          <Link
+            href="/kontakt"
+            className="rounded-full bg-gradient-to-r from-purple-600 to-purple-500 px-8 py-3 text-lg font-medium text-white shadow-md transition-all hover:from-purple-700 hover:to-purple-600"
+          >
+            Kontakta oss
+          </Link>
+        </div>
+      </Section>
     </Container>
   )
 }

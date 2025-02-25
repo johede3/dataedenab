@@ -1,25 +1,33 @@
 export const pricingPlans = [
   {
-    title: "Enkel webbplats",
-    description: "En professionell, responsiv hemsida som presenterar ditt företag.",
-    features: ["✔ Mobilanpassad design", "✔ Grundläggande SEO", "✔ Kontaktformulär"],
-  },
-  {
-    title: "Avancerad webbtjänst",
-    description: "Skräddarsydd lösning med interaktiva funktioner och integrationer.",
+    title: "Bas – Enkel företagshemsida",
+    description: "En professionell, snabb och mobilvänlig hemsida som gör att ditt företag syns online.",
     features: [
-      "✔ API-integrationer (ex. Stripe, bokningssystem)",
-      "✔ CMS för enkel hantering",
-      "✔ Egenutvecklade funktioner",
+      "✔ Responsiv design – fungerar perfekt på mobil, surfplatta & dator",
+      "✔ Grundläggande SEO för bättre synlighet på Google",
+      "✔ Kontaktformulär & enkel redigering av innehåll",
     ],
   },
   {
-    title: "Långsiktig drift",
-    description: "Hosting, uppdateringar och teknisk support efter lansering.",
-    features: ["✔ Säker hosting & SSL", "✔ Regelbundna uppdateringar", "✔ Support & underhåll"],
+    title: "Premium – Skräddarsydd webbtjänst",
+    description: "En avancerad och interaktiv webbplats med skräddarsydda funktioner för ditt företag.",
+    features: [
+      "✔ API-integrationer (ex. Stripe, bokningssystem, CRM)",
+      "✔ Enkel hantering av innehåll utan tekniska kunskaper",
+      "✔ Anpassade funktioner och optimerad prestanda",
+    ],
+  },
+  {
+    title: "Pro – Hosting, support & underhåll",
+    description: "Säker och stabil drift med kontinuerlig optimering och support efter lansering.",
+    features: [
+      "✔ Hosting med hög prestanda & SSL-certifikat för säkerhet",
+      "✔ Löpande uppdateringar och optimering",
+      "✔ Teknisk support och vidareutveckling vid behov",
+    ],
   },
 ]
 
 export const pricingDetails = {
-  offertCTA: "Få en kostnadsfri offert",
+  offertCTA: "Få en kostnadsfri offert & rådgivning",
 }

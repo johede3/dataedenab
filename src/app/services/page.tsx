@@ -1,8 +1,20 @@
 import { Metadata } from "next"
+import { JSX } from "react"
 import { FiCheckCircle, FiCode, FiGlobe, FiShield, FiSmartphone, FiTrendingUp, FiUsers } from "react-icons/fi"
 import CTA from "../../components/CTA/CTA"
 import Section from "../../components/Section/Section"
 import Container from "../../components/UI/Container/Container"
+import { servicesDetails, servicesSectionsText } from "../data/services"
+
+const iconMap: { [key: string]: JSX.Element } = {
+  FiGlobe: <FiGlobe size={28} />,
+  FiTrendingUp: <FiTrendingUp size={28} />,
+  FiCheckCircle: <FiCheckCircle size={28} />,
+  FiSmartphone: <FiSmartphone size={28} />,
+  FiCode: <FiCode size={28} />,
+  FiUsers: <FiUsers size={28} />,
+  FiShield: <FiShield size={28} />,
+}
 
 export const metadata: Metadata = {
   title: "Våra tjänster – Webbutveckling & Apputveckling | Dataeden",
@@ -17,7 +29,7 @@ export const metadata: Metadata = {
       {
         width: 1200,
         height: 630,
-        url: "https://dataeden.se/images/services-og.jpg",
+        url: "https://dataeden.se/favi/android-chrome-512x512.png",
       },
     ],
   },
@@ -34,14 +46,11 @@ export default function Services() {
 
         <div className="text-center">
           <h1 className="text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-2xl md:text-6xl md:leading-tight">
-            Våra <span className="text-purple-600">Tjänster</span>
+            {servicesSectionsText.title} <span className="text-purple-600"> {servicesSectionsText.highlitedText}</span>
           </h1>
 
           {/* Förbättrad undertext */}
-          <p className="text-foreground mx-auto mt-4 max-w-lg">
-            Vi hjälper företag att lyckas online med skräddarsydda webbplatser, appar och digitala lösningar. Modern
-            design, snabb prestanda och smarta funktioner – vi har allt du behöver.
-          </p>
+          <p className="text-foreground mx-auto mt-4 max-w-lg">{servicesSectionsText.subtext}</p>
 
           {/* CTA Buttons */}
           <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -49,88 +58,27 @@ export default function Services() {
               href="/kontakt"
               className="rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-lg transition-all hover:bg-purple-700"
             >
-              Boka en gratis konsultation
+              {servicesSectionsText.CTA}
             </a>
           </div>
         </div>
       </section>
 
       <Container>
-        {/* 🔹 WEB DEVELOPMENT SECTION */}
-        <Section
-          id="webbutveckling"
-          title="Webbutveckling – Hemsidor som konverterar"
-          description="Professionell och mobilanpassad webbutveckling för företag som vill växa online."
-        >
-          <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <ServiceCard
-              icon={<FiGlobe size={28} />}
-              title="Responsiva & moderna hemsidor"
-              description="Anpassade hemsidor som ser bra ut och fungerar perfekt på alla enheter."
-            />
-            <ServiceCard
-              icon={<FiTrendingUp size={28} />}
-              title="SEO-optimering för Google"
-              description="Bättre synlighet och fler kunder genom smart sökmotoroptimering."
-            />
-            <ServiceCard
-              icon={<FiCheckCircle size={28} />}
-              title="Snabb & säker drift"
-              description="Vi ser till att din hemsida laddar blixtsnabbt och skyddas från hot."
-            />
-          </div>
-        </Section>
-
-        {/* 🔹 APP DEVELOPMENT SECTION */}
-        <Section
-          id="apputveckling"
-          title="Apputveckling – iOS & Android"
-          description="Smarta, skalbara appar för ditt företag."
-        >
-          <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <ServiceCard
-              icon={<FiSmartphone size={28} />}
-              title="Native & hybrid-appar"
-              description="Utveckling av appar för både iOS och Android – native eller med React Native."
-            />
-            <ServiceCard
-              icon={<FiCode size={28} />}
-              title="API & dataintegration"
-              description="Koppla din app till externa system och datakällor för full funktionalitet."
-            />
-            <ServiceCard
-              icon={<FiUsers size={28} />}
-              title="Engagerande UX & UI"
-              description="Vi skapar intuitiva appar som användare älskar att använda."
-            />
-          </div>
-        </Section>
-
-        {/* 🔹 TRUST ELEMENTS */}
-        {/* 🔹 TRUST ELEMENTS */}
-        <Section
-          id="trovärdighet"
-          title="Varför välja oss?"
-          description="Vi levererar moderna digitala lösningar som är optimerade för tillväxt och prestanda."
-        >
-          <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <TrustCard
-              icon={<FiShield size={28} />}
-              title="5+ års erfarenhet"
-              description="Vi har byggt skräddarsydda webb- och applösningar för startups och småföretag."
-            />
-            <TrustCard
-              icon={<FiUsers size={28} />}
-              title="Fokus på användarupplevelse"
-              description="Vi skapar lösningar med modern UX och intuitiv design för bättre kundengagemang."
-            />
-            <TrustCard
-              icon={<FiTrendingUp size={28} />}
-              title="SEO & prestandaoptimerade"
-              description="Våra webbplatser är snabba, sökmotoroptimerade och anpassade för att konvertera."
-            />
-          </div>
-        </Section>
+        {servicesDetails.map((section) => (
+          <Section key={section.id} id={section.id} title={section.title} description={section.description}>
+            <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
+              {section.services.map((service) => (
+                <ServiceCard
+                  key={service.title}
+                  icon={iconMap[service.icon]}
+                  title={service.title}
+                  description={service.description}
+                />
+              ))}
+            </div>
+          </Section>
+        ))}
 
         {/* 🔥 CALL TO ACTION */}
         <CTA />

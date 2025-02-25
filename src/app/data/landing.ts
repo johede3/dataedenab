@@ -4,32 +4,36 @@ export const landingSections: ILanding[] = [
   {
     id: "features",
     title: "Varför välja oss?",
-    description: "Vi erbjuder moderna, snabba och säkra lösningar för både webb och mobil.",
+    description:
+      "Vi skapar moderna, snabba och säkra hemsidor och appar som är optimerade för både användarupplevelse och SEO.",
   },
   {
     id: "seo",
-    title: "Syns på Google – få fler kunder",
-    description: "Vi hjälper företag att ranka högre på Google med SEO-optimerade webbplatser.",
+    title: "Syns på Google – få fler kunder med SEO",
+    description:
+      "Vi bygger SEO-optimerade webbplatser som rankar högt på Google och hjälper företag i Göteborg och Sverige att få fler kunder.",
   },
   {
     id: "idea",
-    title: "",
-    description: "",
+    title: "Har du en idé? Vi hjälper dig att förverkliga den!",
+    description:
+      "Oavsett om du behöver en hemsida, en app eller en digital lösning, kan vi guida dig från idé till färdig produkt.",
   },
   {
     id: "pricing",
-    title: "Hur bestäms priset?",
-    description: "Varje projekt är unikt och priset beror på dina behov. Här är några faktorer som påverkar:",
+    title: "Vad kostar en hemsida eller app?",
+    description:
+      "Varje projekt är unikt och priset beror på dina behov. Vi erbjuder transparenta priser och skräddarsydda lösningar för småföretag och startups.",
   },
-
   {
     id: "projects",
-    title: "Tidigare projekt",
-    description: "Här är några av de webbplatser och appar vi har byggt – anpassade lösningar för olika behov.",
+    title: "Se våra tidigare projekt",
+    description:
+      "Vi har byggt hemsidor och appar för företag inom olika branscher. Se våra kundanpassade lösningar och bli inspirerad!",
   },
   {
     id: "about",
-    title: "Om Dataeden",
-    description: "",
+    title: "Om Dataeden – Din digitala partner",
+    description: "Vi hjälper företag att växa online med modern webbutveckling, apputveckling och SEO-optimering.",
   },
 ]

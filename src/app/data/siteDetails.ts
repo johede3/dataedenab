@@ -2,9 +2,9 @@ export const siteDetails = {
   siteName: "Dataeden",
   siteUrl: "https://dataeden.se/",
   metadata: {
-    title: "Dataeden – Webbutveckling & Digitala Lösningar i Göteborg",
+    title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar i Göteborg",
     description:
-      "Vi hjälper småföretag i Göteborg att växa online med moderna, skräddarsydda webblösningar. Från hemsidor till appar – vi bygger din digitala framtid.",
+      "Professionell webbutveckling och SEO-optimerade hemsidor i Göteborg. Vi hjälper företag att synas på Google och konvertera fler kunder med modern teknik och smarta digitala lösningar.",
   },
   language: "sv-SE",
   locale: "sv-SE",

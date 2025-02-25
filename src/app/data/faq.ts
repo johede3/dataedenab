@@ -1,8 +1,9 @@
 import { IFAQ } from "../types"
 
 export const faqDetails = {
-  heading: "Vanliga frågor",
-  subheading: " Här hittar du svar på några vanliga frågor om våra tjänster. Hittar du inte svaret du söker?",
+  heading: "Vanliga frågor – Hemsidor, Appar & Webbutveckling",
+  subheading:
+    "Här hittar du svar på vanliga frågor om våra tjänster inom webbutveckling, SEO och digitala lösningar. Hittar du inte det du söker? Kontakta oss!",
   contactEmail: "kontakt@dataeden.se",
 }
 
@@ -15,20 +16,21 @@ export const faqs: IFAQ[] = [
   {
     question: "Hur lång tid tar det att bygga en hemsida?",
     answer:
-      "Tiden beror på projektets storlek. En enkel hemsida kan vara klar på någon vecka, medan mer avancerade lösningar tar längre tid. Vi går igenom tidsplanen tillsammans innan vi startar.",
+      "Byggtiden beror på projektets omfattning. En enklare företagshemsida kan vara klar inom 1–2 veckor, medan mer avancerade lösningar tar längre tid. Vi skapar en tydlig tidsplan tillsammans innan projektstart.",
   },
   {
     question: "Kan jag uppdatera hemsidan själv efteråt?",
     answer:
-      "Ja! Jag kan bygga en hemsida med ett enkelt hanteringssystem så att du själv kan uppdatera innehållet. Jag erbjuder även löpande support om du vill att jag sköter uppdateringarna åt dig.",
+      "Ja! Jag bygger hemsidor där du enkelt kan ändra text och bilder själv, utan att behöva kunna programmera. Om du föredrar kan jag också sköta uppdateringarna åt dig.",
   },
   {
     question: "Vilka typer av företag hjälper du?",
     answer:
-      "Jag jobbar med små och medelstora företag, entreprenörer och startups som vill ha en professionell och effektiv digital närvaro.",
+      "Jag arbetar med småföretag, startups, restauranger, e-handelsbutiker och lokala företag i Göteborg och Sverige som vill synas online och växa digitalt.",
   },
   {
-    question: "Behöver jag ett webbhotell och domän?",
-    answer: "Ja, men om du inte redan har det kan jag hjälpa dig att välja rätt lösning och sätta upp allt åt dig.",
+    question: "Behöver jag webbhotell och domän för min hemsida?",
+    answer:
+      "Ja, men om du inte redan har det hjälper jag dig att välja rätt domän och webbhotell samt att sätta upp allt tekniskt åt dig.",
   },
 ]

@@ -66,3 +66,11 @@ export interface iSEO {
   description: string
   content?: string[]
 }
+
+export interface iServices {
+  id: string
+  title: string
+  highlitedText: string
+  description: string
+  content?: string[]
+}

@@ -1,7 +1,7 @@
 export const ctaDetails = {
-  heading: "Ta ditt företag online med en skräddarsydd webblösning.",
+  heading: "Bygg en modern, snabb och SEO-optimerad hemsida för ditt företag.",
   subheading:
-    "Oavsett om du behöver en ny hemsida, en app eller teknisk rådgivning – vi hjälper dig att hitta rätt lösning. Boka en gratis konsultation idag!",
+    "Behöver du en professionell hemsida, en app eller teknisk rådgivning? Vi skapar skräddarsydda digitala lösningar för företag i Göteborg och Sverige. Boka en gratis konsultation idag och få rätt strategi för din online-närvaro!",
   consultationCTA: "Boka gratis konsultation",
   servicesCTA: "Se våra tjänster",
 }

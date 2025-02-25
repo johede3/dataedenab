@@ -39,8 +39,8 @@ export const metadata = {
     images: [
       {
         url: "https://dataeden.se/favi/android-chrome-512x512.png", // Replace with your OG image URL
-        width: 1200,
-        height: 630,
+        width: 512,
+        height: 512,
         alt: "A preview image for Dataeden",
       },
     ],

@@ -3,58 +3,59 @@ import { iSEO } from "../types"
 export const seoSections: iSEO[] = [
   {
     id: "seo-intro",
-    title: "Vad är SEO och varför är det viktigt?",
+    title: "Vad är SEO och varför behöver ditt företag det?",
     description:
-      "Att synas högt upp i Googles sökresultat är avgörande för företag som vill nå fler kunder och öka sin försäljning. Sökmotoroptimering (SEO) är en kostnadseffektiv strategi för att förbättra din synlighet online och driva organisk trafik till din webbplats.",
+      "Att synas högt i Googles sökresultat är avgörande för att få fler kunder och öka försäljningen. Sökmotoroptimering (SEO) är en kostnadseffektiv strategi för att förbättra din synlighet online och driva organisk trafik till din webbplats.",
   },
   {
     id: "seo-proof",
-    title: "Bevisad effekt – SEO ökar försäljningen",
-    description: "Företag som investerar i SEO ser långsiktiga resultat, ökad synlighet och fler kunder.",
+    title: "SEO ger bevisade resultat – fler besökare & högre försäljning",
+    description: "",
     content: [
-      "Studier visar att företag som investerar i SEO kan se betydande ökningar i sin försäljning. Enligt data från WPBeginner har e-handelswebbplatser en genomsnittlig konverteringsgrad på 1,6% från organisk trafik, vilket är högre än från betald annonsering (1,3%). Dessutom visar statistik att 33% av alla klick i sökresultaten går till det översta organiska resultatet ",
-      "Utan en egen webbplats riskerar ditt företag att förlora potentiella kunder till konkurrenter. Visma Spcs påpekar att utan en företagshemsida kan konkurrenter ta över sökresultaten för ditt varumärke, vilket leder till förlorad trafik och försäljning.",
+      "Företag som investerar i SEO ser långsiktiga resultat, bättre synlighet och fler konverteringar.",
+      "Studier visar att webbplatser som optimeras för SEO har högre konverteringsgrad än betald annonsering. Enligt data från WPBeginner konverterar organisk trafik i snitt 1,6%, jämfört med betald annonsering på 1,3%.",
+      "Utan en egen hemsida och SEO-optimering riskerar ditt företag att tappa kunder till konkurrenter. Visma Spcs påpekar att företag utan digital närvaro lätt förlorar mark till konkurrenter som rankar högre i sökresultaten.",
     ],
   },
   {
     id: "seo-benefits",
-    title: "Fördelar med SEO för ditt företag",
-    description: "",
+    title: "Därför behöver ditt företag SEO",
+    description: "SEO ökar synligheten, driver fler kunder och hjälper ditt företag att växa online.",
   },
-
   {
     id: "seo-synas",
-    title: "Vi hjälper dig att synas",
+    title: "Så hjälper vi dig att synas på Google",
     description: "",
     content: [
-      "På Dataeden specialiserar vi oss på att skapa SEO-optimerade webbplatser som hjälper småföretag att växa online. Kontakta oss idag för en kostnadsfri analys av din nuvarande webbplats och få reda på hur vi kan förbättra din synlighet på nätet.",
-      "Genom att investera i SEO och en professionell webbplats kan ditt företag nå fler kunder, öka försäljningen och bygga ett starkare varumärke online.",
+      "På Dataeden skapar vi SEO-optimerade hemsidor för småföretag och startups. Vi analyserar din nuvarande webbplats och erbjuder konkreta förbättringsförslag för att öka din ranking och synlighet.",
+      "Genom att investera i en professionell hemsida med SEO kan ditt företag få fler besökare, öka försäljningen och stärka varumärket online.",
     ],
   },
   {
     id: "seo-cta",
-    title: "Nå kunder nära dig",
+    title: "Lokal SEO – nå kunder i ditt område",
     description: "",
     content: [
-      "För företag i Göteborg och andra delar av Sverige är lokal SEO särskilt viktigt. Genom att optimera din webbplats för lokala sökningar kan du säkerställa att ditt företag syns när potentiella kunder söker efter tjänster eller produkter i ditt område. Enligt Buildahome Webbyrå kan lokal SEO förbättra din synlighet och locka fler besökare från ditt närområde.",
+      "För företag i Göteborg och andra svenska städer är lokal SEO avgörande. Genom att optimera din webbplats för lokala sökningar säkerställer du att potentiella kunder hittar ditt företag när de söker efter dina tjänster eller produkter.",
     ],
   },
 ]
 
 export const seoBenefits = [
   {
-    title: "Högre Google-ranking",
-    description: "Bättre placering på Google betyder fler besökare och fler kunder.",
+    title: "Bättre synlighet på Google",
+    description: "Högre placering i sökresultaten betyder fler besökare och fler affärer.",
     icon: "FiTrendingUp",
   },
   {
-    title: "Lokal SEO för småföretag",
-    description: "Vi ser till att du syns för rätt målgrupp i din stad eller region.",
+    title: "Lokal SEO för företag i Göteborg & Sverige",
+    description: "Vi optimerar din webbplats för att synas när lokala kunder söker efter dina tjänster.",
     icon: "FiGlobe",
   },
   {
-    title: "Optimerad hastighet & UX",
-    description: "Snabba och användarvänliga sidor konverterar fler besökare till kunder.",
+    title: "Snabba och användarvänliga sidor",
+    description:
+      "SEO handlar inte bara om sökord – vi ser till att din hemsida är snabb, responsiv och optimerad för konvertering.",
     icon: "FiSearch",
   },
 ]

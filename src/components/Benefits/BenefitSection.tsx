@@ -86,7 +86,7 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
               "justify-end": !imageAtRight,
             })}
           >
-            <Image src={imageSrc} alt="title" width="384" height="384" quality={100} className="" />
+            <Image src={imageSrc} alt="title" width="384" height="384" quality={100} />
           </div>
         </div>
       </motion.div>
