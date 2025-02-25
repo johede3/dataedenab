@@ -34,6 +34,56 @@ const cities = {
     title: "Dataeden – Webbutveckling i Kungsbacka",
     description: "Vi hjälper företag i Kungsbacka att etablera sig online med professionella hemsidor.",
   },
+  molndal: {
+    name: "Mölndal",
+    title: "Dataeden – Webbutveckling i Mölndal",
+    description: "Vi skapar moderna webbplatser för företag i Mölndal och Västra Götaland.",
+  },
+  partille: {
+    name: "Partille",
+    title: "Dataeden – Webbutveckling i Partille",
+    description: "Hemsidor och digitala lösningar för företag i Partille.",
+  },
+  lerum: {
+    name: "Lerum",
+    title: "Dataeden – Webbutveckling i Lerum",
+    description: "Vi bygger skräddarsydda hemsidor och appar för företag i Lerum.",
+  },
+  ale: {
+    name: "Ale",
+    title: "Dataeden – Webbutveckling i Ale",
+    description: "SEO-optimerade hemsidor för företag i Ale och Västra Götaland.",
+  },
+  stenungsund: {
+    name: "Stenungsund",
+    title: "Dataeden – Webbutveckling i Stenungsund",
+    description: "Professionell webbutveckling och SEO-tjänster för företag i Stenungsund.",
+  },
+  tjorn: {
+    name: "Tjörn",
+    title: "Dataeden – Webbutveckling på Tjörn",
+    description: "Vi hjälper företag på Tjörn att bygga snygga och funktionella webbplatser.",
+  },
+  boras: {
+    name: "Borås",
+    title: "Dataeden – Webbutveckling i Borås",
+    description: "Moderna, mobilanpassade hemsidor för företag i Borås.",
+  },
+  trollhattan: {
+    name: "Trollhättan",
+    title: "Dataeden – Webbutveckling i Trollhättan",
+    description: "Skräddarsydda webblösningar för företag i Trollhättan.",
+  },
+  uddevalla: {
+    name: "Uddevalla",
+    title: "Dataeden – Webbutveckling i Uddevalla",
+    description: "Professionell webbutveckling och SEO-optimerade hemsidor i Uddevalla.",
+  },
+  alingsas: {
+    name: "Alingsås",
+    title: "Dataeden – Webbutveckling i Alingsås",
+    description: "Vi hjälper företag i Alingsås att digitalisera sin verksamhet med moderna webbplatser.",
+  },
 };
 
 export async function generateMetadata({
@@ -67,7 +117,7 @@ export async function generateMetadata({
         {
           width: 1200,
           height: 630,
-          url: "https://dataeden.se/images/og-image.jpg",
+          url: "https://dataeden.se/images/logo.png",
           alt: `Webbutveckling i ${cityData.name}`,
         },
       ],
@@ -76,7 +126,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: cityData.title,
       description: cityData.description,
-      images: ["https://dataeden.se/images/og-image.jpg"],
+      images: ["https://dataeden.se/images/logo.png"],
     },
   };
 }
@@ -104,8 +154,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
                 dict={{
                   first_text: "Från idé till verklighet –",
                   second_text1: "Din hemsida kan vara redo på ",
-                  second_text2: "!",
                   time_text: "några dagar",
+                  second_text2: "!",
                 }}
               />
             )}

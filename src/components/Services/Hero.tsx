@@ -42,7 +42,7 @@ const HeroServices: React.FC = () => {
       </div>
 
       <Link
-        href="#webbutveckling"
+        href="#services"
         className="absolute bottom-0 animate-[shake_0.5s_ease-in-out_0.5s_1] transition-transform duration-300 hover:scale-110"
       >
         <FiChevronDown className="text-black hover:text-purple-600" size={52} />

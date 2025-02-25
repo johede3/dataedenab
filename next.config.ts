@@ -1,9 +1,10 @@
-import withBundleAnalyzer from "@next/bundle-analyzer"
-import { type NextConfig } from "next"
+import withBundleAnalyzer from "@next/bundle-analyzer";
+import { type NextConfig } from "next";
 
-import { env } from "./env.mjs"
+import { env } from "./env.mjs";
 
 const config: NextConfig = {
+  productionBrowserSourceMaps: true,
   reactStrictMode: true,
   logging: {
     fetches: {
@@ -16,6 +17,6 @@ const config: NextConfig = {
     { source: "/health", destination: "/api/health" },
     { source: "/ping", destination: "/api/health" },
   ],
-}
+};
 
-export default env.ANALYZE ? withBundleAnalyzer({ enabled: env.ANALYZE })(config) : config
+export default env.ANALYZE ? withBundleAnalyzer({ enabled: env.ANALYZE })(config) : config;

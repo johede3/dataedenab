@@ -1,11 +1,11 @@
-import { Metadata } from "next"
-import { JSX } from "react"
-import { FiCheckCircle, FiCode, FiGlobe, FiShield, FiSmartphone, FiTrendingUp, FiUsers } from "react-icons/fi"
-import CTA from "../../components/CTA/CTA"
-import Section from "../../components/Section/Section"
-import HeroServices from "../../components/Services/Hero"
-import Container from "../../components/UI/Container/Container"
-import { servicesDetails } from "../data/services"
+import { Metadata } from "next";
+import { JSX } from "react";
+import { FiCheckCircle, FiCode, FiGlobe, FiShield, FiSmartphone, FiTrendingUp, FiUsers } from "react-icons/fi";
+import CTA from "../../components/CTA/CTA";
+import Section from "../../components/Section/Section";
+import HeroServices from "../../components/Services/Hero";
+import ServicesTab from "../../components/Services/ServicesTab";
+import Container from "../../components/UI/Container/Container";
 
 const iconMap: { [key: string]: JSX.Element } = {
   FiGlobe: <FiGlobe size={28} />,
@@ -15,7 +15,7 @@ const iconMap: { [key: string]: JSX.Element } = {
   FiCode: <FiCode size={28} />,
   FiUsers: <FiUsers size={28} />,
   FiShield: <FiShield size={28} />,
-}
+};
 
 export const metadata: Metadata = {
   title: "Våra tjänster – Webbutveckling & Apputveckling | Dataeden",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
 export default function Services() {
   return (
@@ -43,45 +43,14 @@ export default function Services() {
       <HeroServices />
 
       <Container>
-        {servicesDetails.map((section) => (
-          <Section key={section.id} id={section.id} title={section.title} description={section.description}>
-            <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
-              {section.services.map((service) => (
-                <ServiceCard
-                  key={service.title}
-                  icon={iconMap[service.icon]}
-                  title={service.title}
-                  description={service.description}
-                />
-              ))}
-            </div>
-          </Section>
-        ))}
+        {/* 🔥 Interaktiv sektion - Tjänster med tabs */}
+        <Section id="services" title="Våra tjänster" description="Välj en kategori för att läsa mer.">
+          <ServicesTab />
+        </Section>
 
-        {/* 🔥 CALL TO ACTION */}
+        {/* 🔥 Call to Action */}
         <CTA />
       </Container>
     </>
-  )
-}
-
-/* COMPONENTS FOR UI CARDS */
-function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <div className="flex flex-col items-center rounded-lg p-6 text-center shadow-lg dark:bg-gray-800">
-      <div className="text-purple-600">{icon}</div>
-      <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-      <p className="mt-2 text-gray-600 dark:text-gray-300">{description}</p>
-    </div>
-  )
-}
-
-function TrustCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <div className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-900">
-      <div className="text-green-500">{icon}</div>
-      <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-      <p className="mt-2 text-gray-600 dark:text-gray-300">{description}</p>
-    </div>
-  )
+  );
 }
