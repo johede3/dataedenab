@@ -1,7 +1,12 @@
 import Link from "next/link"
 import { ctaDetails } from "../../app/data/cta"
+import { replaceCityPlaceholder } from "../Benefits/Benefits"
 
-const CTA: React.FC = () => {
+type HeroProps = {
+  city?: string
+}
+
+const CTA: React.FC<HeroProps> = ({ city }) => {
   return (
     <section id="cta" className="mt-10 mb-5 lg:my-20">
       <div className="relative z-10 mx-auto h-full w-full py-12 sm:py-20">
@@ -15,7 +20,9 @@ const CTA: React.FC = () => {
               {ctaDetails.heading}
             </h2>
 
-            <p className="mx-auto max-w-xl md:px-5">{ctaDetails.subheading}</p>
+            <p className="mx-auto max-w-xl md:px-5">
+              {replaceCityPlaceholder(ctaDetails.subheading, city ? " i " + city : "")}
+            </p>
 
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:gap-4">
               <Link

@@ -2,8 +2,13 @@ import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 import { heroDetails } from "../../app/data/hero"
+import { replaceCityPlaceholder } from "../Benefits/Benefits"
 
-const Hero: React.FC = () => {
+type HeroProps = {
+  city?: string
+}
+
+const Hero: React.FC<HeroProps> = ({ city }) => {
   return (
     <section id="hero" className="relative flex items-center justify-center px-5 pt-32 pb-0 md:pt-40">
       <div className="absolute top-0 bottom-0 left-0 -z-10 w-full">
@@ -14,10 +19,11 @@ const Hero: React.FC = () => {
       <div className="text-center">
         <h1 className="text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-2xl md:text-6xl md:leading-tight">
           {heroDetails.heading} <span className="text-purple-600">{heroDetails.highlight}</span>
+          {city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : ""}
         </h1>
 
         {/* Förbättrad undertext */}
-        <p className="text-foreground mx-auto mt-4 max-w-lg">{heroDetails.subheading}</p>
+        <p className="text-foreground mx-auto mt-4 max-w-lg">{replaceCityPlaceholder(heroDetails.subheading, city)}</p>
 
         {/* CTA-knappar */}
         <div className="mx-auto mt-6 flex w-fit flex-col items-center gap-2 sm:flex-row sm:gap-4">

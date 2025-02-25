@@ -3,15 +3,14 @@ import { ILanding } from "../types"
 export const landingSections: ILanding[] = [
   {
     id: "features",
-    title: "Varför välja oss?",
-    description:
-      "Vi skapar moderna, snabba och säkra hemsidor och appar som är optimerade för både användarupplevelse och SEO.",
+    title: "",
+    description: "",
   },
   {
     id: "seo",
     title: "Syns på Google – få fler kunder med SEO",
     description:
-      "Vi bygger SEO-optimerade webbplatser som rankar högt på Google och hjälper företag i Göteborg och Sverige att få fler kunder.",
+      "Vi bygger SEO-optimerade webbplatser som rankar högt på Google och hjälper företag i {{city}} att få fler kunder.",
   },
   {
     id: "idea",

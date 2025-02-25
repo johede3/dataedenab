@@ -11,7 +11,7 @@ export const footerDetails: {
   contactHeader: string
   quickLinksHeader: string
 } = {
-  subheading: "Professionell webbutveckling och apputveckling för småföretag och startups i Göteborg & Sverige.",
+  subheading: "Professionell webbutveckling och apputveckling för småföretag och startups i Sverige.",
   quickLinks: [
     { text: "Varför välja oss?", url: `${baseUrl}#features` },
     { text: "Tidigare projekt", url: `${baseUrl}#projects` },

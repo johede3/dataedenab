@@ -6,8 +6,13 @@ import React from "react"
 import { footerDetails } from "../../../app/data/footer"
 import { siteDetails } from "../../../app/data/siteDetails"
 import { getPlatformIconByName } from "../../../app/utils"
+import { replaceCityPlaceholder } from "../../Benefits/Benefits"
 
-const Footer: React.FC = () => {
+type HeroProps = {
+  city?: string
+}
+
+const Footer: React.FC<HeroProps> = ({ city }) => {
   const pathname = usePathname()
   const isHomePage = pathname === "/"
 
@@ -20,7 +25,7 @@ const Footer: React.FC = () => {
             <Image src="/mainImage.png" alt="Logo" height={528} width={528} className="h-32 w-auto" />
           </Link>
         </div>
-        <p className="text-foreground-accent mt-3.5">{footerDetails.subheading}</p>
+        <p className="text-foreground-accent mt-3.5">{replaceCityPlaceholder(footerDetails.subheading, city)}</p>
 
         {/* Snabblänkar */}
         <div>

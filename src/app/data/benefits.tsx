@@ -14,9 +14,9 @@ import { IBenefit } from "../types"
 
 export const benefits: IBenefit[] = [
   {
-    title: "Modern och responsiv webbutveckling i Göteborg",
+    title: "Modern och responsiv webbutveckling i {{city}}",
     description:
-      "Vi skapar skräddarsydda, SEO-optimerade och mobilvänliga webbplatser för företag i Göteborg och Sverige som vill synas och växa online.",
+      "Vi skapar skräddarsydda, SEO-optimerade och mobilvänliga webbplatser för företag i {{city}} som vill synas och växa online.",
     bullets: [
       {
         title: "Mobilanpassning & SEO",
@@ -44,7 +44,7 @@ export const benefits: IBenefit[] = [
   },
 
   {
-    title: "Apputveckling för iOS & Android – Göteborg & Sverige",
+    title: "Apputveckling för iOS & Android – {{city}}",
     description:
       "Vi bygger prestandaoptimerade, användarvänliga appar för företag som vill expandera digitalt– från idé till lansering.",
     bullets: [

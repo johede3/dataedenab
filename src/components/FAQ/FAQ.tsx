@@ -3,9 +3,14 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react"
 import { BiMinus, BiPlus } from "react-icons/bi"
 import { faqDetails, faqs } from "../../app/data/faq"
+import { replaceCityPlaceholder } from "../Benefits/Benefits"
 import SectionTitle from "../Section/SectionTitle"
 
-const FAQ: React.FC = () => {
+type Props = {
+  city?: string
+}
+
+const FAQ: React.FC<Props> = ({ city }) => {
   return (
     <section id="faq" className="py-10 lg:py-20">
       <div className="flex flex-col gap-10 lg:flex-row">
@@ -39,7 +44,12 @@ const FAQ: React.FC = () => {
                         <BiPlus className="text-secondary h-5 w-5" />
                       )}
                     </DisclosureButton>
-                    <DisclosurePanel className="text-foreground-accent px-4 pt-4 pb-2">{faq.answer}</DisclosurePanel>
+                    <DisclosurePanel className="text-foreground-accent px-4 pt-4 pb-2">
+                      {replaceCityPlaceholder(
+                        faq.answer,
+                        city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : ""
+                      )}
+                    </DisclosurePanel>
                   </div>
                 )}
               </Disclosure>

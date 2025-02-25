@@ -26,7 +26,7 @@ export const faqs: IFAQ[] = [
   {
     question: "Vilka typer av företag hjälper du?",
     answer:
-      "Jag arbetar med småföretag, startups, restauranger, e-handelsbutiker och lokala företag i Göteborg och Sverige som vill synas online och växa digitalt.",
+      "Jag arbetar med småföretag, startups, restauranger, e-handelsbutiker och lokala företag {{city}} som vill synas online och växa digitalt.",
   },
   {
     question: "Behöver jag webbhotell och domän för min hemsida?",
