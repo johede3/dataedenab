@@ -1,16 +1,17 @@
-import { ILanding } from "../types"
+import { ILanding } from "../types";
 
 export const landingSections: ILanding[] = [
   {
     id: "features",
-    title: "",
-    description: "",
+    title: "Därför behöver ditt företag en professionell hemsida",
+    description:
+      "Vill du ha fler kunder? En snabb och snygg hemsida hjälper dig att synas och konvertera fler besökare till betalande kunder.",
   },
   {
     id: "seo",
-    title: "Syns på Google – få fler kunder med SEO",
+    title: "Hur gör man en hemsida som syns på Google?",
     description:
-      "Vi bygger SEO-optimerade webbplatser som rankar högt på Google och hjälper företag i {{city}} att få fler kunder.",
+      "SEO är nyckeln till synlighet. Vi bygger SEO-optimerade webbplatser som rankar högt på Google och hjälper företag i {{city}} att få fler kunder.",
   },
   {
     id: "idea",
@@ -35,4 +36,4 @@ export const landingSections: ILanding[] = [
     title: "Om Dataeden – Din digitala partner",
     description: "Vi hjälper företag att växa online med modern webbutveckling, apputveckling och SEO-optimering.",
   },
-]
+];

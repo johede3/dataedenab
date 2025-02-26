@@ -18,6 +18,18 @@ export const metadata: Metadata = {
   title: "Dataeden – Webbutveckling & Digitala Lösningar i Västra Götaland",
   description:
     "Vi hjälper småföretag i Göteborg, Kungälv, Kungsbacka och hela Västra Götaland att växa online med moderna hemsidor och appar.",
+  keywords: [
+    `Webbutveckling `,
+    `Hemsida småföretag`,
+    `Skräddarsydda webblösningar`,
+    `Webbdesign`,
+    "SEO optimering",
+    "Webbapplikationer",
+    "Mobilanpassade hemsidor",
+    "E-handelslösningar",
+    `Webbyrå`,
+    "Egen hemsida",
+  ],
   twitter: {
     card: "summary_large_image",
     site: "@dataeden",

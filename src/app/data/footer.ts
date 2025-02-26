@@ -1,8 +1,6 @@
 import { cities } from "../sitemap";
 import { IMenuItem, ISocials } from "../types";
 
-const baseUrl = "/";
-
 export const footerDetails: {
   subheading: string;
   quickLinks: IMenuItem[];
@@ -16,11 +14,11 @@ export const footerDetails: {
 } = {
   subheading: "Professionell webbutveckling och apputveckling för småföretag och startups i Sverige.",
   quickLinks: [
-    { text: "Varför välja oss?", url: `${baseUrl}#features` },
-    { text: "Tidigare projekt", url: `${baseUrl}#projects` },
-    { text: "Om Dataeden", url: `${baseUrl}#about` },
-    { text: "Vanliga frågor", url: `${baseUrl}#faq` },
-    { text: "Kontakta oss", url: `${baseUrl}#cta` },
+    { text: "Om Dataeden", url: `#about` },
+    { text: "Varför välja oss?", url: `#features` },
+    { text: "Tidigare projekt", url: `#projects` },
+    { text: "Vanliga frågor", url: `#faq` },
+    { text: "Kontakta oss", url: `#cta` },
   ],
   locations: cities,
   email: "kontakt@dataeden.se",

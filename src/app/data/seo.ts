@@ -1,4 +1,4 @@
-import { iSEO } from "../types"
+import { iSEO } from "../types";
 
 export const seoSections: iSEO[] = [
   {
@@ -19,17 +19,14 @@ export const seoSections: iSEO[] = [
   },
   {
     id: "seo-benefits",
-    title: "Därför behöver ditt företag SEO",
+    title: "Varför behöver ditt företag SEO?",
     description: "SEO ökar synligheten, driver fler kunder och hjälper ditt företag att växa online.",
   },
   {
     id: "seo-synas",
-    title: "Så hjälper vi dig att synas på Google",
-    description: "",
-    content: [
-      "På Dataeden skapar vi SEO-optimerade hemsidor för småföretag och startups. Vi analyserar din nuvarande webbplats och erbjuder konkreta förbättringsförslag för att öka din ranking och synlighet.",
-      "Genom att investera i en professionell hemsida med SEO kan ditt företag få fler besökare, öka försäljningen och stärka varumärket online.",
-    ],
+    title: "Hur fungerar SEO – och hur hjälper vi dig?",
+    description:
+      "SEO handlar om att optimera din webbplats så att den rankar högre på Google och når rätt kunder. Vi ser till att din hemsida presterar optimalt och syns där det behövs.",
   },
   {
     id: "seo-cta",
@@ -39,7 +36,7 @@ export const seoSections: iSEO[] = [
       "För företag i Göteborg och andra svenska städer är lokal SEO avgörande. Genom att optimera din webbplats för lokala sökningar säkerställer du att potentiella kunder hittar ditt företag när de söker efter dina tjänster eller produkter.",
     ],
   },
-]
+];
 
 export const seoBenefits = [
   {
@@ -58,4 +55,24 @@ export const seoBenefits = [
       "SEO handlar inte bara om sökord – vi ser till att din hemsida är snabb, responsiv och optimerad för konvertering.",
     icon: "FiSearch",
   },
-]
+];
+
+export const seoSeen = [
+  {
+    icon: "FiTrendingUp",
+    title: "Teknisk SEO & hastighetsoptimering",
+    description:
+      "Vi analyserar din hemsida och förbättrar teknisk SEO, hastighet och mobilanpassning för bättre ranking.",
+  },
+  {
+    icon: "FiSearch",
+    title: "Sökordsoptimering & innehållsstrategi",
+    description: "Vi optimerar ditt innehåll med rätt sökord så att fler hittar dig via Google.",
+  },
+  {
+    icon: "FiGlobe",
+    title: "Lokal SEO & Google My Business",
+    description:
+      "Vi hjälper dig att synas lokalt genom att optimera din Google My Business-profil och lokala sökningar.",
+  },
+];

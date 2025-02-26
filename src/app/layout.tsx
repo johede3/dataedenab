@@ -1,23 +1,24 @@
-import { GoogleAnalytics } from "@next/third-parties/google"
-import { Manrope, Source_Sans_3 } from "next/font/google"
-import Script from "next/script"
-import "styles/tailwind.css"
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Manrope, Source_Sans_3 } from "next/font/google";
+import Script from "next/script";
+import "styles/tailwind.css";
 
-import Footer from "../components/UI/Shared/Footer"
-import Header from "../components/UI/Shared/Header"
-import { siteDetails } from "./data/siteDetails"
+import Footer from "../components/UI/Shared/Footer";
+import Header from "../components/UI/Shared/Header";
+import { siteDetails } from "./data/siteDetails";
 
-const manrope = Manrope({ subsets: ["latin"], display: "swap" })
-const sourceSans = Source_Sans_3({ subsets: ["latin"], display: "swap" })
+const manrope = Manrope({ subsets: ["latin"], display: "swap" });
+const sourceSans = Source_Sans_3({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
-  title: siteDetails.metadata.title,
-  description: siteDetails.metadata.description,
+  title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar",
+  description:
+    "Skräddarsydda hemsidor, apputveckling och SEO-optimerade webblösningar för företag. Vi hjälper dig att synas på Google och nå fler kunder online.",
   keywords: [
-    "Webbutveckling Göteborg",
+    "Webbutveckling",
     "Hemsidor småföretag",
     "Skräddarsydda webblösningar",
-    "Webbdesign Göteborg",
+    "Webbdesign",
     "SEO optimering",
     "Webbapplikationer",
     "Mobilanpassade hemsidor",
@@ -33,23 +34,24 @@ export const metadata = {
     type: "website",
     locale: "sv_SE",
     url: siteDetails.siteUrl,
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
-    siteName: siteDetails.siteName,
+    title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar",
+    description:
+      "Skräddarsydda hemsidor och digitala lösningar för företag. Vi bygger snabba, mobilvänliga och SEO-optimerade webbplatser.",
+    siteName: "Dataeden",
     images: [
       {
-        url: "https://dataeden.se/favi/android-chrome-512x512.png", // Replace with your OG image URL
+        url: "https://dataeden.se/favi/android-chrome-512x512.png",
         width: 512,
         height: 512,
-        alt: "A preview image for Dataeden",
+        alt: "Dataeden – Professionell webbutveckling och SEO",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
-    images: ["https://dataeden.se/favi/android-chrome-512x512.png"], // Same OG image for Twitter
+    title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar",
+    description: "Skräddarsydda hemsidor och SEO-optimering för företag som vill växa online.",
+    images: ["https://dataeden.se/favi/android-chrome-512x512.png"],
   },
   icons: {
     shortcut: "favi/favicon-16x16.png",
@@ -57,7 +59,7 @@ export const metadata = {
     logo: "/logo.png",
   },
   metadataBase: new URL(siteDetails.siteUrl),
-}
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -75,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: "Dataeden",
               url: "https://dataeden.se",
               logo: "https://dataeden.se/logo.png",
-              description: "Skräddarsydda webblösningar för företag i Göteborg.",
+              description: "Webbutveckling, SEO & Digitala Lösningar för företag och privatpersoner.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Göteborg",
@@ -97,5 +99,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
       </body>
     </html>
-  )
+  );
 }

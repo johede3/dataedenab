@@ -1,22 +1,29 @@
-"use client"
+"use client";
 
-import { Transition } from "@headlessui/react"
-import Image from "next/image"
-import Link from "next/link"
-import React, { useState } from "react"
-import { HiBars3, HiOutlineXMark } from "react-icons/hi2"
+import { Transition } from "@headlessui/react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { HiBars3, HiOutlineXMark } from "react-icons/hi2";
 
-import { headerDetails } from "../../../app/data/header"
-import { menuItems } from "../../../app/data/menuItems"
-import { siteDetails } from "../../../app/data/siteDetails"
-import Container from "../Container/Container"
+import { usePathname } from "next/navigation";
+import { footerDetails } from "../../../app/data/footer";
+import { headerDetails } from "../../../app/data/header";
+import { menuItems } from "../../../app/data/menuItems";
+import { siteDetails } from "../../../app/data/siteDetails";
+import Container from "../Container/Container";
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
+  const segments = pathname.split("/");
+  const validCities = footerDetails.locations.map((loc) => loc.slug);
+  const city = segments[1] && validCities.includes(segments[1]) ? segments[1] : undefined;
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <header className="fixed top-0 right-0 left-0 z-50 mx-auto h-20 w-full bg-transparent md:absolute">
@@ -30,13 +37,25 @@ const Header: React.FC = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden space-x-6 md:flex">
-            {menuItems.map((item) => (
-              <li key={item.text}>
-                <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
-                  {item.text}
-                </Link>
-              </li>
-            ))}
+            {menuItems.map((link) => {
+              const href = city ? `/${city}${link.url}` : `/${link.url}`;
+              return (
+                <li key={link.text}>
+                  <Link
+                    href={href}
+                    prefetch={false}
+                    className="text-foreground hover:text-foreground-accent transition-colors"
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              );
+            })}
+            <li>
+              <Link href="/services" className="text-foreground hover:text-foreground-accent transition-colors">
+                Tjänster
+              </Link>
+            </li>
             <li>
               <Link
                 href="/kontakt"
@@ -79,13 +98,22 @@ const Header: React.FC = () => {
       >
         <div id="mobile-menu" className="bg-white shadow-lg md:hidden">
           <ul className="flex flex-col space-y-4 px-6 pt-1 pb-6">
-            {menuItems.map((item) => (
-              <li key={item.text}>
-                <Link href={item.url} className="text-foreground hover:text-primary block" onClick={toggleMenu}>
-                  {item.text}
-                </Link>
-              </li>
-            ))}
+            {menuItems.map((item) => {
+              const href = city ? `/${city}${item.url}` : `/${item.url}`;
+
+              return (
+                <li key={item.text}>
+                  <Link
+                    href={href}
+                    className="text-foreground hover:text-primary block"
+                    onClick={toggleMenu}
+                    prefetch={false}
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              );
+            })}
             <li>
               <Link
                 href="/kontakt"
@@ -99,7 +127,7 @@ const Header: React.FC = () => {
         </div>
       </Transition>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
