@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import About from "../components/About/About";
-import Benefits from "../components/Benefits/Benefits";
+import Benefits, { replaceCityPlaceholder } from "../components/Benefits/Benefits";
 import CTA from "../components/CTA/CTA";
 import FAQ from "../components/FAQ/FAQ";
 import { landingSections } from "./data/landing";
@@ -57,7 +57,12 @@ export default function Web() {
 
       <Container>
         {landingSections.map((section) => (
-          <Section key={section.id} id={section.id} title={section.title} description={section.description}>
+          <Section
+            key={section.id}
+            id={section.id}
+            title={replaceCityPlaceholder(section.title, "")}
+            description={replaceCityPlaceholder(section.description, "")}
+          >
             {section.id === "features" && <Benefits city={"Göteborg med omnejd"} />}
             {section.id === "seo" && <SEOSection />}
 

@@ -145,8 +145,14 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
           <Section
             key={section.id}
             id={section.id}
-            title={replaceCityPlaceholder(section.title, cityData.name)}
-            description={replaceCityPlaceholder(section.description, cityData.name)}
+            title={replaceCityPlaceholder(
+              section.title,
+              cityData.name ? (cityData.name === "Orust" ? ` på ${cityData.name}` : ` i ${cityData.name}`) : "",
+            )}
+            description={replaceCityPlaceholder(
+              section.description,
+              cityData.name ? (cityData.name === "Orust" ? ` på ${cityData.name}` : ` i ${cityData.name}`) : "",
+            )}
           >
             {section.id === "features" && <Benefits city={cityData.name} />}
             {section.id === "seo" && <SEOSection />}

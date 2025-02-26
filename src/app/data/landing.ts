@@ -11,7 +11,7 @@ export const landingSections: ILanding[] = [
     id: "seo",
     title: "Hur gör man en hemsida som syns på Google?",
     description:
-      "SEO är nyckeln till synlighet. Vi bygger SEO-optimerade webbplatser som rankar högt på Google och hjälper företag i {{city}} att få fler kunder.",
+      "SEO är nyckeln till synlighet. Vi bygger SEO-optimerade webbplatser som rankar högt på Google och hjälper företag {{city}} att få fler kunder.",
   },
   {
     id: "idea",
