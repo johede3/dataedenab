@@ -118,7 +118,6 @@ export default function SEOPage() {
           </div>
         ))}
       </Section>
-
       <div className="mt-8 flex justify-center">
         <Link
           href="/kontakt"
@@ -128,10 +127,10 @@ export default function SEOPage() {
         </Link>
       </div>
 
-      <section id="faq-seo" className="py-16">
-        <div className="max-w-4xl mx-auto">
+      <section id="faq" className="py-16">
+        <div className="max-w-4xl mx-auto ">
           <h2 className="text-3xl font-bold text-center">Vanliga frågor om SEO</h2>
-          <div className="mt-8 space-y-6">
+          <div className="mt-8 space-y-2">
             <details className="p-4 bg-gray-100 rounded-lg">
               <summary className="font-medium cursor-pointer">Behöver jag SEO för min hemsida?</summary>
               <p className="mt- text-gray-600">

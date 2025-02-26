@@ -123,10 +123,10 @@ export default function Services() {
         </Section>
 
         {/* 🔥 FAQ */}
-        <section id="faq-services" className="py-16">
-          <div className="max-w-4xl mx-auto">
+        <section id="faq" className="py-16">
+          <div className="max-w-4xl mx-auto py-2">
             <h2 className="text-3xl font-bold text-center">Vanliga frågor om våra tjänster</h2>
-            <div className="mt-8 space-y-6">
+            <div className="mt-8 space-y-2">
               <details className="p-4 bg-gray-100 rounded-lg">
                 <summary className="font-medium cursor-pointer">
                   Hur mycket kostar en hemsida för ett litet företag?

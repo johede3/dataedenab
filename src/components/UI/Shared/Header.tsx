@@ -59,7 +59,7 @@ const Header: React.FC = () => {
             <li>
               <Link
                 href="/kontakt"
-                className="bg-primary hover:bg-primary-accent rounded-full px-8 py-3 text-white transition-colors"
+                className="rounded-full bg-purple-600 px-6 py-2 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
               >
                 {headerDetails.contactUsCTA}
               </Link>

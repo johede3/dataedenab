@@ -169,29 +169,32 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
             {section.id === "about" && <About />}
           </Section>
         ))}
-        <details className="p-4 bg-gray-100 rounded-lg">
-          <summary className="font-medium cursor-pointer">Hur får jag mitt företag att synas på Google?</summary>
-          <p className="mt-2 text-gray-600">
-            För att synas på Google behöver du en hemsida som laddar snabbt, funkar på mobilen och har rätt texter och
-            bilder. Vi hjälper dig att komma högre upp i sökresultaten utan att du behöver betala för annonser.
-          </p>
-        </details>
 
-        <details className="p-4 bg-gray-100 rounded-lg">
-          <summary className="font-medium cursor-pointer">Måste jag ha SEO på min hemsida?</summary>
-          <p className="mt-2 text-gray-600">
-            Ja, om du vill att folk ska hitta ditt företag på Google. Utan SEO hamnar din hemsida långt ner i
-            sökresultaten och kunderna hittar dina konkurrenter istället. Vi kan hjälpa dig att ranka högre.
-          </p>
-        </details>
+        <section id="faq" className="flex flex-col gap-2">
+          <details className="p-4 bg-gray-100 rounded-lg">
+            <summary className="font-medium cursor-pointer">Hur får jag mitt företag att synas på Google?</summary>
+            <p className="mt-2 text-gray-600">
+              För att synas på Google behöver du en hemsida som laddar snabbt, funkar på mobilen och har rätt texter och
+              bilder. Vi hjälper dig att komma högre upp i sökresultaten utan att du behöver betala för annonser.
+            </p>
+          </details>
 
-        <details className="p-4 bg-gray-100 rounded-lg">
-          <summary className="font-medium cursor-pointer">Kan jag göra en hemsida själv?</summary>
-          <p className="mt-2 text-gray-600">
-            Ja, det finns gratis verktyg som Wix och WordPress, men de har begränsningar. En proffsig hemsida byggd av
-            en webbyrå ser bättre ut, laddar snabbare och får fler kunder.
-          </p>
-        </details>
+          <details className="p-4 bg-gray-100 rounded-lg">
+            <summary className="font-medium cursor-pointer">Måste jag ha SEO på min hemsida?</summary>
+            <p className="mt-2 text-gray-600">
+              Ja, om du vill att folk ska hitta ditt företag på Google. Utan SEO hamnar din hemsida långt ner i
+              sökresultaten och kunderna hittar dina konkurrenter istället. Vi kan hjälpa dig att ranka högre.
+            </p>
+          </details>
+
+          <details className="p-4 bg-gray-100 rounded-lg">
+            <summary className="font-medium cursor-pointer">Kan jag göra en hemsida själv?</summary>
+            <p className="mt-2 text-gray-600">
+              Ja, det finns gratis verktyg som Wix och WordPress, men de har begränsningar. En proffsig hemsida byggd av
+              en webbyrå ser bättre ut, laddar snabbare och får fler kunder.
+            </p>
+          </details>
+        </section>
 
         <CTA city={cityData.name} />
       </Container>
