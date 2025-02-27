@@ -9,8 +9,8 @@ import {
   FiTrendingUp,
   FiUsers,
   FiZap,
-} from "react-icons/fi"
-import { IBenefit } from "../types"
+} from "react-icons/fi";
+import { IBenefit } from "../types";
 
 export const benefits: IBenefit[] = [
   {
@@ -40,7 +40,7 @@ export const benefits: IBenefit[] = [
         icon: <FiEdit size={26} />,
       },
     ],
-    imageSrc: "/images/web-development.png",
+    imageSrc: "/assets/web-development.png",
   },
 
   {
@@ -64,7 +64,7 @@ export const benefits: IBenefit[] = [
         icon: <FiCode size={26} />,
       },
     ],
-    imageSrc: "/images/app-development2.png",
+    imageSrc: "/assets/app-development.png",
   },
   {
     title: "Säkerhet & prestanda för din hemsida eller app",
@@ -87,6 +87,6 @@ export const benefits: IBenefit[] = [
         icon: <FiTrendingUp size={26} />,
       },
     ],
-    imageSrc: "/images/security-performance.png",
+    imageSrc: "/assets/sec.png",
   },
-]
+];
