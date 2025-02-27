@@ -3,37 +3,37 @@ import { ILanding } from "../types";
 export const landingSections: ILanding[] = [
   {
     id: "features",
-    title: "Därför behöver ditt företag en professionell hemsida",
+    title: "Varför behöver ditt företag en professionell hemsida?",
     description:
-      "Vill du ha fler kunder? En snabb och snygg hemsida hjälper dig att synas och konvertera fler besökare till betalande kunder.",
+      "Vill du ha fler kunder? Vi bygger moderna, mobilanpassade och SEO-optimerade webbplatser som gör att du syns på Google och lockar fler kunder.",
   },
   {
     id: "seo",
     title: "Hur gör man en hemsida som syns på Google?",
     description:
-      "SEO är nyckeln till synlighet. Vi bygger SEO-optimerade webbplatser som rankar högt på Google och hjälper företag {{city}} att få fler kunder.",
+      "SEO är nyckeln till synlighet. Vi bygger SEO-optimerade hemsidor som rankar högt på Google och hjälper företag {{city}} att få fler kunder.",
   },
   {
     id: "idea",
-    title: "Har du en idé? Vi hjälper dig att förverkliga den!",
+    title: "Behöver du en hemsida eller app? Vi hjälper dig!",
     description:
-      "Oavsett om du behöver en hemsida, en app eller en digital lösning, kan vi guida dig från idé till färdig produkt.",
+      "Oavsett om du behöver en ny hemsida, en mobilapp eller en digital lösning, guidar vi dig från idé till färdig produkt.",
   },
   {
     id: "pricing",
-    title: "Vad kostar en hemsida eller app?",
+    title: "Vad kostar det att bygga en hemsida eller app?",
     description:
-      "Varje projekt är unikt och priset beror på dina behov. Vi erbjuder transparenta priser och skräddarsydda lösningar för småföretag och startups.",
+      "Priset beror på dina behov. Vi erbjuder transparenta priser och skräddarsydda lösningar för småföretag och startups.",
   },
   {
     id: "projects",
-    title: "Se våra tidigare projekt",
+    title: "Se våra tidigare projekt – Få inspiration",
     description:
-      "Vi har byggt hemsidor och appar för företag inom olika branscher. Se våra kundanpassade lösningar och bli inspirerad!",
+      "Vi har utvecklat hemsidor och appar för företag inom olika branscher. Se våra kundprojekt och bli inspirerad!",
   },
   {
     id: "about",
-    title: "Om Dataeden – Din digitala partner",
-    description: "Vi hjälper företag att växa online med modern webbutveckling, apputveckling och SEO-optimering.",
+    title: "Vilka är vi? Lär känna Dataeden",
+    description: "Vi hjälper företag att växa online genom modern webbutveckling, apputveckling och SEO-optimering.",
   },
 ];

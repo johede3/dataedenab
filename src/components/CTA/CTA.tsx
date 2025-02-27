@@ -1,10 +1,10 @@
-import Link from "next/link"
-import { ctaDetails } from "../../app/data/cta"
-import { replaceCityPlaceholder } from "../Benefits/Benefits"
+import Link from "next/link";
+import { ctaDetails } from "../../app/data/cta";
+import { replaceCityPlaceholder } from "../Benefits/Benefits";
 
 type HeroProps = {
-  city?: string
-}
+  city?: string;
+};
 
 const CTA: React.FC<HeroProps> = ({ city }) => {
   return (
@@ -21,7 +21,10 @@ const CTA: React.FC<HeroProps> = ({ city }) => {
             </h2>
 
             <p className="mx-auto max-w-xl md:px-5">
-              {replaceCityPlaceholder(ctaDetails.subheading, city ? " i " + city : "")}
+              {replaceCityPlaceholder(
+                ctaDetails.subheading,
+                city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : "",
+              )}
             </p>
 
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:gap-4">
@@ -36,7 +39,7 @@ const CTA: React.FC<HeroProps> = ({ city }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CTA
+export default CTA;

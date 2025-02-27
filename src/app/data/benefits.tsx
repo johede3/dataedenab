@@ -2,7 +2,7 @@ import {
   FiCode,
   FiEdit,
   FiGlobe,
-  FiLock,
+  FiMapPin,
   FiMonitor,
   FiSettings,
   FiSmartphone,
@@ -14,19 +14,18 @@ import { IBenefit } from "../types";
 
 export const benefits: IBenefit[] = [
   {
-    title: "Modern och responsiv webbutveckling i {{city}}",
+    title: "Prisvärd webbutveckling för småföretag {{city}}",
     description:
-      "Vi skapar skräddarsydda, SEO-optimerade och mobilvänliga webbplatser för företag i {{city}} som vill synas och växa online.",
+      "Vi erbjuder skräddarsydda, SEO-optimerade och mobilvänliga webbplatser för företag {{city}} som vill öka sin online-närvaro.",
     bullets: [
       {
         title: "Mobilanpassning & SEO",
-        description: "Dina kunder hittar dig lättare och får en sömlös upplevelse på alla enheter.",
+        description: "Gör det enkelt för dina kunder att hitta dig och få en sömlös upplevelse på alla enheter.",
         icon: <FiSmartphone size={26} />,
       },
       {
         title: "Snabb laddningstid & prestandaoptimering",
-        description:
-          "Vi bygger snabba, lätta och optimerade webbplatser för bättre användarupplevelse och högre ranking.",
+        description: "Vi bygger snabba och optimerade webbplatser för bättre användarupplevelse och högre ranking.",
         icon: <FiZap size={26} />,
       },
       {
@@ -36,26 +35,25 @@ export const benefits: IBenefit[] = [
       },
       {
         title: "Ingen WordPress – 100% skräddarsytt",
-        description: "Vi bygger dina lösningar från grunden utan tunga sidbyggare eller onödiga plugins.",
+        description: "Vi skapar lösningar från grunden utan tunga sidbyggare eller onödiga plugins.",
         icon: <FiEdit size={26} />,
       },
     ],
     imageSrc: "/assets/web-development.png",
   },
-
   {
-    title: "Apputveckling för iOS & Android – {{city}}",
+    title: "Apputveckling för småföretag {{city}}",
     description:
-      "Vi bygger prestandaoptimerade, användarvänliga appar för företag som vill expandera digitalt– från idé till lansering.",
+      "Vi utvecklar användarvänliga appar för företag som vill expandera digitalt – från idé till lansering.",
     bullets: [
       {
         title: "Native & Hybrid-appar",
-        description: "Vi utvecklar både plattformsspecifika och korsplattformslösningar.",
+        description: "Vi skapar både plattformsspecifika och korsplattformslösningar.",
         icon: <FiGlobe size={26} />,
       },
       {
         title: "Användarfokuserad UX/UI",
-        description: "Intuitiv och snygg appdesign som engagerar och ökar konverteringarna.",
+        description: "Intuitiv och attraktiv appdesign som engagerar och ökar konverteringarna.",
         icon: <FiUsers size={26} />,
       },
       {
@@ -67,26 +65,26 @@ export const benefits: IBenefit[] = [
     imageSrc: "/assets/app-development.png",
   },
   {
-    title: "Säkerhet & prestanda för din hemsida eller app",
+    title: "Sökmotoroptimering (SEO) för småföretag {{city}}",
     description:
-      "Vi säkerställer att din hemsida eller app är snabb, säker och optimerad för både användare och sökmotorer.",
+      "Vi hjälper ditt företag att synas bättre på Google och andra sökmotorer, vilket leder till ökad trafik och fler kunder.",
     bullets: [
       {
-        title: "SSL & dataskydd",
-        description: "Skydda din webbplats med SSL-certifikat och GDPR-anpassad datasäkerhet.",
-        icon: <FiLock size={26} />,
+        title: "Sökordsanalys & strategi",
+        description: "Identifiera de bästa sökorden för din verksamhet och skapa en effektiv SEO-strategi.",
+        icon: <FiTrendingUp size={26} />,
       },
       {
-        title: "Hosting & drift med hög prestanda",
-        description: "Vi hjälper dig att välja rätt hostinglösning för stabil och snabb drift.",
+        title: "On-page & Off-page optimering",
+        description: "Förbättra både innehåll och tekniska aspekter av din webbplats för bättre ranking.",
         icon: <FiSettings size={26} />,
       },
       {
-        title: "Prestandaanalys & optimering",
-        description: "Analysera och förbättra din webbplats hastighet med PageSpeed Insights och avancerad optimering.",
-        icon: <FiTrendingUp size={26} />,
+        title: "Lokal SEO",
+        description: "Optimera din närvaro för lokala sökningar så att kunder {{city}} enkelt hittar dig.",
+        icon: <FiMapPin size={26} />,
       },
     ],
-    imageSrc: "/assets/sec.png",
+    imageSrc: "/assets/seo-services.png",
   },
 ];
