@@ -1,16 +1,15 @@
-import Image from "next/image"
-import Link from "next/link"
-import React from "react"
-import { heroDetails } from "../../app/data/hero"
-import { getPreposition } from "../../app/utils"
-import { replaceCityPlaceholder } from "../Benefits/Benefits"
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { heroDetails } from "../../app/data/hero";
+import { getPreposition } from "../../app/utils";
+import { replaceCityPlaceholder } from "../Benefits/Benefits";
 
 type HeroProps = {
-  city?: string
-}
+  city?: string;
+};
 
 const Hero: React.FC<HeroProps> = ({ city }) => {
-  console.log(city)
   return (
     <section id="hero" className="relative flex items-center justify-center px-5 pt-26 pb-0 md:pt-40">
       <div className="absolute top-0 bottom-0 left-0 -z-10 w-full">
@@ -33,13 +32,13 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
         <div className="mx-auto mt-6 flex w-fit flex-col items-center gap-2 sm:flex-row sm:gap-4">
           <Link
             href="/kontakt"
-            className="rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
+            className="w-full text-nowrap rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
           >
             {heroDetails.offertCTA}
           </Link>
           <Link
             href="/services"
-            className="w-full rounded-full border border-gray-400 px-6 py-3 text-center text-lg text-gray-700 transition-all hover:border-gray-600 hover:bg-gray-100 md:w-auto dark:border-gray-500 dark:text-gray-300 dark:hover:border-gray-300 dark:hover:bg-gray-800"
+            className="text-nowrap w-full rounded-full border border-gray-400 px-6 py-3 text-center text-lg text-gray-700 transition-all hover:border-gray-600 hover:bg-gray-100 md:w-auto dark:border-gray-500 dark:text-gray-300 dark:hover:border-gray-300 dark:hover:bg-gray-800"
           >
             {heroDetails.servicesCTA}
           </Link>
@@ -58,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
         />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
