@@ -1,4 +1,5 @@
 import { benefits } from "../../app/data/benefits";
+import { getPreposition } from "../../app/utils";
 import BenefitSection from "./BenefitSection";
 
 type BenefitsProps = {
@@ -17,21 +18,12 @@ const Benefits: React.FC<BenefitsProps> = ({ city }) => {
           key={index}
           benefit={{
             ...item,
-            title: replaceCityPlaceholder(item.title, city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : ""),
-            description: replaceCityPlaceholder(
-              item.description,
-              city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : "",
-            ),
+            title: replaceCityPlaceholder(item.title, city ? getPreposition(city) : ""),
+            description: replaceCityPlaceholder(item.description, city ? getPreposition(city) : ""),
             bullets: item.bullets.map((bullet) => ({
               ...bullet,
-              title: replaceCityPlaceholder(
-                bullet.title,
-                city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : "",
-              ),
-              description: replaceCityPlaceholder(
-                bullet.description,
-                city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : "",
-              ),
+              title: replaceCityPlaceholder(bullet.title, city ? getPreposition(city) : ""),
+              description: replaceCityPlaceholder(bullet.description, city ? getPreposition(city) : ""),
             })),
           }}
           imageAtRight={index % 2 !== 0}

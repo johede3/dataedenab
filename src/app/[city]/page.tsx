@@ -11,6 +11,7 @@ import Section from "../../components/Section/Section";
 import SEOSection from "../../components/SEO/SEOSection";
 import Container from "../../components/UI/Container/Container";
 import { landingSections } from "../data/landing";
+import { getPreposition } from "../utils";
 
 const cities = {
   goteborg: {
@@ -83,6 +84,56 @@ const cities = {
     title: "Dataeden – Webbutveckling i Alingsås",
     description: "Vi hjälper företag i Alingsås att digitalisera sin verksamhet med moderna webbplatser.",
   },
+  skovde: {
+    name: "Skövde",
+    title: "Dataeden – Webbutveckling i Skövde",
+    description: "Vi skapar moderna och SEO-optimerade hemsidor för företag i Skövde.",
+  },
+  vanersborg: {
+    name: "Vänersborg",
+    title: "Dataeden – Webbutveckling i Vänersborg",
+    description: "Skräddarsydd webbutveckling och digitala lösningar för företag i Vänersborg.",
+  },
+  lidkoping: {
+    name: "Lidköping",
+    title: "Dataeden – Webbutveckling i Lidköping",
+    description: "Professionella hemsidor och digitala lösningar för företag i Lidköping.",
+  },
+  mariestad: {
+    name: "Mariestad",
+    title: "Dataeden – Webbutveckling i Mariestad",
+    description: "SEO-optimerade hemsidor och digitala lösningar för företag i Mariestad.",
+  },
+  lysekil: {
+    name: "Lysekil",
+    title: "Dataeden – Webbutveckling på Lysekil",
+    description: "Vi bygger mobilanpassade och SEO-optimerade hemsidor för företag på Lysekil.",
+  },
+  stromstad: {
+    name: "Strömstad",
+    title: "Dataeden – Webbutveckling i Strömstad",
+    description: "Få fler kunder online med en modern och sökmotorvänlig hemsida i Strömstad.",
+  },
+  falkoping: {
+    name: "Falköping",
+    title: "Dataeden – Webbutveckling i Falköping",
+    description: "Skräddarsydda hemsidor för företag i Falköping – optimerade för både desktop och mobil.",
+  },
+  hjo: {
+    name: "Hjo",
+    title: "Dataeden – Webbutveckling på Hjo",
+    description: "Bygg en stark digital närvaro med en professionell hemsida för ditt företag i Hjo.",
+  },
+  ulricehamn: {
+    name: "Ulricehamn",
+    title: "Dataeden – Webbutveckling i Ulricehamn",
+    description: "SEO-optimerade och konverteringsvänliga hemsidor för företag i Ulricehamn.",
+  },
+  munkedal: {
+    name: "Munkedal",
+    title: "Dataeden – Webbutveckling i Munkedal",
+    description: "Vi hjälper företag i Munkedal att synas online med moderna och snabba hemsidor.",
+  },
 };
 
 export async function generateMetadata({
@@ -105,8 +156,8 @@ export async function generateMetadata({
       "Webbapplikationer",
       `Webbyrå ${cityData.name}`,
       `Hur gör jag en hemsida för mitt företag?`,
-      `Bästa webbyrån i ${cityData.name}`,
-      `Synas på Google i ${cityData.name}`,
+      `Bästa webbyrån ${getPreposition(cityData.name)} ${cityData.name}`,
+      `Synas på Google ${getPreposition(cityData.name)} ${cityData.name}`,
       `Billig hemsida för småföretag`,
     ],
     openGraph: {
@@ -119,7 +170,7 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           url: "https://dataeden.se/images/logo.png",
-          alt: `Webbutveckling i ${cityData.name}`,
+          alt: `Webbutveckling ${getPreposition(cityData.name)} ${cityData.name}`,
         },
       ],
     },
@@ -145,13 +196,10 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
           <Section
             key={section.id}
             id={section.id}
-            title={replaceCityPlaceholder(
-              section.title,
-              cityData.name ? (cityData.name === "Orust" ? ` på ${cityData.name}` : ` i ${cityData.name}`) : "",
-            )}
+            title={replaceCityPlaceholder(section.title, cityData.name ? getPreposition(cityData.name) : "")}
             description={replaceCityPlaceholder(
               section.description,
-              cityData.name ? (cityData.name === "Orust" ? ` på ${cityData.name}` : ` i ${cityData.name}`) : "",
+              cityData.name ? getPreposition(cityData.name) : "",
             )}
           >
             {section.id === "features" && <Benefits city={cityData.name} />}

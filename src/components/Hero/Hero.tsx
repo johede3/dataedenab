@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { heroDetails } from "../../app/data/hero";
+import { getPreposition } from "../../app/utils";
 import { replaceCityPlaceholder } from "../Benefits/Benefits";
 
 type HeroProps = {
@@ -19,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
       <div className="absolute right-0 bottom-0 left-0 h-40 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)] backdrop-blur-[2px]"></div>
       <div className="text-center">
         <h1 className="text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-4xl md:text-6xl md:leading-tight">
-          {replaceCityPlaceholder(heroDetails.heading, city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : "")}
+          {replaceCityPlaceholder(heroDetails.heading, city ? `${getPreposition(city)} ${city} ` : "")}
           <span className="text-purple-600">{heroDetails.highlight}</span>
           <br />
           {heroDetails.heading2}

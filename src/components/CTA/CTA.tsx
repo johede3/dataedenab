@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import { ctaDetails } from "../../app/data/cta";
+import { getPreposition } from "../../app/utils";
 import { replaceCityPlaceholder } from "../Benefits/Benefits";
 
 type HeroProps = {
@@ -21,10 +23,7 @@ const CTA: React.FC<HeroProps> = ({ city }) => {
             </h2>
 
             <p className="mx-auto max-w-xl md:px-5">
-              {replaceCityPlaceholder(
-                ctaDetails.subheading,
-                city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : "",
-              )}
+              {replaceCityPlaceholder(ctaDetails.subheading, city ? getPreposition(city) : "")}
             </p>
 
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:gap-4">

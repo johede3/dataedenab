@@ -1,14 +1,15 @@
-"use client"
+"use client";
 
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react"
-import { BiMinus, BiPlus } from "react-icons/bi"
-import { faqDetails, faqs } from "../../app/data/faq"
-import { replaceCityPlaceholder } from "../Benefits/Benefits"
-import SectionTitle from "../Section/SectionTitle"
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
+import { BiMinus, BiPlus } from "react-icons/bi";
+import { faqDetails, faqs } from "../../app/data/faq";
+import { getPreposition } from "../../app/utils";
+import { replaceCityPlaceholder } from "../Benefits/Benefits";
+import SectionTitle from "../Section/SectionTitle";
 
 type Props = {
-  city?: string
-}
+  city?: string;
+};
 
 const FAQ: React.FC<Props> = ({ city }) => {
   return (
@@ -45,10 +46,7 @@ const FAQ: React.FC<Props> = ({ city }) => {
                       )}
                     </DisclosureButton>
                     <DisclosurePanel className="text-foreground-accent px-4 pt-4 pb-2">
-                      {replaceCityPlaceholder(
-                        faq.answer,
-                        city ? (city === "Orust" ? ` på ${city}` : ` i ${city}`) : ""
-                      )}
+                      {replaceCityPlaceholder(faq.answer, city ? getPreposition(city) : "")}
                     </DisclosurePanel>
                   </div>
                 )}
@@ -58,7 +56,7 @@ const FAQ: React.FC<Props> = ({ city }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQ;
