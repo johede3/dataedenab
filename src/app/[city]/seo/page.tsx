@@ -170,8 +170,7 @@ export async function generateMetadata({
   };
 }
 
-// SEO-sida som laddar rätt innehåll för varje stad
-export default async function SEOPage({ params }: { params: { city: keyof typeof cities } }) {
+export default async function SEOPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
   const { city } = await params;
   const cityData = cities[city];
   if (!cityData) return notFound();
@@ -281,7 +280,7 @@ export default async function SEOPage({ params }: { params: { city: keyof typeof
               </div>
 
               {/* SEO Strategier - Enhetlig Sektion */}
-              <div className=" bg-white dark:bg-gray-900   dark:border-gray-700 p-12 rounded-xl mt-16">
+              <div className=" bg-white dark:bg-gray-900   dark:border-gray-700  rounded-xl mt-16">
                 <div className="grid grid-cols-1 md:grid-cols-1 items-center gap-10">
                   {/* Text */}
                   <div>
@@ -333,7 +332,7 @@ export default async function SEOPage({ params }: { params: { city: keyof typeof
 
               {/* CTA Sektion - Avslut med en bred block */}
               <div className="bg-purple-700 dark:bg-purple-900 text-white p-6 md:p-12 rounded-xl shadow-md mt-16 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold">
+                <h2 className="text-4xl md:text-5xl font-bold leading-14">
                   Vill du synas högst på Google? Börja din SEO-resa idag!
                 </h2>
                 <p className="mt-4 text-xl max-w-3xl mx-auto">
@@ -346,7 +345,7 @@ export default async function SEOPage({ params }: { params: { city: keyof typeof
                     href="/kontakt"
                     className="rounded-full bg-white text-purple-700 px-8 py-3 text-md font-medium shadow-md transition-all hover:bg-gray-200"
                   >
-                    Boka en kostnadsfri SEO-analys
+                    Boka en gratis SEO-analys
                   </Link>
                   <Link
                     href="/services"

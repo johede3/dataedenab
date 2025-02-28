@@ -11,7 +11,7 @@ export const faqs: IFAQ[] = [
   {
     question: "Hur mycket kostar en hemsida?",
     answer:
-      "Priset varierar beroende på design, funktioner och omfattning. Vi erbjuder skräddarsydda lösningar baserade på dina behov. Kontakta oss för en kostnadsfri offert!",
+      "Priset varierar beroende på design, funktioner och omfattning. Vi erbjuder skräddarsydda lösningar baserade på dina behov. Kontakta oss för en gratis offert!",
   },
   {
     question: "Hur lång tid tar det att bygga en hemsida?",
