@@ -6,7 +6,7 @@ type BenefitsProps = {
   city?: string;
 };
 
-export const replaceCityPlaceholder = (text: string, city = "") => {
+export const replaceCityPlaceholder = (text: string, city = "Göteborg med omnejd") => {
   return text.replace(/{{city}}/g, city);
 };
 
