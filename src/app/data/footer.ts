@@ -1,16 +1,16 @@
-import { cities } from "../sitemap";
-import { IMenuItem, ISocials } from "../types";
+import { cities } from "../sitemap"
+import { IMenuItem, ISocials } from "../types"
 
 export const footerDetails: {
-  subheading: string;
-  quickLinks: IMenuItem[];
-  email: string;
-  telephone?: string;
-  socials: ISocials;
-  contactHeader: string;
-  quickLinksHeader: string;
-  locations: typeof cities;
-  locationsHeader: string;
+  subheading: string
+  quickLinks: IMenuItem[]
+  email: string
+  telephone?: string
+  socials: ISocials
+  contactHeader: string
+  quickLinksHeader: string
+  locations: typeof cities
+  locationsHeader: string
 } = {
   subheading: "Professionell webbutveckling och apputveckling för småföretag och startups i Sverige.",
   quickLinks: [
@@ -28,4 +28,4 @@ export const footerDetails: {
   contactHeader: "Kontaktuppgifter",
   quickLinksHeader: "Snabblänkar",
   locationsHeader: "Vi arbetar i dessa områden",
-};
+}

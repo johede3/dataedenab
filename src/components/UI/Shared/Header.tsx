@@ -1,34 +1,34 @@
-"use client";
+"use client"
 
-import { Transition } from "@headlessui/react";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import { HiBars3, HiOutlineXMark } from "react-icons/hi2";
+import { Transition } from "@headlessui/react"
+import Image from "next/image"
+import Link from "next/link"
+import React, { useState } from "react"
+import { HiBars3, HiOutlineXMark } from "react-icons/hi2"
 
-import { usePathname } from "next/navigation";
-import { footerDetails } from "../../../app/data/footer";
-import { headerDetails } from "../../../app/data/header";
-import { menuItems } from "../../../app/data/menuItems";
-import { siteDetails } from "../../../app/data/siteDetails";
-import Container from "../Container/Container";
+import { usePathname } from "next/navigation"
+import { footerDetails } from "../../../app/data/footer"
+import { headerDetails } from "../../../app/data/header"
+import { menuItems } from "../../../app/data/menuItems"
+import { siteDetails } from "../../../app/data/siteDetails"
+import Container from "../Container/Container"
 
 const Header: React.FC = () => {
-  const pathname = usePathname();
-  const segments = pathname.split("/");
-  const validCities = footerDetails.locations.map((loc) => loc.slug);
-  const city = segments[1] && validCities.includes(segments[1]) ? segments[1] : undefined;
+  const pathname = usePathname()
+  const segments = pathname.split("/")
+  const validCities = footerDetails.locations.map((loc) => loc.slug)
+  const city = segments[1] && validCities.includes(segments[1]) ? segments[1] : undefined
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   return (
     <header className="fixed top-0 right-0 left-0 z-50 mx-auto h-20 w-full bg-transparent md:absolute">
       <Container className="mx-auto w-full max-w-7xl !px-0">
-        <nav className="mx-auto flex h-16 items-center justify-between bg-white md:px-5 py-2 shadow-md md:bg-transparent md:py-10 md:shadow-none">
+        <nav className="mx-auto flex h-16 items-center justify-between bg-white py-2 shadow-md md:bg-transparent md:px-5 md:py-10 md:shadow-none">
           {/* Logo */}
           <Link href="/" className="flex items-center sm:ml-0">
             <Image src="/mainSmall.png" alt="Logo" height={528} width={528} className="h-20 w-auto" />
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
           {/* Desktop Menu */}
           <ul className="hidden space-x-6 md:flex">
             {menuItems.map((link) => {
-              const href = city ? `/${city}${link.url}` : `/${link.url}`;
+              const href = city ? `/${city}${link.url}` : `/${link.url}`
               return (
                 <li key={link.text}>
                   <Link
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
                     {link.text}
                   </Link>
                 </li>
-              );
+              )
             })}
             <li>
               <Link href="/services" className="text-foreground hover:text-foreground-accent transition-colors">
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
         <div id="mobile-menu" className="bg-white shadow-lg md:hidden">
           <ul className="flex flex-col space-y-4 px-6 pt-1 pb-6">
             {menuItems.map((item) => {
-              const href = city ? `/${city}${item.url}` : `/${item.url}`;
+              const href = city ? `/${city}${item.url}` : `/${item.url}`
 
               return (
                 <li key={item.text}>
@@ -112,7 +112,7 @@ const Header: React.FC = () => {
                     {item.text}
                   </Link>
                 </li>
-              );
+              )
             })}
             <li>
               <Link
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
         </div>
       </Transition>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

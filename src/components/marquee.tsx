@@ -1,17 +1,17 @@
-import { cn } from "./UI/utils/cn"
+import { cn } from "./UI/utils/cn";
 
 interface MarqueeProps {
-  className?: string
-  reverse?: boolean
-  pauseOnHover?: boolean
-  children?: React.ReactNode
-  vertical?: boolean
-  repeat?: number
+  className?: string;
+  reverse?: boolean;
+  pauseOnHover?: boolean;
+  children?: React.ReactNode;
+  vertical?: boolean;
+  repeat?: number;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any
+  [key: string]: any;
 }
 
-export default function Marquee({
+export default function Marquees({
   className,
   reverse,
   pauseOnHover = false,
@@ -29,7 +29,7 @@ export default function Marquee({
           "flex-row": !vertical,
           "flex-col": vertical,
         },
-        className
+        className,
       )}
     >
       {Array(repeat)
@@ -48,5 +48,5 @@ export default function Marquee({
           </div>
         ))}
     </div>
-  )
+  );
 }

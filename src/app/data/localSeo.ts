@@ -1,4 +1,4 @@
-import { iSEO } from "../types";
+import { iSEO } from "../types"
 
 export const localSeoSections: iSEO[] = [
   {
@@ -37,7 +37,7 @@ export const localSeoSections: iSEO[] = [
       "Vi hjälper dig att förbättra din Google My Business-profil, skapa lokalt innehåll och stärka din synlighet i {{city}}.",
     ],
   },
-];
+]
 
 export const localSeoBenefits = [
   {
@@ -56,7 +56,7 @@ export const localSeoBenefits = [
       "SEO handlar inte bara om sökord – vi ser till att din hemsida är snabb, mobilvänlig och optimerad för konvertering.",
     icon: "FiSearch",
   },
-];
+]
 
 export const localSeoSeen = [
   {
@@ -76,4 +76,4 @@ export const localSeoSeen = [
     description:
       "Vi hjälper dig att synas lokalt i {{city}} genom att optimera din Google My Business-profil och lokala sökningar.",
   },
-];
+]

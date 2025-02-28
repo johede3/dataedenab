@@ -1,18 +1,18 @@
-"use client";
-import Link from "next/link";
-import React, { useEffect } from "react";
-import { FiChevronDown } from "react-icons/fi";
-import { servicesSectionsText } from "../../app/data/services";
+"use client"
+import Link from "next/link"
+import React, { useEffect } from "react"
+import { FiChevronDown } from "react-icons/fi"
+import { servicesSectionsText } from "../../app/data/services"
 
 const HeroServices: React.FC = () => {
   useEffect(() => {
     const setVh = () => {
-      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
-    };
-    setVh();
-    window.addEventListener("resize", setVh);
-    return () => window.removeEventListener("resize", setVh);
-  }, []);
+      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`)
+    }
+    setVh()
+    window.addEventListener("resize", setVh)
+    return () => window.removeEventListener("resize", setVh)
+  }, [])
 
   return (
     <section
@@ -66,7 +66,7 @@ const HeroServices: React.FC = () => {
         }
       `}</style>
     </section>
-  );
-};
+  )
+}
 
-export default HeroServices;
+export default HeroServices

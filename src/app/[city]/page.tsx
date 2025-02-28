@@ -1,17 +1,17 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import About from "../../components/About/About";
-import Benefits, { replaceCityPlaceholder } from "../../components/Benefits/Benefits";
-import CTA from "../../components/CTA/CTA";
-import Hero from "../../components/Hero/Hero";
-import { ItemScroll } from "../../components/Idea/ItemScroll";
-import Pricing from "../../components/Pricing/Pricing";
-import { Projects } from "../../components/Projects/Projects";
-import Section from "../../components/Section/Section";
-import SEOSection from "../../components/SEO/SEOSection";
-import Container from "../../components/UI/Container/Container";
-import { landingSections } from "../data/landing";
-import { getPreposition } from "../utils";
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
+import About from "../../components/About/About"
+import Benefits, { replaceCityPlaceholder } from "../../components/Benefits/Benefits"
+import CTA from "../../components/CTA/CTA"
+import Hero from "../../components/Hero/Hero"
+import { ItemScroll } from "../../components/Idea/ItemScroll"
+import Pricing from "../../components/Pricing/Pricing"
+import { Projects } from "../../components/Projects/Projects"
+import Section from "../../components/Section/Section"
+import SEOSection from "../../components/SEO/SEOSection"
+import Container from "../../components/UI/Container/Container"
+import { landingSections } from "../data/landing"
+import { getPreposition } from "../utils"
 
 const cities = {
   goteborg: {
@@ -134,16 +134,16 @@ const cities = {
     title: "Dataeden – Webbutveckling i Munkedal",
     description: "Vi hjälper företag i Munkedal att synas online med moderna och snabba hemsidor.",
   },
-};
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ city: keyof typeof cities }>;
+  params: Promise<{ city: keyof typeof cities }>
 }): Promise<Metadata> {
-  const { city } = await params;
-  const cityData = cities[city];
-  if (!cityData) return notFound();
+  const { city } = await params
+  const cityData = cities[city]
+  if (!cityData) return notFound()
 
   return {
     title: cityData.title,
@@ -180,13 +180,13 @@ export async function generateMetadata({
       description: cityData.description,
       images: ["https://dataeden.se/images/logo.png"],
     },
-  };
+  }
 }
 
 export default async function CityPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
-  const { city } = await params;
-  const cityData = cities[city];
-  if (!cityData) return notFound();
+  const { city } = await params
+  const cityData = cities[city]
+  if (!cityData) return notFound()
 
   return (
     <>
@@ -199,11 +199,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
             title={replaceCityPlaceholder(section.title, cityData.name ? getPreposition(cityData.name) : "")}
             description={replaceCityPlaceholder(
               section.description,
-              cityData.name ? getPreposition(cityData.name) : "",
+              cityData.name ? getPreposition(cityData.name) : ""
             )}
           >
             {section.id === "features" && <Benefits city={cityData.name} />}
-            {section.id === "seo" && <SEOSection />}
+            {section.id === "seo" && <SEOSection city={cityData.name} />}
             {section.id === "idea" && (
               <ItemScroll
                 dict={{
@@ -225,24 +225,24 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
         ))}
 
         <section id="faq" className="flex flex-col gap-2">
-          <details className="p-4 bg-gray-100 rounded-lg">
-            <summary className="font-medium cursor-pointer">Hur får jag mitt företag att synas på Google?</summary>
+          <details className="rounded-lg bg-gray-100 p-4">
+            <summary className="cursor-pointer font-medium">Hur får jag mitt företag att synas på Google?</summary>
             <p className="mt-2 text-gray-600">
               För att synas på Google behöver du en hemsida som laddar snabbt, funkar på mobilen och har rätt texter och
               bilder. Vi hjälper dig att komma högre upp i sökresultaten utan att du behöver betala för annonser.
             </p>
           </details>
 
-          <details className="p-4 bg-gray-100 rounded-lg">
-            <summary className="font-medium cursor-pointer">Måste jag ha SEO på min hemsida?</summary>
+          <details className="rounded-lg bg-gray-100 p-4">
+            <summary className="cursor-pointer font-medium">Måste jag ha SEO på min hemsida?</summary>
             <p className="mt-2 text-gray-600">
               Ja, om du vill att folk ska hitta ditt företag på Google. Utan SEO hamnar din hemsida långt ner i
               sökresultaten och kunderna hittar dina konkurrenter istället. Vi kan hjälpa dig att ranka högre.
             </p>
           </details>
 
-          <details className="p-4 bg-gray-100 rounded-lg">
-            <summary className="font-medium cursor-pointer">Kan jag göra en hemsida själv?</summary>
+          <details className="rounded-lg bg-gray-100 p-4">
+            <summary className="cursor-pointer font-medium">Kan jag göra en hemsida själv?</summary>
             <p className="mt-2 text-gray-600">
               Ja, det finns gratis verktyg som Wix och WordPress, men de har begränsningar. En proffsig hemsida byggd av
               en webbyrå ser bättre ut, laddar snabbare och får fler kunder.
@@ -253,9 +253,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
         <CTA city={cityData.name} />
       </Container>
     </>
-  );
+  )
 }
 
-export async function generateStaticParams() {
-  return Object.keys(cities).map((city) => ({ city }));
+export function generateStaticParams() {
+  return Object.keys(cities).map((city) => ({ city }))
 }

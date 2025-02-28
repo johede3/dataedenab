@@ -1,4 +1,4 @@
-import { ILanding } from "../types";
+import { ILanding } from "../types"
 
 export const landingSections: ILanding[] = [
   {
@@ -36,4 +36,4 @@ export const landingSections: ILanding[] = [
     title: "Vilka är vi? Lär känna Dataeden",
     description: "Vi hjälper företag att växa online genom modern webbutveckling, apputveckling och SEO-optimering.",
   },
-];
+]

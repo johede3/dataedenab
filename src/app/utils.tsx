@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX } from "react"
 import {
   FaFacebook,
   FaGithub,
@@ -8,41 +8,46 @@ import {
   FaTwitter,
   FaXTwitter,
   FaYoutube,
-} from "react-icons/fa6";
+} from "react-icons/fa6"
 
 export const getPlatformIconByName = (platformName: string): JSX.Element | null => {
   switch (platformName) {
     case "facebook": {
-      return <FaFacebook size={24} className="min-w-fit" />;
+      return <FaFacebook size={24} className="min-w-fit" />
     }
     case "github": {
-      return <FaGithub size={24} className="min-w-fit" />;
+      return <FaGithub size={24} className="min-w-fit" />
     }
     case "instagram": {
-      return <FaInstagram size={24} className="min-w-fit" />;
+      return <FaInstagram size={24} className="min-w-fit" />
     }
     case "linkedin": {
-      return <FaLinkedin size={24} className="min-w-fit" />;
+      return <FaLinkedin size={24} className="min-w-fit" />
     }
     case "threads": {
-      return <FaThreads size={24} className="min-w-fit" />;
+      return <FaThreads size={24} className="min-w-fit" />
     }
     case "twitter": {
-      return <FaTwitter size={24} className="min-w-fit" />;
+      return <FaTwitter size={24} className="min-w-fit" />
     }
     case "youtube": {
-      return <FaYoutube size={24} className="min-w-fit" />;
+      return <FaYoutube size={24} className="min-w-fit" />
     }
     case "x": {
-      return <FaXTwitter size={24} className="min-w-fit" />;
+      return <FaXTwitter size={24} className="min-w-fit" />
     }
     default:
-      console.log("Platform name not supported, no icon is returned:", platformName);
-      return null;
+      console.log("Platform name not supported, no icon is returned:", platformName)
+      return null
   }
-};
+}
 
 export function getPreposition(city: string): string {
-  const citiesWithPa = ["Orust", "Tjörn", "Lysekil", "Hjo"];
-  return citiesWithPa.includes(city) ? "på" : "i";
+  const citiesWithPa = ["Orust", "Tjörn", "Lysekil", "Hjo"]
+  return citiesWithPa.includes(city) ? "på" : "i"
+}
+
+export function getFullCity(city: string): string {
+  const citiesWithPa = ["Orust", "Tjörn", "Lysekil", "Hjo"]
+  return citiesWithPa.includes(city) ? `på ${city}` : `i ${city}`
 }

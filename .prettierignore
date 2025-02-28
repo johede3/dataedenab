@@ -1,2 +1,7 @@
 .next
 node_modules
+build/
+dist/
+*.min.js
+.pnpm-lock.yaml
+.README.md

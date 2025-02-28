@@ -1,9 +1,9 @@
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "./SectionTitle"
 
 interface Props {
-  id: string;
-  title: string;
-  description: string;
+  id: string
+  title: string
+  description: string
 }
 
 const Section: React.FC<React.PropsWithChildren<Props>> = ({
@@ -21,7 +21,7 @@ const Section: React.FC<React.PropsWithChildren<Props>> = ({
 
       {children}
     </section>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section

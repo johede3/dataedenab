@@ -1,16 +1,16 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { heroDetails } from "../../app/data/hero";
-import { getPreposition } from "../../app/utils";
-import { replaceCityPlaceholder } from "../Benefits/Benefits";
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
+import { heroDetails } from "../../app/data/hero"
+import { getPreposition } from "../../app/utils"
+import { replaceCityPlaceholder } from "../Benefits/Benefits"
 
 type HeroProps = {
-  city?: string;
-};
+  city?: string
+}
 
 const Hero: React.FC<HeroProps> = ({ city }) => {
-  console.log(city);
+  console.log(city)
   return (
     <section id="hero" className="relative flex items-center justify-center px-5 pt-26 pb-0 md:pt-40">
       <div className="absolute top-0 bottom-0 left-0 -z-10 w-full">
@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
           </Link>
           <Link
             href="/services"
-            className="rounded-full w-full text-center md:w-auto border border-gray-400 px-6 py-3 text-lg text-gray-700 transition-all hover:border-gray-600 hover:bg-gray-100 dark:border-gray-500 dark:text-gray-300 dark:hover:border-gray-300 dark:hover:bg-gray-800"
+            className="w-full rounded-full border border-gray-400 px-6 py-3 text-center text-lg text-gray-700 transition-all hover:border-gray-600 hover:bg-gray-100 md:w-auto dark:border-gray-500 dark:text-gray-300 dark:hover:border-gray-300 dark:hover:bg-gray-800"
           >
             {heroDetails.servicesCTA}
           </Link>
@@ -48,17 +48,17 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
         {/* Bild – Om du har en egen illustration/mockup, byt ut denna */}
         <Image
           src={heroDetails.centerImageSrc}
-          width={384}
-          height={340}
+          width={891}
+          height={968}
           quality={100}
           sizes="(max-width: 768px) 100vw, 384px"
-          priority={true}
+          priority
           alt="Webb & App Mockup"
-          className={`relative z-10 mx-auto ${city !== "Göteborg med omnejd" ? "mt-12" : "mt-4"}   md:mt-16`}
+          className={`relative z-10 mx-auto ${city !== "Göteborg med omnejd" ? "mt-12" : "mt-4"} md:mt-16`}
         />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

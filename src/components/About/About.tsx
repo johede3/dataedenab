@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 const About: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ const About: React.FC = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About

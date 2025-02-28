@@ -5,7 +5,7 @@ export const servicesSectionsText = {
   subtext:
     "Vi hjälper företag att lyckas online med skräddarsydda webbplatser, appar och digitala lösningar. Modern design, snabb prestanda och smarta funktioner – vi har allt du behöver.",
   CTA: "Boka en gratis konsultation",
-};
+}
 
 export const servicesDetails = [
   {
@@ -77,4 +77,4 @@ export const servicesDetails = [
       },
     ],
   },
-];
+]

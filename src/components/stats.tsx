@@ -1,6 +1,6 @@
-import { BsBarChartFill, BsFillStarFill } from "react-icons/bs";
-import { PiGlobeFill } from "react-icons/pi";
-import { IStats } from "../app/types";
+import { BsBarChartFill, BsFillStarFill } from "react-icons/bs"
+import { PiGlobeFill } from "react-icons/pi"
+import { IStats } from "../app/types"
 
 export const stats: IStats[] = [
   {
@@ -18,4 +18,4 @@ export const stats: IStats[] = [
     icon: <PiGlobeFill size={34} className="text-green-600" />,
     description: "Financial Institutions, seamlessly integrated, so you can manage all accounts.",
   },
-];
+]

@@ -1,12 +1,12 @@
-import Link from "next/link";
+import Link from "next/link"
 
-import { ctaDetails } from "../../app/data/cta";
-import { getPreposition } from "../../app/utils";
-import { replaceCityPlaceholder } from "../Benefits/Benefits";
+import { ctaDetails } from "../../app/data/cta"
+import { getPreposition } from "../../app/utils"
+import { replaceCityPlaceholder } from "../Benefits/Benefits"
 
 type HeroProps = {
-  city?: string;
-};
+  city?: string
+}
 
 const CTA: React.FC<HeroProps> = ({ city }) => {
   return (
@@ -38,7 +38,7 @@ const CTA: React.FC<HeroProps> = ({ city }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CTA;
+export default CTA

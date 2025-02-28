@@ -1,4 +1,4 @@
-import { iSEO } from "../types";
+import { iSEO } from "../types"
 
 export const seoSections: iSEO[] = [
   {
@@ -36,7 +36,7 @@ export const seoSections: iSEO[] = [
       "För företag i Göteborg och andra svenska städer är lokal SEO avgörande. Genom att optimera din webbplats för lokala sökningar säkerställer du att potentiella kunder hittar ditt företag när de söker efter dina tjänster eller produkter.",
     ],
   },
-];
+]
 
 export const seoBenefits = [
   {
@@ -55,7 +55,7 @@ export const seoBenefits = [
       "SEO handlar inte bara om sökord – vi ser till att din hemsida är snabb, responsiv och optimerad för konvertering.",
     icon: "FiSearch",
   },
-];
+]
 
 export const seoSeen = [
   {
@@ -75,4 +75,4 @@ export const seoSeen = [
     description:
       "Vi hjälper dig att synas lokalt genom att optimera din Google My Business-profil och lokala sökningar.",
   },
-];
+]

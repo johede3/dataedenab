@@ -1,11 +1,11 @@
-import { IFAQ } from "../types";
+import { IFAQ } from "../types"
 
 export const faqDetails = {
   heading: "Vanliga frågor – Hemsidor, Appar & Webbutveckling",
   subheading:
     "Här hittar du svar på vanliga frågor om våra tjänster inom webbutveckling, SEO och digitala lösningar. Hittar du inte det du söker? Kontakta oss!",
   contactEmail: "kontakt@dataeden.se",
-};
+}
 
 export const faqs: IFAQ[] = [
   {
@@ -33,4 +33,4 @@ export const faqs: IFAQ[] = [
     answer:
       "Ja, men om du inte redan har det hjälper vi dig att välja rätt domän och webbhotell samt att sätta upp allt tekniskt åt dig.",
   },
-];
+]

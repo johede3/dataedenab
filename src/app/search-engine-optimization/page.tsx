@@ -1,9 +1,9 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { FiGlobe, FiSearch, FiTrendingUp } from "react-icons/fi";
-import Section from "../../components/Section/Section";
-import Container from "../../components/UI/Container/Container";
-import { seoBenefits, seoSections, seoSeen } from "../data/seo";
+import { Metadata } from "next"
+import Link from "next/link"
+import { FiGlobe, FiSearch, FiTrendingUp } from "react-icons/fi"
+import Section from "../../components/Section/Section"
+import Container from "../../components/UI/Container/Container"
+import { seoBenefits, seoSections, seoSeen } from "../data/seo"
 
 export const metadata: Metadata = {
   title: "SEO – Rank högre & få fler kunder | Dataeden",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}
 
 export default function SEOPage() {
   return (
@@ -35,13 +35,13 @@ export default function SEOPage() {
 
             {/* 🔥 Titel och beskrivning med större hierarki */}
             {section.id !== "seo-synas" && (
-              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 text-center">
+              <h2 className="mt-12 text-center text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">
                 {section.title}
               </h2>
             )}
 
             {section.description && section.id !== "seo-synas" && (
-              <p className="mt-4 text-lg text-center text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-gray-700 dark:text-gray-300">
                 {section.description}
               </p>
             )}
@@ -59,9 +59,9 @@ export default function SEOPage() {
 
             {/* 🔥 SEO-synlighetsektionen med ANNAN bakgrund & större layout */}
             {section.id === "seo-synas" && (
-              <div className="bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 pb-16 rounded-xl">
-                <div className="mx-auto max-w-4xl px-6 lg:px-0 text-center">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 text-center">
+              <div className="rounded-xl bg-gradient-to-b from-white to-gray-100 pb-16 dark:from-gray-900 dark:to-gray-800">
+                <div className="mx-auto max-w-4xl px-6 text-center lg:px-0">
+                  <h2 className="text-center text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">
                     {section.title}
                   </h2>
                   <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">{section.description}</p>
@@ -71,13 +71,13 @@ export default function SEOPage() {
                     {seoSeen.map((item, index) => (
                       <div key={index} className="flex items-start text-left">
                         {/* 🔥 Stor siffra istället för ikon */}
-                        <div className="p-6 md:p-0 flex h-12 w-12 items-center justify-center rounded-full bg-purple-600 text-white text-xl font-bold mr-6">
+                        <div className="mr-6 flex h-12 w-12 items-center justify-center rounded-full bg-purple-600 p-6 text-xl font-bold text-white md:p-0">
                           {index + 1}
                         </div>
 
                         <div>
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{item.title}</h3>
-                          <p className="mt-2 text-gray-600 dark:text-gray-400 leading-relaxed">{item.description}</p>
+                          <p className="mt-2 leading-relaxed text-gray-600 dark:text-gray-400">{item.description}</p>
                         </div>
                       </div>
                     ))}
@@ -88,18 +88,18 @@ export default function SEOPage() {
 
             {/* 🔥 SEO-fördelar med annan layout och bredare grid för bättre balans */}
             {section.id === "seo-benefits" && (
-              <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12 max-w-6xl mx-auto">
+              <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
                 {seoBenefits.map((item, index) => {
                   const IconComponent =
-                    item.icon === "FiTrendingUp" ? FiTrendingUp : item.icon === "FiGlobe" ? FiGlobe : FiSearch;
+                    item.icon === "FiTrendingUp" ? FiTrendingUp : item.icon === "FiGlobe" ? FiGlobe : FiSearch
 
                   return (
                     <div
                       key={index}
-                      className="flex flex-col items-center text-center p-6 shadow-md rounded-xl bg-white dark:bg-gray-800 transition-transform duration-200 hover:scale-105 max-w-[360px] mx-auto"
+                      className="mx-auto flex max-w-[360px] flex-col items-center rounded-xl bg-white p-6 text-center shadow-md transition-transform duration-200 hover:scale-105 dark:bg-gray-800"
                     >
                       {/* 🔥 Mindre ikon, bättre spacing */}
-                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300">
+                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300">
                         <IconComponent size={24} />
                       </div>
 
@@ -107,11 +107,11 @@ export default function SEOPage() {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{item.title}</h3>
 
                       {/* 🔥 Kompaktare text */}
-                      <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                      <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                         {item.description}
                       </p>
                     </div>
-                  );
+                  )
                 })}
               </div>
             )}
@@ -128,40 +128,40 @@ export default function SEOPage() {
       </div>
 
       <section id="faq" className="py-16">
-        <div className="max-w-4xl mx-auto ">
-          <h2 className="text-3xl font-bold text-center">Vanliga frågor om SEO</h2>
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-3xl font-bold">Vanliga frågor om SEO</h2>
           <div className="mt-8 space-y-2">
-            <details className="p-4 bg-gray-100 rounded-lg">
-              <summary className="font-medium cursor-pointer">Behöver jag SEO för min hemsida?</summary>
+            <details className="rounded-lg bg-gray-100 p-4">
+              <summary className="cursor-pointer font-medium">Behöver jag SEO för min hemsida?</summary>
               <p className="mt- text-gray-600">
                 Ja! Utan SEO kommer din hemsida vara svår att hitta på Google. SEO hjälper dig att synas för rätt kunder
                 och driva trafik till din webbplats.
               </p>
             </details>
 
-            <details className="p-4 bg-gray-100 rounded-lg">
-              <summary className="font-medium cursor-pointer">Hur lång tid tar det innan SEO ger resultat?</summary>
+            <details className="rounded-lg bg-gray-100 p-4">
+              <summary className="cursor-pointer font-medium">Hur lång tid tar det innan SEO ger resultat?</summary>
               <p className="mt-2 text-gray-600">
                 SEO är en långsiktig strategi och kan ta 3–6 månader innan du ser tydliga resultat. Dock kan teknisk SEO
                 och prestandaoptimering ge snabbare förbättringar.
               </p>
             </details>
 
-            <details className="p-4 bg-gray-100 rounded-lg">
-              <summary className="font-medium cursor-pointer">Vad är skillnaden mellan SEO och Google Ads?</summary>
+            <details className="rounded-lg bg-gray-100 p-4">
+              <summary className="cursor-pointer font-medium">Vad är skillnaden mellan SEO och Google Ads?</summary>
               <p className="mt-2 text-gray-600">
                 Google Ads är betalda annonser som ger omedelbara resultat, men kräver en budget. SEO är organiskt och
                 ger långsiktiga resultat utan att du behöver betala för klick.
               </p>
             </details>
 
-            <details className="p-4 bg-gray-100 rounded-lg">
-              <summary className="font-medium cursor-pointer">
+            <details className="rounded-lg bg-gray-100 p-4">
+              <summary className="cursor-pointer font-medium">
                 Vad är lokal SEO och hur hjälper det mitt företag?
               </summary>
               <p className="mt-2 text-gray-600">
                 Lokal SEO hjälper din hemsida att synas när potentiella kunder söker efter tjänster i sitt närområde,
-                till exempel <strong>"snickare nära mig"</strong> eller <strong>"bästa frisören i Stockholm"</strong>.
+                till exempel <strong>&quot;snickare nära mig&quot;</strong> eller <strong>&quot;bästa frisören i Stockholm&quot;</strong>.
                 Genom att optimera din webbplats och Google Business-profil ser vi till att ditt företag visas i lokala
                 sökresultat och på Google Maps.
               </p>
@@ -170,5 +170,5 @@ export default function SEOPage() {
         </div>
       </section>
     </Container>
-  );
+  )
 }

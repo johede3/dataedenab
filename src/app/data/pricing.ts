@@ -26,8 +26,8 @@ export const pricingPlans = [
       "✔ Teknisk support och vidareutveckling vid behov",
     ],
   },
-];
+]
 
 export const pricingDetails = {
   offertCTA: "Få en gratis offert & rådgivning",
-};
+}

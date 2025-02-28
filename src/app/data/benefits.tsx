@@ -9,8 +9,8 @@ import {
   FiTrendingUp,
   FiUsers,
   FiZap,
-} from "react-icons/fi";
-import { IBenefit } from "../types";
+} from "react-icons/fi"
+import { IBenefit } from "../types"
 
 export const benefits: IBenefit[] = [
   {
@@ -87,4 +87,4 @@ export const benefits: IBenefit[] = [
     ],
     imageSrc: "/assets/seo-services.png",
   },
-];
+]

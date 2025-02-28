@@ -1,14 +1,14 @@
-import { benefits } from "../../app/data/benefits";
-import { getPreposition } from "../../app/utils";
-import BenefitSection from "./BenefitSection";
-
-type BenefitsProps = {
-  city?: string;
-};
+import { benefits } from "../../app/data/benefits"
+import { getPreposition } from "../../app/utils"
+import BenefitSection from "./BenefitSection"
 
 export const replaceCityPlaceholder = (text: string, city = "Göteborg med omnejd") => {
-  return text.replace(/{{city}}/g, city);
-};
+  return text.replace(/{{city}}/g, city)
+}
+
+type BenefitsProps = {
+  city?: string
+}
 
 const Benefits: React.FC<BenefitsProps> = ({ city }) => {
   return (
@@ -30,7 +30,7 @@ const Benefits: React.FC<BenefitsProps> = ({ city }) => {
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Benefits;
+export default Benefits

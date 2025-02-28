@@ -1,14 +1,14 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { Manrope, Source_Sans_3 } from "next/font/google";
-import Script from "next/script";
-import "styles/tailwind.css";
+import { GoogleAnalytics } from "@next/third-parties/google"
+import { Manrope, Source_Sans_3 } from "next/font/google"
+import Script from "next/script"
+import "styles/tailwind.css"
 
-import Footer from "../components/UI/Shared/Footer";
-import Header from "../components/UI/Shared/Header";
-import { siteDetails } from "./data/siteDetails";
+import Footer from "../components/UI/Shared/Footer"
+import Header from "../components/UI/Shared/Header"
+import { siteDetails } from "./data/siteDetails"
 
-const manrope = Manrope({ subsets: ["latin"], display: "swap" });
-const sourceSans = Source_Sans_3({ subsets: ["latin"], display: "swap" });
+const manrope = Manrope({ subsets: ["latin"], display: "swap" })
+const sourceSans = Source_Sans_3({ subsets: ["latin"], display: "swap" })
 
 export const metadata = {
   title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar",
@@ -54,17 +54,24 @@ export const metadata = {
     images: ["https://dataeden.se/favi/android-chrome-512x512.png"],
   },
   icons: {
-    shortcut: "favi/favicon-16x16.png",
-    apple: "favi/apple-touch-icon.png",
-    logo: "/logo.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favi/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favi/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favi/android-chrome-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favi/android-chrome-512x512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/favi/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
   },
   metadataBase: new URL(siteDetails.siteUrl),
-};
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sv-SE">
       <head>
+        <link rel="preload" href="/images/BSHsmall.webp" as="image" type="image/webp" />
         {/* Schema Markup för Google */}
         <Script
           id="structured-data"
@@ -99,5 +106,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
       </body>
     </html>
-  );
+  )
 }

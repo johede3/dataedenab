@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { FiGlobe, FiSearch, FiTrendingUp } from "react-icons/fi"
+import { getPreposition } from "../../app/utils"
 
 const seoBenefits = [
   {
@@ -19,7 +20,11 @@ const seoBenefits = [
   },
 ]
 
-const SEOSection: React.FC = () => {
+type SEOSectionProps = {
+  city?: string
+}
+
+const SEOSection: React.FC<SEOSectionProps> = ({ city = "Göteborg med omnejd" }) => {
   return (
     <div className="mx-auto max-w-5xl px-6 text-center">
       {/* SEO Benefits Grid */}
@@ -33,13 +38,13 @@ const SEOSection: React.FC = () => {
         ))}
       </div>
 
-      {/* CTA Button */}
+      {/* CTA Button - Dynamic Link */}
       <div className="mt-10">
         <Link
-          href="/search-engine-optimization"
+          href={`/${city}/seo`}
           className="rounded-full bg-purple-600 px-6 py-3 font-medium text-white shadow-md transition-all hover:bg-purple-700"
         >
-          Läs mer om SEO
+          Läs mer om SEO {getPreposition(city)} {city}
         </Link>
       </div>
     </div>

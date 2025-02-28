@@ -1,7 +1,6 @@
-"use server";
-import { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 import {
   FaBolt,
   FaChartLine,
@@ -10,10 +9,10 @@ import {
   FaMoneyBillWave,
   FaPenNib,
   FaWrench,
-} from "react-icons/fa6";
-import HeroSEO from "../../../components/SEO/Hero";
-import Container from "../../../components/UI/Container/Container";
-import { getPreposition } from "../../utils";
+} from "react-icons/fa6"
+import HeroSEO from "../../../components/SEO/Hero"
+import Container from "../../../components/UI/Container/Container"
+import { getPreposition } from "../../utils"
 
 const cities = {
   goteborg: {
@@ -141,16 +140,16 @@ const cities = {
     title: "SEO i Munkedal – Digital närvaro & högre ranking | Dataeden",
     description: "Behöver du bättre placering på Google i Munkedal? Vi skapar optimerade hemsidor för ökad synlighet.",
   },
-};
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ city: keyof typeof cities }>;
+  params: Promise<{ city: keyof typeof cities }>
 }): Promise<Metadata> {
-  const { city } = await params;
-  const cityData = cities[city];
-  if (!cityData) return notFound();
+  const { city } = await params
+  const cityData = cities[city]
+  if (!cityData) return notFound()
 
   return {
     title: cityData.title,
@@ -167,13 +166,13 @@ export async function generateMetadata({
         },
       ],
     },
-  };
+  }
 }
 
 export default async function SEOPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
-  const { city } = await params;
-  const cityData = cities[city];
-  if (!cityData) return notFound();
+  const { city } = await params
+  const cityData = cities[city]
+  if (!cityData) return notFound()
 
   const benefits = [
     {
@@ -191,7 +190,7 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
       title: "Gratis trafik",
       text: "Till skillnad från annonser ger SEO dig gratis, långsiktig trafik – utan att du behöver betala för varje klick.",
     },
-  ];
+  ]
 
   const strategies = [
     {
@@ -238,7 +237,7 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
         "Optimerad textlängd och nyckelordsdensitet",
       ],
     },
-  ];
+  ]
 
   return (
     <>
@@ -246,45 +245,45 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
       <Container>
         <section id="seo-content">
           <div className="mx-auto max-w-5xl lg:px-0">
-            <div className=" mt-16 space-y-16">
+            <div className="mt-16 space-y-16">
               {/* SEO Sektion */}
-              <div className=" text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
+              <div className="text-center">
+                <h2 className="text-3xl leading-tight font-bold text-gray-900 md:text-4xl dark:text-gray-100">
                   SEO {getPreposition(cityData.name)} {cityData.name} – Maximera din synlighet och kundtillväxt
                 </h2>
-                <p className="mt-4 text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+                <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                   Behöver du fler kunder från Google? Vi hjälper dig att få mer synlighet, trafik och affärer genom
                   strategisk SEO.
                 </p>
               </div>
 
               {/* SEO Fördelar - Kortlayout */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-lg text-gray-700 dark:text-gray-300">
+              <div className="grid grid-cols-1 gap-6 text-lg text-gray-700 md:grid-cols-3 dark:text-gray-300">
                 {benefits.map((item, index) => {
-                  const Icon = item.icon;
+                  const Icon = item.icon
                   return (
                     <div
                       key={index}
-                      className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md"
+                      className="rounded-xl border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800"
                     >
-                      <div className="flex justify-center mb-4">
+                      <div className="mb-4 flex justify-center">
                         <Icon className="text-4xl text-purple-600" />
                       </div>
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 text-center">
+                      <h3 className="text-center text-xl font-semibold text-gray-900 dark:text-gray-100">
                         {item.title}
                       </h3>
                       <p className="mt-2 text-center">{item.text}</p>
                     </div>
-                  );
+                  )
                 })}
               </div>
 
               {/* SEO Strategier - Enhetlig Sektion */}
-              <div className=" bg-white dark:bg-gray-900   dark:border-gray-700  rounded-xl mt-16">
-                <div className="grid grid-cols-1 md:grid-cols-1 items-center gap-10">
+              <div className="mt-16 rounded-xl bg-white dark:border-gray-700 dark:bg-gray-900">
+                <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-1">
                   {/* Text */}
                   <div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
+                    <h2 className="text-4xl leading-tight font-bold text-gray-900 md:text-5xl dark:text-gray-100">
                       Vill du ranka högre på Google {getPreposition(cityData.name)} {cityData.name}?
                     </h2>
                     <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
@@ -297,20 +296,20 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                       Många tror att SEO bara handlar om sökord, men en välgjord strategi täcker allt från sidstruktur
                       och laddningshastighet till lokal synlighet och backlinks.
                     </p>
-                    <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 font-semibold">
+                    <p className="mt-4 text-lg font-semibold text-gray-700 dark:text-gray-300">
                       Här är några av de viktigaste faktorerna som påverkar din ranking:
                     </p>
                   </div>
                 </div>
 
                 {/* SEO Strategier - Korta boxar direkt under texten */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
                   {strategies.map((strategy, index) => {
-                    const Icon = strategy.icon;
+                    const Icon = strategy.icon
                     return (
                       <div
                         key={index}
-                        className="p-8 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-lg flex flex-col gap-4"
+                        className="flex flex-col gap-4 rounded-lg bg-gray-50 p-8 shadow-lg dark:bg-gray-900"
                       >
                         <div className="flex items-center gap-4">
                           <Icon className="text-4xl text-purple-600" />
@@ -325,31 +324,31 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                           ))}
                         </ul>
                       </div>
-                    );
+                    )
                   })}
                 </div>
               </div>
 
               {/* CTA Sektion - Avslut med en bred block */}
-              <div className="bg-purple-700 dark:bg-purple-900 text-white p-6 md:p-12 rounded-xl shadow-md mt-16 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold leading-14">
+              <div className="mt-16 rounded-xl bg-purple-700 p-6 text-center text-white shadow-md md:p-12 dark:bg-purple-900">
+                <h2 className="text-4xl leading-14 font-bold md:text-5xl">
                   Vill du synas högst på Google? Börja din SEO-resa idag!
                 </h2>
-                <p className="mt-4 text-xl max-w-3xl mx-auto">
+                <p className="mx-auto mt-4 max-w-3xl text-xl">
                   Vill du veta hur din hemsida presterar? Boka en gratis SEO-analys och få konkreta förbättringsförslag.
                 </p>
 
                 {/* Knappar - Mobilvänlig layout */}
-                <div className="mt-6 flex flex-col md:flex-row justify-center gap-4">
+                <div className="mt-6 flex flex-col justify-center gap-4 md:flex-row">
                   <Link
                     href="/kontakt"
-                    className="rounded-full bg-white text-purple-700 px-8 py-3 text-md font-medium shadow-md transition-all hover:bg-gray-200"
+                    className="text-md rounded-full bg-white px-8 py-3 font-medium text-purple-700 shadow-md transition-all hover:bg-gray-200"
                   >
                     Boka en gratis SEO-analys
                   </Link>
                   <Link
                     href="/services"
-                    className="rounded-full border border-white text-white px-8 py-3 text-md font-medium shadow-md transition-all hover:bg-white hover:text-purple-700"
+                    className="text-md rounded-full border border-white px-8 py-3 font-medium text-white shadow-md transition-all hover:bg-white hover:text-purple-700"
                   >
                     Läs mer om våra tjänster
                   </Link>
@@ -359,13 +358,13 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
 
             {/* FAQ */}
             <section id="faq" className="py-16">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold text-center">
+              <div className="mx-auto max-w-4xl">
+                <h2 className="text-center text-3xl font-bold">
                   Vanliga frågor om SEO {getPreposition(cityData.name)} {cityData.name}
                 </h2>
                 <div className="mt-8 space-y-2">
-                  <details className="p-4 bg-gray-100 rounded-lg">
-                    <summary className="font-medium cursor-pointer">
+                  <details className="rounded-lg bg-gray-100 p-4">
+                    <summary className="cursor-pointer font-medium">
                       Hur kommer min hemsida högre upp på Google?
                     </summary>
                     <p className="mt-2 text-gray-600">
@@ -375,16 +374,16 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                     </p>
                   </details>
 
-                  <details className="p-4 bg-gray-100 rounded-lg">
-                    <summary className="font-medium cursor-pointer">Hur lång tid tar det innan SEO fungerar?</summary>
+                  <details className="rounded-lg bg-gray-100 p-4">
+                    <summary className="cursor-pointer font-medium">Hur lång tid tar det innan SEO fungerar?</summary>
                     <p className="mt-2 text-gray-600">
                       SEO är en långsiktig strategi. Oftast tar det 3–6 månader innan du ser tydliga resultat. Men
                       teknisk SEO och optimeringar kan ge snabbare förbättringar.
                     </p>
                   </details>
 
-                  <details className="p-4 bg-gray-100 rounded-lg">
-                    <summary className="font-medium cursor-pointer">
+                  <details className="rounded-lg bg-gray-100 p-4">
+                    <summary className="cursor-pointer font-medium">
                       Behöver mitt företag SEO om jag redan har en hemsida?
                     </summary>
                     <p className="mt-2 text-gray-600">
@@ -393,8 +392,8 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                     </p>
                   </details>
 
-                  <details className="p-4 bg-gray-100 rounded-lg">
-                    <summary className="font-medium cursor-pointer">Hur gör man en hemsida som syns på Google?</summary>
+                  <details className="rounded-lg bg-gray-100 p-4">
+                    <summary className="cursor-pointer font-medium">Hur gör man en hemsida som syns på Google?</summary>
                     <p className="mt-2 text-gray-600">
                       För att en hemsida ska synas på Google måste den ha rätt sökord, bra laddningstid och vara
                       mobilanpassad. Vi hjälper dig att optimera din hemsida så att du når fler kunder{" "}
@@ -402,8 +401,8 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                     </p>
                   </details>
 
-                  <details className="p-4 bg-gray-100 rounded-lg">
-                    <summary className="font-medium cursor-pointer">
+                  <details className="rounded-lg bg-gray-100 p-4">
+                    <summary className="cursor-pointer font-medium">
                       Vad är skillnaden mellan SEO och Google Ads?
                     </summary>
                     <p className="mt-2 text-gray-600">
@@ -412,17 +411,17 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                     </p>
                   </details>
 
-                  <details className="p-4 bg-gray-100 rounded-lg">
-                    <summary className="font-medium cursor-pointer">Hur fungerar lokal SEO i {cityData.name}?</summary>
+                  <details className="rounded-lg bg-gray-100 p-4">
+                    <summary className="cursor-pointer font-medium">Hur fungerar lokal SEO i {cityData.name}?</summary>
                     <p className="mt-2 text-gray-600">
                       Lokal SEO gör att du syns på Google när någon söker efter tjänster {getPreposition(cityData.name)}{" "}
                       {cityData.name}. Vi optimerar din webbplats för sökningar som{" "}
-                      <strong>"SEO {cityData.name}"</strong> och hjälper dig att synas på Google Maps.
+                      <strong>&quot;SEO {cityData.name}&quot;</strong> och hjälper dig att synas på Google Maps.
                     </p>
                   </details>
 
-                  <details className="p-4 bg-gray-100 rounded-lg">
-                    <summary className="font-medium cursor-pointer">Hur vet jag om SEO fungerar?</summary>
+                  <details className="rounded-lg bg-gray-100 p-4">
+                    <summary className="cursor-pointer font-medium">Hur vet jag om SEO fungerar?</summary>
                     <p className="mt-2 text-gray-600">
                       Vi mäter dina SEO-resultat genom Google Analytics och sökordsrapporter. Du kan se hur många fler
                       besökare och kunder du får från Google {getPreposition(cityData.name)} {cityData.name}.
@@ -435,5 +434,9 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
         </section>
       </Container>
     </>
-  );
+  )
+}
+
+export async function generateStaticParams() {
+  return Object.keys(cities).map((city) => ({ city }))
 }

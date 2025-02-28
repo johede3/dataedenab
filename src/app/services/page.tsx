@@ -1,9 +1,9 @@
-import { Metadata } from "next";
-import { FiCheckCircle, FiCode, FiGlobe, FiShield, FiSmartphone, FiTrendingUp } from "react-icons/fi";
-import CTA from "../../components/CTA/CTA";
-import Section from "../../components/Section/Section";
-import HeroServices from "../../components/Services/Hero";
-import Container from "../../components/UI/Container/Container";
+import { Metadata } from "next"
+import { FiCheckCircle, FiCode, FiGlobe, FiShield, FiSmartphone, FiTrendingUp } from "react-icons/fi"
+import CTA from "../../components/CTA/CTA"
+import Section from "../../components/Section/Section"
+import HeroServices from "../../components/Services/Hero"
+import Container from "../../components/UI/Container/Container"
 
 const services = [
   {
@@ -72,7 +72,7 @@ const services = [
     ],
     icon: <FiShield size={28} className="text-gray-700" />,
   },
-];
+]
 
 export const metadata: Metadata = {
   title: "Webbutveckling & Apputveckling – Skräddarsydda lösningar | Dataeden",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
       "Behöver du en modern hemsida eller app? Vi skapar skräddarsydda lösningar som är snabba, mobilvänliga och SEO-optimerade.",
     images: [{ width: 1200, height: 630, url: "https://dataeden.se/favi/android-chrome-512x512.png" }],
   },
-};
+}
 
 export default function Services() {
   return (
@@ -104,15 +104,15 @@ export default function Services() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="flex flex-col items-center text-center p-8 shadow-md rounded-lg bg-white transition-transform duration-200 hover:scale-101 hover:shadow-xl"
+                className="flex flex-col items-center rounded-lg bg-white p-8 text-center shadow-md transition-transform duration-200 hover:scale-101 hover:shadow-xl"
               >
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-lg font-semibold">{service.title}</h3>
                 <p className="mt-2 text-gray-600">{service.description}</p>
-                <ul className="mt-4 text-sm text-gray-600 space-y-2 text-left">
+                <ul className="mt-4 space-y-2 text-left text-sm text-gray-600">
                   {service.details.map((detail, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="mr-2 w-2 h-2 bg-purple-600 rounded-full mt-2"></span>
+                      <span className="mt-2 mr-2 h-2 w-2 rounded-full bg-purple-600"></span>
                       {detail}
                     </li>
                   ))}
@@ -124,11 +124,11 @@ export default function Services() {
 
         {/* 🔥 FAQ */}
         <section id="faq" className="py-16">
-          <div className="max-w-4xl mx-auto py-2">
-            <h2 className="text-3xl font-bold text-center">Vanliga frågor om våra tjänster</h2>
+          <div className="mx-auto max-w-4xl py-2">
+            <h2 className="text-center text-3xl font-bold">Vanliga frågor om våra tjänster</h2>
             <div className="mt-8 space-y-2">
-              <details className="p-4 bg-gray-100 rounded-lg">
-                <summary className="font-medium cursor-pointer">
+              <details className="rounded-lg bg-gray-100 p-4">
+                <summary className="cursor-pointer font-medium">
                   Hur mycket kostar en hemsida för ett litet företag?
                 </summary>
                 <p className="mt-2 text-gray-600">
@@ -137,8 +137,8 @@ export default function Services() {
                 </p>
               </details>
 
-              <details className="p-4 bg-gray-100 rounded-lg">
-                <summary className="font-medium cursor-pointer">
+              <details className="rounded-lg bg-gray-100 p-4">
+                <summary className="cursor-pointer font-medium">
                   Vad är skillnaden mellan en skräddarsydd hemsida och en hemsidebyggare som Wix?
                 </summary>
                 <p className="mt-2 text-gray-600">
@@ -148,8 +148,8 @@ export default function Services() {
                 </p>
               </details>
 
-              <details className="p-4 bg-gray-100 rounded-lg">
-                <summary className="font-medium cursor-pointer">
+              <details className="rounded-lg bg-gray-100 p-4">
+                <summary className="cursor-pointer font-medium">
                   Kan jag koppla bokningar och betalningar till min hemsida?
                 </summary>
                 <p className="mt-2 text-gray-600">
@@ -158,8 +158,8 @@ export default function Services() {
                 </p>
               </details>
 
-              <details className="p-4 bg-gray-100 rounded-lg">
-                <summary className="font-medium cursor-pointer">
+              <details className="rounded-lg bg-gray-100 p-4">
+                <summary className="cursor-pointer font-medium">
                   Kan ni hjälpa till med att uppdatera och underhålla hemsidan efter lansering?
                 </summary>
                 <p className="mt-2 text-gray-600">
@@ -175,5 +175,5 @@ export default function Services() {
         <CTA />
       </Container>
     </>
-  );
+  )
 }

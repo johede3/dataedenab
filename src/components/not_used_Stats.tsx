@@ -1,4 +1,4 @@
-import { stats } from "./stats";
+import { stats } from "./stats"
 
 const Stats: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Stats: React.FC = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Stats;
+export default Stats

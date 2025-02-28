@@ -7,4 +7,4 @@ export const heroDetails = {
   offertCTA: "Få en gratis offert",
   servicesCTA: "Se våra tjänster",
   centerImageSrc: "/images/BSHsmall.webp",
-};
+}

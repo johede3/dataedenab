@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from "next"
 
 // Lista över städer vi stödjer
 export const cities = [
@@ -26,13 +26,13 @@ export const cities = [
   { name: "Hjo", slug: "hjo" },
   { name: "Ulricehamn", slug: "ulricehamn" },
   { name: "Munkedal", slug: "munkedal" },
-];
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://dataeden.se";
+  const baseUrl = "https://dataeden.se"
 
   // Statiska sidor
-  const pages = ["", "kontakt", "services", "search-engine-optimization"];
+  const pages = ["", "kontakt", "services", "search-engine-optimization"]
 
   // Generera URLs för alla sidor
   const allPages = [
@@ -41,11 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       `${baseUrl}/${city.slug}`, // Stadens huvudsida
       `${baseUrl}/${city.slug}/seo`, // SEO-sidan för staden
     ]),
-  ];
+  ]
 
   // Returnera rätt format för Next.js sitemap
   return allPages.map((url) => ({
     url,
     lastModified: new Date().toISOString(),
-  }));
+  }))
 }

@@ -1,22 +1,22 @@
-"use client";
-import Link from "next/link";
-import React, { useEffect } from "react";
-import { FiChevronDown } from "react-icons/fi";
-import { getPreposition } from "../../app/utils";
+"use client"
+import Link from "next/link"
+import React, { useEffect } from "react"
+import { FiChevronDown } from "react-icons/fi"
+import { getPreposition } from "../../app/utils"
 
 type HeroSEOProps = {
-  city: string;
-};
+  city: string
+}
 
 const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
   useEffect(() => {
     const setVh = () => {
-      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
-    };
-    setVh();
-    window.addEventListener("resize", setVh);
-    return () => window.removeEventListener("resize", setVh);
-  }, []);
+      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`)
+    }
+    setVh()
+    window.addEventListener("resize", setVh)
+    return () => window.removeEventListener("resize", setVh)
+  }, [])
 
   return (
     <section
@@ -31,13 +31,13 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
       <div className="absolute right-0 bottom-0 left-0 h-20 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)] backdrop-blur-[1px]"></div>
 
       {/* Innehåll */}
-      <div className="text-center max-w-3xl">
+      <div className="max-w-3xl text-center">
         <h1 className="text-foreground mx-auto text-3xl font-bold md:text-5xl md:leading-tight">
           SEO {getPreposition(city)} {city} – Ta din webbplats till
           <span className="text-purple-600"> toppositioner på Google</span>
         </h1>
 
-        <p className="mx-auto mt-4 text-lg text-gray-700 md:text-xl leading-relaxed">
+        <p className="mx-auto mt-4 text-lg leading-relaxed text-gray-700 md:text-xl">
           Vill du synas bättre på Google och attrahera fler kunder {getPreposition(city)} {city}? Vi hjälper småföretag
           och lokala verksamheter {getPreposition(city)} {city} att ranka
           <span className="text-purple-600"> högre på Google</span>, få mer trafik och öka sina affärer med beprövade
@@ -88,7 +88,7 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
         }
       `}</style>
     </section>
-  );
-};
+  )
+}
 
-export default HeroSEO;
+export default HeroSEO

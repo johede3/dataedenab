@@ -1,18 +1,18 @@
-import { Metadata } from "next";
+import { Metadata } from "next"
 
-import About from "../components/About/About";
-import Benefits, { replaceCityPlaceholder } from "../components/Benefits/Benefits";
-import CTA from "../components/CTA/CTA";
-import FAQ from "../components/FAQ/FAQ";
-import { landingSections } from "./data/landing";
+import About from "../components/About/About"
+import Benefits, { replaceCityPlaceholder } from "../components/Benefits/Benefits"
+import CTA from "../components/CTA/CTA"
+import FAQ from "../components/FAQ/FAQ"
+import { landingSections } from "./data/landing"
 
-import Hero from "../components/Hero/Hero";
-import { ItemScroll } from "../components/Idea/ItemScroll";
-import Pricing from "../components/Pricing/Pricing";
-import { Projects } from "../components/Projects/Projects";
-import Section from "../components/Section/Section";
-import SEOSection from "../components/SEO/SEOSection";
-import Container from "../components/UI/Container/Container";
+import Hero from "../components/Hero/Hero"
+import { ItemScroll } from "../components/Idea/ItemScroll"
+import Pricing from "../components/Pricing/Pricing"
+import { Projects } from "../components/Projects/Projects"
+import Section from "../components/Section/Section"
+import SEOSection from "../components/SEO/SEOSection"
+import Container from "../components/UI/Container/Container"
 
 export const metadata: Metadata = {
   title: "Dataeden – Webbutveckling & Digitala Lösningar i Västra Götaland",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}
 
 export default function Web() {
   return (
@@ -90,5 +90,5 @@ export default function Web() {
         <CTA city={"Göteborg med omnejd"} />
       </Container>
     </>
-  );
+  )
 }
