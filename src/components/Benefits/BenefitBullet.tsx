@@ -1,6 +1,6 @@
-import { motion } from "framer-motion"
-import { childVariants } from "./BenefitSection"
-import { IBenefitBullet } from "../../app/types"
+import { motion } from "framer-motion";
+import { IBenefitBullet } from "../../app/types";
+import { childVariants } from "./BenefitSection";
 
 const BenefitBullet: React.FC<IBenefitBullet> = ({ title, description, icon }: IBenefitBullet) => {
   return (
@@ -10,11 +10,11 @@ const BenefitBullet: React.FC<IBenefitBullet> = ({ title, description, icon }: I
     >
       <div className="mx-auto mt-3 flex w-fit flex-shrink-0 justify-center lg:mx-0">{icon}</div>
       <div>
-        <h4 className="text-lg font-semibold">{title}</h4>
+        <h3 className="text-lg font-semibold">{title}</h3>
         <p className="text-foreground-accent text-base">{description}</p>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default BenefitBullet
+export default BenefitBullet;
