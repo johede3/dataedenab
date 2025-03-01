@@ -16,20 +16,19 @@ import Container from "../components/UI/Container/Container";
 import { getCTAContent } from "./utils";
 
 export const metadata: Metadata = {
-  title: "Dataeden – Webbutveckling & Digitala Lösningar i Västra Götaland",
+  title: " Webbutveckling & Digitala Lösningar i Västra Götaland – Dataeden",
   description:
     "Vi hjälper småföretag i Göteborg, Kungälv, Kungsbacka och hela Västra Götaland att växa online med moderna hemsidor och appar.",
   keywords: [
     `Webbutveckling `,
     `Hemsida småföretag`,
-    `Skräddarsydda webblösningar`,
     `Webbdesign`,
-    "SEO optimering",
     "Webbapplikationer",
-    "Mobilanpassade hemsidor",
-    "E-handelslösningar",
     `Webbyrå`,
     "Egen hemsida",
+    `Apputveckling`,
+    `Skapa hemsida`,
+    `Synas på Google `,
   ],
   twitter: {
     card: "summary_large_image",
