@@ -27,8 +27,8 @@ const ReviewCard = ({
       <div className="flex flex-row items-center gap-2">
         <Image className="rounded-full" width={32} height={32} alt={name} src={avatar} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">{name}</figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{role}</p>
+          <figcaption className="text-sm font-medium dark:text-background">{name}</figcaption>
+          <p className="text-xs font-medium dark:text-background/40">{role}</p>
         </div>
       </div>
       <blockquote className="mt-2 text-sm">&quot;{message}&quot;</blockquote>
@@ -49,8 +49,8 @@ const Comments = () => {
           <ReviewCard key={index} {...testimonial} />
         ))}
       </Marquee> */}
-      <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white"></div>
-      <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white"></div>
+      <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-background"></div>
+      <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-background"></div>
     </div>
   );
 };

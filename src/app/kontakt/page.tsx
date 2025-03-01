@@ -1,23 +1,23 @@
-"use client"
-import { useForm, ValidationError } from "@formspree/react"
+"use client";
+import { useForm, ValidationError } from "@formspree/react";
 
 function ContactForm() {
-  const [state, handleSubmit] = useForm("xyzkqznp")
+  const [state, handleSubmit] = useForm("xyzkqznp");
 
   // If form is successfully submitted, show confirmation message instead
   if (state.succeeded) {
     return (
-      <div className="mx-auto mt-10 w-full max-w-lg rounded-lg border border-gray-200 bg-white p-6 text-center shadow-md">
+      <div className="mx-auto mt-10 w-full max-w-lg rounded-lg border border-gray-200 bg-background p-6 text-center shadow-md">
         <h2 className="text-2xl font-semibold text-green-600">Tack för ditt meddelande! </h2>
         <p className="mt-2 text-gray-700">Vi återkommer till dig så snart vi kan.</p>
       </div>
-    )
+    );
   }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto mt-6 w-full max-w-lg space-y-4 rounded-lg border border-gray-200 bg-white p-6 shadow-md"
+      className="mx-auto mt-6 w-full max-w-lg space-y-4 rounded-lg border border-gray-200 bg-background p-6 shadow-md"
     >
       {/* Email Field */}
       <div className="flex flex-col text-left">
@@ -30,7 +30,7 @@ function ContactForm() {
           name="email"
           required
           placeholder="Din e-postadress"
-          className="mt-1 rounded-lg border p-3 focus:ring-2 focus:ring-purple-600 focus:outline-none"
+          className="mt-1 rounded-lg border p-3 focus:ring-2 focus:ring-primary focus:outline-none"
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
@@ -46,7 +46,7 @@ function ContactForm() {
           required
           placeholder="Skriv ditt meddelande här..."
           rows={4}
-          className="mt-1 rounded-lg border p-3 focus:ring-2 focus:ring-purple-600 focus:outline-none"
+          className="mt-1 rounded-lg border p-3 focus:ring-2 focus:ring-primary focus:outline-none"
         />
         <ValidationError prefix="Message" field="message" errors={state.errors} />
       </div>
@@ -55,12 +55,12 @@ function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="w-full rounded-lg bg-purple-600 py-3 font-medium text-white transition-all hover:cursor-pointer hover:bg-purple-700"
+        className="w-full rounded-lg bg-primary py-3 font-medium text-background transition-all hover:cursor-pointer hover:bg-primary-hover"
       >
         {state.submitting ? "Skickar..." : "Skicka meddelande"}
       </button>
     </form>
-  )
+  );
 }
 
 const ContactPage: React.FC = () => {
@@ -74,12 +74,12 @@ const ContactPage: React.FC = () => {
       {/* Keep email option visible even after success */}
       <p className="mt-6 text-sm text-gray-600">
         Eller skicka ett mejl direkt till:{" "}
-        <a href="mailto:kontakt@dataeden.se" className="font-medium text-purple-600 hover:underline">
+        <a href="mailto:kontakt@dataeden.se" className="font-medium text-primary hover:underline">
           kontakt@dataeden.se
         </a>
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;

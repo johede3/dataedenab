@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import * as React from "react"
+import { motion } from "framer-motion";
+import * as React from "react";
 
 export function ColourfulText({ text }: { text: string }) {
   const colors = [
@@ -15,20 +15,20 @@ export function ColourfulText({ text }: { text: string }) {
     "rgb(230, 64, 92)",
     "rgb(232, 98, 63)",
     "rgb(249, 129, 47)",
-  ]
+  ];
 
-  const [currentColors, setCurrentColors] = React.useState(colors)
-  const [count, setCount] = React.useState(0)
+  const [currentColors, setCurrentColors] = React.useState(colors);
+  const [count, setCount] = React.useState(0);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      const shuffled = [...colors].sort(() => Math.random() - 0.5)
-      setCurrentColors(shuffled)
-      setCount((prev) => prev + 1)
-    }, 5000)
+      const shuffled = [...colors].sort(() => Math.random() - 0.5);
+      setCurrentColors(shuffled);
+      setCount((prev) => prev + 1);
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   return text.split("").map((char, index) => (
     <motion.span
@@ -51,5 +51,5 @@ export function ColourfulText({ text }: { text: string }) {
     >
       {char}
     </motion.span>
-  ))
+  ));
 }

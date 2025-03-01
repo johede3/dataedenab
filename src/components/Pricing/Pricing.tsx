@@ -12,9 +12,9 @@ const Pricing: React.FC<PricingProps> = ({ city }) => {
         {getPricingPlans(city).map((plan, index) => (
           <div
             key={index}
-            className="mx-auto w-full max-w-sm rounded-xl border border-gray-200 bg-white p-6 shadow-lg dark:bg-gray-800"
+            className="mx-auto w-full max-w-sm rounded-xl border border-gray-200 bg-background p-6 shadow-lg dark:bg-gray-800"
           >
-            <h3 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">{plan.title}</h3>
+            <h3 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-background">{plan.title}</h3>
             <p className="text-gray-600 dark:text-gray-300">{plan.description}</p>
             <ul className="mt-4 space-y-2 text-gray-600 dark:text-gray-300">
               {plan.features.map((feature, i) => (
@@ -28,7 +28,7 @@ const Pricing: React.FC<PricingProps> = ({ city }) => {
       <div className="mt-10 text-center">
         <Link
           href="/kontakt"
-          className="bg-primary hover:bg-primary-accent inline-block rounded-full px-6 py-3 text-lg font-medium text-white shadow-md transition-all"
+          className="bg-primary hover:bg-primary-accent inline-block rounded-full px-6 py-3 text-lg font-medium text-background shadow-md transition-all"
         >
           {pricingDetails.offertCTA}
         </Link>

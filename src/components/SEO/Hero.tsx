@@ -1,22 +1,22 @@
-"use client"
-import Link from "next/link"
-import React, { useEffect } from "react"
-import { FiChevronDown } from "react-icons/fi"
-import { getPreposition } from "../../app/utils"
+"use client";
+import Link from "next/link";
+import React, { useEffect } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import { getPreposition } from "../../app/utils";
 
 type HeroSEOProps = {
-  city: string
-}
+  city: string;
+};
 
 const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
   useEffect(() => {
     const setVh = () => {
-      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`)
-    }
-    setVh()
-    window.addEventListener("resize", setVh)
-    return () => window.removeEventListener("resize", setVh)
-  }, [])
+      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
+    };
+    setVh();
+    window.addEventListener("resize", setVh);
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
 
   return (
     <section
@@ -34,13 +34,13 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
       <div className="max-w-3xl text-center">
         <h1 className="text-foreground mx-auto text-3xl font-bold md:text-5xl md:leading-tight">
           SEO {getPreposition(city)} {city} – Ta din webbplats till
-          <span className="text-purple-600"> toppositioner på Google</span>
+          <span className="text-primary"> toppositioner på Google</span>
         </h1>
 
         <p className="mx-auto mt-4 text-lg leading-relaxed text-gray-700 md:text-xl">
           Vill du synas bättre på Google och attrahera fler kunder {getPreposition(city)} {city}? Vi hjälper småföretag
           och lokala verksamheter {getPreposition(city)} {city} att ranka
-          <span className="text-purple-600"> högre på Google</span>, få mer trafik och öka sina affärer med beprövade
+          <span className="text-primary"> högre på Google</span>, få mer trafik och öka sina affärer med beprövade
           SEO-strategier
         </p>
 
@@ -48,7 +48,7 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
         <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="/kontakt"
-            className="rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-lg transition-all hover:bg-purple-700"
+            className="rounded-full bg-primary px-6 py-3 text-lg font-medium text-background shadow-lg transition-all hover:bg-primary-hover"
           >
             Boka en gratis SEO-analys
           </Link>
@@ -66,7 +66,7 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
         href="#seo-content"
         className="absolute bottom-6 animate-[shake_0.5s_ease-in-out_0.5s_1] transition-transform duration-300 hover:scale-110"
       >
-        <FiChevronDown className="text-gray-600 hover:text-purple-600" size={48} />
+        <FiChevronDown className="text-gray-600 hover:text-primary" size={48} />
       </Link>
 
       {/* Shake-animation */}
@@ -88,7 +88,7 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
         }
       `}</style>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSEO
+export default HeroSEO;

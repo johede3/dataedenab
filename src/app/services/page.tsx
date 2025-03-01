@@ -104,7 +104,7 @@ export default function Services() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="flex flex-col items-center rounded-lg bg-white p-8 text-center shadow-md transition-transform duration-200 hover:scale-101 hover:shadow-xl"
+                className="flex flex-col items-center rounded-lg bg-background p-8 text-center shadow-md transition-transform duration-200 hover:scale-101 hover:shadow-xl"
               >
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-lg font-semibold">{service.title}</h3>
@@ -112,7 +112,7 @@ export default function Services() {
                 <ul className="mt-4 space-y-2 text-left text-sm text-gray-600">
                   {service.details.map((detail, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="mt-2 mr-2 h-2 w-2 rounded-full bg-purple-600"></span>
+                      <span className="mt-2 mr-2 h-2 w-2 rounded-full bg-primary"></span>
                       {detail}
                     </li>
                   ))}

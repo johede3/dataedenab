@@ -1,9 +1,9 @@
-import { Metadata } from "next"
-import Link from "next/link"
-import { FiGlobe, FiSearch, FiTrendingUp } from "react-icons/fi"
-import Section from "../../components/Section/Section"
-import Container from "../../components/UI/Container/Container"
-import { seoBenefits, seoSections, seoSeen } from "../data/seo"
+import { Metadata } from "next";
+import Link from "next/link";
+import { FiGlobe, FiSearch, FiTrendingUp } from "react-icons/fi";
+import Section from "../../components/Section/Section";
+import Container from "../../components/UI/Container/Container";
+import { seoBenefits, seoSections, seoSeen } from "../data/seo";
 
 export const metadata: Metadata = {
   title: "SEO – Rank högre & få fler kunder | Dataeden",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
 export default function SEOPage() {
   return (
@@ -59,7 +59,7 @@ export default function SEOPage() {
 
             {/* 🔥 SEO-synlighetsektionen med ANNAN bakgrund & större layout */}
             {section.id === "seo-synas" && (
-              <div className="rounded-xl bg-gradient-to-b from-white to-gray-100 pb-16 dark:from-gray-900 dark:to-gray-800">
+              <div className="rounded-xl bg-gradient-to-b from-background to-gray-100 pb-16 dark:from-gray-900 dark:to-gray-800">
                 <div className="mx-auto max-w-4xl px-6 text-center lg:px-0">
                   <h2 className="text-center text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">
                     {section.title}
@@ -71,7 +71,7 @@ export default function SEOPage() {
                     {seoSeen.map((item, index) => (
                       <div key={index} className="flex items-start text-left">
                         {/* 🔥 Stor siffra istället för ikon */}
-                        <div className="mr-6 flex h-12 w-12 items-center justify-center rounded-full bg-purple-600 p-6 text-xl font-bold text-white md:p-0">
+                        <div className="mr-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary p-6 text-xl font-bold text-background md:p-0">
                           {index + 1}
                         </div>
 
@@ -91,15 +91,15 @@ export default function SEOPage() {
               <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
                 {seoBenefits.map((item, index) => {
                   const IconComponent =
-                    item.icon === "FiTrendingUp" ? FiTrendingUp : item.icon === "FiGlobe" ? FiGlobe : FiSearch
+                    item.icon === "FiTrendingUp" ? FiTrendingUp : item.icon === "FiGlobe" ? FiGlobe : FiSearch;
 
                   return (
                     <div
                       key={index}
-                      className="mx-auto flex max-w-[360px] flex-col items-center rounded-xl bg-white p-6 text-center shadow-md transition-transform duration-200 hover:scale-105 dark:bg-gray-800"
+                      className="mx-auto flex max-w-[360px] flex-col items-center rounded-xl bg-background p-6 text-center shadow-md transition-transform duration-200 hover:scale-105 dark:bg-gray-800"
                     >
                       {/* 🔥 Mindre ikon, bättre spacing */}
-                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300">
+                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 text-primary dark:bg-purple-900 dark:text-purple-300">
                         <IconComponent size={24} />
                       </div>
 
@@ -111,7 +111,7 @@ export default function SEOPage() {
                         {item.description}
                       </p>
                     </div>
-                  )
+                  );
                 })}
               </div>
             )}
@@ -121,7 +121,7 @@ export default function SEOPage() {
       <div className="mt-8 flex justify-center">
         <Link
           href="/kontakt"
-          className="rounded-full bg-gradient-to-r from-purple-600 to-purple-500 px-8 py-3 text-lg font-medium text-white shadow-md transition-all hover:from-purple-700 hover:to-purple-600"
+          className="rounded-full bg-gradient-to-r from-primary to-purple-500 px-8 py-3 text-lg font-medium text-background shadow-md transition-all hover:from-primary-hover hover:to-primary"
         >
           Kontakta oss
         </Link>
@@ -161,14 +161,14 @@ export default function SEOPage() {
               </summary>
               <p className="mt-2 text-gray-600">
                 Lokal SEO hjälper din hemsida att synas när potentiella kunder söker efter tjänster i sitt närområde,
-                till exempel <strong>&quot;snickare nära mig&quot;</strong> eller <strong>&quot;bästa frisören i Stockholm&quot;</strong>.
-                Genom att optimera din webbplats och Google Business-profil ser vi till att ditt företag visas i lokala
-                sökresultat och på Google Maps.
+                till exempel <strong>&quot;snickare nära mig&quot;</strong> eller{" "}
+                <strong>&quot;bästa frisören i Stockholm&quot;</strong>. Genom att optimera din webbplats och Google
+                Business-profil ser vi till att ditt företag visas i lokala sökresultat och på Google Maps.
               </p>
             </details>
           </div>
         </div>
       </section>
     </Container>
-  )
+  );
 }

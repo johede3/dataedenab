@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 
-import { ContainerScroll } from "../UI/Container/container-scroll-animation"
-import { ColourfulText } from "../UI/Shared/colorful-text"
+import { ContainerScroll } from "../UI/Container/container-scroll-animation";
+import { ColourfulText } from "../UI/Shared/colorful-text";
 
 export function ItemScroll({ dict }: { dict: Record<string, string> | undefined }) {
   return (
@@ -11,7 +11,7 @@ export function ItemScroll({ dict }: { dict: Record<string, string> | undefined 
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="mb-2 text-4xl font-semibold text-black md:mb-10 dark:text-white">
+            <h1 className="mb-2 text-4xl font-semibold text-foreground md:mb-10 dark:text-background">
               {dict?.first_text}
               <br />
               <span className="mt-1 text-4xl leading-none font-bold md:text-6xl">
@@ -34,5 +34,5 @@ export function ItemScroll({ dict }: { dict: Record<string, string> | undefined 
         />
       </ContainerScroll>
     </div>
-  )
+  );
 }

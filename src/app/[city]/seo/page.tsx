@@ -1,6 +1,6 @@
-import { Metadata } from "next"
-import Link from "next/link"
-import { notFound } from "next/navigation"
+import { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import {
   FaBolt,
   FaChartLine,
@@ -9,10 +9,10 @@ import {
   FaMoneyBillWave,
   FaPenNib,
   FaWrench,
-} from "react-icons/fa6"
-import HeroSEO from "../../../components/SEO/Hero"
-import Container from "../../../components/UI/Container/Container"
-import { getPreposition } from "../../utils"
+} from "react-icons/fa6";
+import HeroSEO from "../../../components/SEO/Hero";
+import Container from "../../../components/UI/Container/Container";
+import { getPreposition } from "../../utils";
 
 const cities = {
   goteborg: {
@@ -140,16 +140,16 @@ const cities = {
     title: "SEO i Munkedal – Digital närvaro & högre ranking | Dataeden",
     description: "Behöver du bättre placering på Google i Munkedal? Vi skapar optimerade hemsidor för ökad synlighet.",
   },
-}
+};
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ city: keyof typeof cities }>
+  params: Promise<{ city: keyof typeof cities }>;
 }): Promise<Metadata> {
-  const { city } = await params
-  const cityData = cities[city]
-  if (!cityData) return notFound()
+  const { city } = await params;
+  const cityData = cities[city];
+  if (!cityData) return notFound();
 
   return {
     title: cityData.title,
@@ -166,13 +166,13 @@ export async function generateMetadata({
         },
       ],
     },
-  }
+  };
 }
 
 export default async function SEOPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
-  const { city } = await params
-  const cityData = cities[city]
-  if (!cityData) return notFound()
+  const { city } = await params;
+  const cityData = cities[city];
+  if (!cityData) return notFound();
 
   const benefits = [
     {
@@ -190,7 +190,7 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
       title: "Gratis trafik",
       text: "Till skillnad från annonser ger SEO dig gratis, långsiktig trafik – utan att du behöver betala för varje klick.",
     },
-  ]
+  ];
 
   const strategies = [
     {
@@ -237,7 +237,7 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
         "Optimerad textlängd och nyckelordsdensitet",
       ],
     },
-  ]
+  ];
 
   return (
     <>
@@ -260,26 +260,26 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
               {/* SEO Fördelar - Kortlayout */}
               <div className="grid grid-cols-1 gap-6 text-lg text-gray-700 md:grid-cols-3 dark:text-gray-300">
                 {benefits.map((item, index) => {
-                  const Icon = item.icon
+                  const Icon = item.icon;
                   return (
                     <div
                       key={index}
-                      className="rounded-xl border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800"
+                      className="rounded-xl border border-gray-200 bg-background p-6 shadow-md dark:border-gray-700 dark:bg-gray-800"
                     >
                       <div className="mb-4 flex justify-center">
-                        <Icon className="text-4xl text-purple-600" />
+                        <Icon className="text-4xl text-primary" />
                       </div>
                       <h3 className="text-center text-xl font-semibold text-gray-900 dark:text-gray-100">
                         {item.title}
                       </h3>
                       <p className="mt-2 text-center">{item.text}</p>
                     </div>
-                  )
+                  );
                 })}
               </div>
 
               {/* SEO Strategier - Enhetlig Sektion */}
-              <div className="mt-16 rounded-xl bg-white dark:border-gray-700 dark:bg-gray-900">
+              <div className="mt-16 rounded-xl bg-background dark:border-gray-700 dark:bg-gray-900">
                 <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-1">
                   {/* Text */}
                   <div>
@@ -305,14 +305,14 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                 {/* SEO Strategier - Korta boxar direkt under texten */}
                 <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
                   {strategies.map((strategy, index) => {
-                    const Icon = strategy.icon
+                    const Icon = strategy.icon;
                     return (
                       <div
                         key={index}
                         className="flex flex-col gap-4 rounded-lg bg-gray-50 p-8 shadow-lg dark:bg-gray-900"
                       >
                         <div className="flex items-center gap-4">
-                          <Icon className="text-4xl text-purple-600" />
+                          <Icon className="text-4xl text-primary" />
                           <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{strategy.title}</h3>
                         </div>
                         <p className="text-lg text-gray-700 dark:text-gray-300">{strategy.description}</p>
@@ -324,13 +324,13 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                           ))}
                         </ul>
                       </div>
-                    )
+                    );
                   })}
                 </div>
               </div>
 
               {/* CTA Sektion - Avslut med en bred block */}
-              <div className="mt-16 rounded-xl bg-purple-700 p-6 text-center text-white shadow-md md:p-12 dark:bg-purple-900">
+              <div className="mt-16 rounded-xl bg-primary-hover p-6 text-center text-background shadow-md md:p-12 dark:bg-purple-900">
                 <h2 className="text-4xl leading-14 font-bold md:text-5xl">
                   Vill du synas högst på Google? Börja din SEO-resa idag!
                 </h2>
@@ -342,13 +342,13 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                 <div className="mt-6 flex flex-col justify-center gap-4 md:flex-row">
                   <Link
                     href="/kontakt"
-                    className="text-md rounded-full bg-white px-8 py-3 font-medium text-purple-700 shadow-md transition-all hover:bg-gray-200"
+                    className="text-md rounded-full bg-background px-8 py-3 font-medium text-primary shadow-md transition-all hover:bg-gray-200"
                   >
                     Boka en gratis SEO-analys
                   </Link>
                   <Link
                     href="/services"
-                    className="text-md rounded-full border border-white px-8 py-3 font-medium text-white shadow-md transition-all hover:bg-white hover:text-purple-700"
+                    className="text-md rounded-full border border-background px-8 py-3 font-medium text-background shadow-md transition-all hover:bg-background hover:text-primary"
                   >
                     Läs mer om våra tjänster
                   </Link>
@@ -434,9 +434,9 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
         </section>
       </Container>
     </>
-  )
+  );
 }
 
 export async function generateStaticParams() {
-  return Object.keys(cities).map((city) => ({ city }))
+  return Object.keys(cities).map((city) => ({ city }));
 }

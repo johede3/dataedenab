@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
       <div className="text-center">
         <h1 className="text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-4xl md:text-6xl md:leading-tight">
           {replaceCityPlaceholder(hero.heading, city ? `${getPreposition(city)} ${city} ` : "")}
-          <span className="text-purple-600">{hero.highlight}</span>
+          <span className="text-primary">{hero.highlight}</span>
           <br />
           {hero.heading2}
         </h1>
@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
         <div className="mx-auto mt-6 flex w-fit flex-col items-center gap-2 sm:flex-row sm:gap-4">
           <Link
             href="/kontakt"
-            className="w-full text-nowrap rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
+            className="w-full text-nowrap rounded-full bg-primary px-6 py-3 text-lg font-medium text-background shadow-md transition-all hover:bg-primary-hover"
           >
             {hero.offertCTA}
           </Link>

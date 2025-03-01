@@ -1,5 +1,5 @@
-"use client"
-import { JSX, useState } from "react"
+"use client";
+import { JSX, useState } from "react";
 import {
   FiCheckCircle,
   FiChevronDown,
@@ -9,8 +9,8 @@ import {
   FiSmartphone,
   FiTrendingUp,
   FiUsers,
-} from "react-icons/fi"
-import { servicesDetails } from "../../app/data/services"
+} from "react-icons/fi";
+import { servicesDetails } from "../../app/data/services";
 
 const iconMap: { [key: string]: JSX.Element } = {
   FiGlobe: <FiGlobe size={20} />,
@@ -20,11 +20,11 @@ const iconMap: { [key: string]: JSX.Element } = {
   FiCode: <FiCode size={20} />,
   FiUsers: <FiUsers size={20} />,
   FiShield: <FiShield size={20} />,
-}
+};
 
 export default function ServicesTab() {
-  const [activeTab, setActiveTab] = useState("webbutveckling")
-  const [expanded, setExpanded] = useState<string | null>(null)
+  const [activeTab, setActiveTab] = useState("webbutveckling");
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function ServicesTab() {
               onClick={() => setActiveTab(service.id)}
               className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap shadow-md transition-all ${
                 activeTab === service.id
-                  ? "scale-100 bg-purple-600 text-white shadow-lg ring-2 ring-purple-400"
+                  ? "scale-100 bg-primary text-background shadow-lg ring-2 ring-purple-400"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300 hover:shadow-lg"
               }`}
             >
@@ -71,7 +71,7 @@ export default function ServicesTab() {
         {servicesDetails.map((section) => (
           <div key={section.id} className="border-b border-gray-300">
             <button
-              className="flex w-full items-center justify-between px-4 py-3 text-left text-lg font-medium text-gray-800 dark:text-white"
+              className="flex w-full items-center justify-between px-4 py-3 text-left text-lg font-medium text-gray-800 dark:text-background"
               onClick={() => setExpanded(expanded === section.id ? null : section.id)}
             >
               {section.title}
@@ -100,16 +100,16 @@ export default function ServicesTab() {
         ))}
       </div>
     </>
-  )
+  );
 }
 
 /* COMPONENTS FOR UI CARDS */
 function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="flex flex-col items-center rounded-lg p-4 text-center shadow-lg dark:bg-gray-800">
-      <div className="text-purple-600">{icon}</div>
+      <div className="text-primary">{icon}</div>
       <h3 className="mt-2 text-lg font-semibold">{title}</h3>
       <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{description}</p>
     </div>
-  )
+  );
 }

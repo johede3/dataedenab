@@ -28,13 +28,12 @@ const Header: React.FC = () => {
   return (
     <header className="fixed top-0 right-0 left-0 z-50 mx-auto h-20 w-full bg-transparent md:absolute">
       <Container className="mx-auto w-full max-w-7xl !px-0">
-        <nav className="mx-auto flex h-16 items-center justify-between bg-white py-2 shadow-md md:bg-transparent sm:px-5 md:py-10 md:shadow-none">
+        <nav className="mx-auto flex h-16 items-center justify-between bg-background py-2 shadow-md md:bg-transparent sm:px-5 md:py-10 md:shadow-none">
           {/* Logo */}
           <Link href="/" className="flex items-center sm:ml-0">
             <Image src="/mainSmall.png" alt="Logo" height={528} width={528} className="h-20 w-auto" />
             <span className="manrope text-foreground cursor-pointer text-xl font-semibold">{siteDetails.siteName}</span>
           </Link>
-
           {/* Desktop Menu */}
           <ul className="hidden space-x-6 md:flex">
             {menuItems.map((link) => {
@@ -59,7 +58,7 @@ const Header: React.FC = () => {
             <li>
               <Link
                 href="/kontakt"
-                className="rounded-full bg-purple-600 px-6 py-2 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
+                className="rounded-full bg-primary px-6 py-2 text-lg font-medium text-background shadow-md transition-all hover:bg-primary-hover"
               >
                 {headerDetails.contactUsCTA}
               </Link>
@@ -71,7 +70,7 @@ const Header: React.FC = () => {
             <button
               onClick={toggleMenu}
               type="button"
-              className="bg-primary flex h-10 w-10 items-center justify-center rounded-full text-white focus:outline-none"
+              className="bg-primary flex h-10 w-10 items-center justify-center rounded-full text-background focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -96,7 +95,7 @@ const Header: React.FC = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div id="mobile-menu" className="bg-white shadow-lg md:hidden">
+        <div id="mobile-menu" className="bg-background shadow-lg md:hidden">
           <ul className="flex flex-col space-y-4 px-6 pt-1 pb-6">
             {menuItems.map((item) => {
               const href = city ? `/${city}${item.url}` : `/${item.url}`;
@@ -117,7 +116,7 @@ const Header: React.FC = () => {
             <li>
               <Link
                 href="/kontakt"
-                className="bg-primary hover:bg-primary-accent block w-fit rounded-full px-5 py-2 text-white"
+                className="bg-primary hover:bg-primary-accent block w-fit rounded-full px-5 py-2 text-background"
                 onClick={toggleMenu}
               >
                 {headerDetails.contactUsCTA}

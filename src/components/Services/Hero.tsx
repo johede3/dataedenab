@@ -1,18 +1,18 @@
-"use client"
-import Link from "next/link"
-import React, { useEffect } from "react"
-import { FiChevronDown } from "react-icons/fi"
-import { servicesSectionsText } from "../../app/data/services"
+"use client";
+import Link from "next/link";
+import React, { useEffect } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import { servicesSectionsText } from "../../app/data/services";
 
 const HeroServices: React.FC = () => {
   useEffect(() => {
     const setVh = () => {
-      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`)
-    }
-    setVh()
-    window.addEventListener("resize", setVh)
-    return () => window.removeEventListener("resize", setVh)
-  }, [])
+      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
+    };
+    setVh();
+    window.addEventListener("resize", setVh);
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
 
   return (
     <section
@@ -28,13 +28,13 @@ const HeroServices: React.FC = () => {
 
       <div className="text-center">
         <h1 className="text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-2xl md:text-6xl md:leading-tight">
-          {servicesSectionsText.title} <span className="text-purple-600">{servicesSectionsText.highlitedText}</span>
+          {servicesSectionsText.title} <span className="text-primary">{servicesSectionsText.highlitedText}</span>
         </h1>
         <p className="text-foreground mx-auto mt-4 max-w-lg">{servicesSectionsText.subtext}</p>
         <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="/kontakt"
-            className="rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-lg transition-all hover:bg-purple-700"
+            className="rounded-full bg-primary px-6 py-3 text-lg font-medium text-background shadow-lg transition-all hover:bg-primary-hover"
           >
             {servicesSectionsText.CTA}
           </Link>
@@ -45,7 +45,7 @@ const HeroServices: React.FC = () => {
         href="#services"
         className="absolute bottom-0 animate-[shake_0.5s_ease-in-out_0.5s_1] transition-transform duration-300 hover:scale-110"
       >
-        <FiChevronDown className="text-black hover:text-purple-600" size={52} />
+        <FiChevronDown className="text-foreground hover:text-primary" size={52} />
       </Link>
 
       <style jsx>{`
@@ -66,7 +66,7 @@ const HeroServices: React.FC = () => {
         }
       `}</style>
     </section>
-  )
-}
+  );
+};
 
-export default HeroServices
+export default HeroServices;

@@ -23,7 +23,7 @@ const CTA: React.FC<HeroProps> = ({
             <div className="absolute top-0 right-0 bottom-0 left-0 rounded-3xl bg-[radial-gradient(circle_600px_at_50%_500px,#1C1C02,transparent)]"></div>
           </div>
 
-          <div className="flex h-full flex-col items-center justify-center px-5 text-center text-white">
+          <div className="flex h-full flex-col items-center justify-center px-5 text-center text-background">
             <h2 className="mb-4 max-w-2xl text-2xl font-semibold sm:text-3xl md:text-5xl md:leading-tight">{title}</h2>
 
             <p className="mx-auto max-w-xl md:px-5">
@@ -33,7 +33,7 @@ const CTA: React.FC<HeroProps> = ({
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:gap-4">
               <Link
                 href="/kontakt"
-                className="rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
+                className="rounded-full bg-primary px-6 py-3 text-lg font-medium text-background shadow-md transition-all hover:bg-primary-hover"
               >
                 {buttonText}
               </Link>

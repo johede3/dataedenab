@@ -32,7 +32,7 @@ const SEOSection: React.FC<SEOSectionProps> = ({ city = "" }) => {
       <div className="mt-10">
         <Link
           href={cityName ? `/${cityName}/seo` : "/search-engine-optimization"}
-          className="rounded-full bg-purple-600 px-6 py-3 font-medium text-white shadow-md transition-all hover:bg-purple-700"
+          className="rounded-full bg-primary px-6 py-3 font-medium text-background shadow-md transition-all hover:bg-primary-hover"
         >
           Läs mer om SEO {getPreposition(city)} {city}
         </Link>

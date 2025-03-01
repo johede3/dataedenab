@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 const About: React.FC = () => {
   return (
@@ -16,13 +16,13 @@ const About: React.FC = () => {
       <div className="mt-6 flex justify-center">
         <Link
           href="/kontakt"
-          className="rounded-full bg-purple-600 px-6 py-3 text-lg font-medium text-white shadow-md transition-all hover:bg-purple-700"
+          className="rounded-full bg-primary px-6 py-3 text-lg font-medium text-background shadow-md transition-all hover:bg-primary-hover"
         >
           Kontakta oss
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

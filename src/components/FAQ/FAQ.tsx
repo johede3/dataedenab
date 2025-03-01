@@ -39,7 +39,7 @@ const FAQ: React.FC<Props> = ({ city }) => {
               <Disclosure>
                 {({ open }) => (
                   <div>
-                    <DisclosureButton className="flex w-full items-center justify-between border-t px-4 pt-7 text-left text-lg">
+                    <DisclosureButton className="flex w-full items-center justify-between border-t px-4 pt-7 text-left text-lg cursor-pointer">
                       <span className="text-2xl font-semibold">{faq.question}</span>
                       {open ? (
                         <BiMinus className="text-secondary h-5 w-5" />
