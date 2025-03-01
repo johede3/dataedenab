@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { FiChevronDown } from "react-icons/fi";
-import { getPreposition } from "../../app/utils";
+import { getCityCategory, getPreposition } from "../../app/utils";
 
 type HeroSEOProps = {
   city: string;
@@ -17,6 +17,32 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
     window.addEventListener("resize", setVh);
     return () => window.removeEventListener("resize", setVh);
   }, []);
+
+  const cityCategory = getCityCategory(city);
+
+  const heroTitle =
+    cityCategory === "large"
+      ? `SEO ${getPreposition(city)} ${city} –`
+      : cityCategory === "growing"
+      ? `SEO ${getPreposition(city)} ${city} – Ta ledningen online`
+      : `SEO ${getPreposition(city)} ${city} –`;
+
+  const heroHighlight =
+    cityCategory === "large"
+      ? ` Dominera Google`
+      : cityCategory === "growing"
+      ? ` innan konkurrensen`
+      : ` Få fler kunder`;
+
+  const heroHeading2 =
+    cityCategory === "large" ? ` & slå konkurrenterna.` : cityCategory === "growing" ? `` : ` från Google lokalt`;
+
+  const heroDescription =
+    cityCategory === "large"
+      ? `Behöver du fler kunder i ${city}? Vi hjälper företag att ranka högre och stärka sitt varumärke online genom avancerade SEO-strategier.`
+      : cityCategory === "growing"
+      ? `SEO är en nyckel för tillväxt i ${city}. Vi hjälper företag att optimera sina hemsidor och ta en ledande position innan konkurrensen hårdnar.`
+      : `SEO i ${city} hjälper småföretag att synas på Google, locka fler kunder och växa online med minimal konkurrens.`;
 
   return (
     <section
@@ -33,16 +59,12 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
       {/* Innehåll */}
       <div className="max-w-3xl text-center">
         <h1 className="text-foreground mx-auto text-3xl font-bold md:text-5xl md:leading-tight">
-          SEO {getPreposition(city)} {city} – Ta din webbplats till
-          <span className="text-primary"> toppositioner på Google</span>
+          {heroTitle}
+          <span className="text-primary">{heroHighlight}</span>
+          {heroHeading2}
         </h1>
 
-        <p className="mx-auto mt-4 text-lg leading-relaxed text-gray-700 md:text-xl">
-          Vill du synas bättre på Google och attrahera fler kunder {getPreposition(city)} {city}? Vi hjälper småföretag
-          och lokala verksamheter {getPreposition(city)} {city} att ranka
-          <span className="text-primary"> högre på Google</span>, få mer trafik och öka sina affärer med beprövade
-          SEO-strategier
-        </p>
+        <p className="mx-auto mt-4 text-lg leading-relaxed text-gray-700 md:text-xl">{heroDescription}</p>
 
         {/* CTA-knappar */}
         <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -50,7 +72,11 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
             href="/kontakt"
             className="rounded-full bg-primary px-6 py-3 text-lg font-medium text-background shadow-lg transition-all hover:bg-primary-hover"
           >
-            Boka en gratis SEO-analys
+            {cityCategory === "large"
+              ? "Boka en expertanalys"
+              : cityCategory === "growing"
+              ? "Ta din webbplats till toppen"
+              : "Se hur du kan synas bättre"}
           </Link>
           <Link
             href="#seo-content"

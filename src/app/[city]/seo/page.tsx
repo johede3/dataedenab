@@ -1,18 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  FaBolt,
-  FaChartLine,
-  FaLocationDot,
-  FaMagnifyingGlass,
-  FaMoneyBillWave,
-  FaPenNib,
-  FaWrench,
-} from "react-icons/fa6";
 import HeroSEO from "../../../components/SEO/Hero";
 import Container from "../../../components/UI/Container/Container";
-import { getPreposition } from "../../utils";
+import { generateCitySEOData } from "../../data/seoPage";
+import { getCityCategory, getPreposition } from "../../utils";
 
 const cities = {
   goteborg: {
@@ -174,70 +166,9 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
   const cityData = cities[city];
   if (!cityData) return notFound();
 
-  const benefits = [
-    {
-      icon: FaMagnifyingGlass,
-      title: "Syns högre på Google",
-      text: `Fler kunder hittar dig när de söker efter dina tjänster i ${cityData.name}.`,
-    },
-    {
-      icon: FaChartLine,
-      title: "Ökad försäljning",
-      text: "Organisk trafik från Google konverterar bättre än betalda annonser.",
-    },
-    {
-      icon: FaMoneyBillWave,
-      title: "Gratis trafik",
-      text: "Till skillnad från annonser ger SEO dig gratis, långsiktig trafik – utan att du behöver betala för varje klick.",
-    },
-  ];
+  const cityCategory = getCityCategory(cityData.name);
 
-  const strategies = [
-    {
-      icon: FaWrench,
-      title: "On-page SEO – Strukturerad och sökoptimerad hemsida",
-      description:
-        "Vi bygger sidor med rätt struktur, rubriker och innehåll så att Google enkelt kan förstå och ranka din webbplats.",
-      points: [
-        "SEO-optimerade titlar och rubriker",
-        "Säljande meta-beskrivningar som ökar klick",
-        "Effektiv internlänkning för bättre indexering",
-      ],
-    },
-    {
-      icon: FaBolt,
-      title: "Teknisk SEO – Snabba och mobilvänliga hemsidor",
-      description:
-        "Vi optimerar din hemsida för snabb laddning, mobilanpassning och säkerhet – viktiga faktorer för högre ranking på Google.",
-      points: [
-        "Laddningstid under 2 sekunder för bättre SEO",
-        "Mobilanpassad design (Mobile-first)",
-        "SSL/HTTPS för säkerhet och förtroende",
-      ],
-    },
-    {
-      icon: FaLocationDot,
-      title: `Lokal SEO – Byggd för att synas ${getPreposition(cityData.name)} ${cityData.name}`,
-      description:
-        "Din hemsida optimeras för lokala sökningar, så att potentiella kunder hittar dig när de söker efter dina tjänster.",
-      points: [
-        "Strukturerat innehåll med lokala sökord",
-        "Optimerad sidstruktur för Google",
-        "SEO-vänlig webbadress och metadata",
-      ],
-    },
-    {
-      icon: FaPenNib,
-      title: "SEO-anpassat innehåll – Texter som rankar på Google",
-      description:
-        "Vi skapar sökmotorvänliga texter som både engagerar besökare och hjälper din hemsida att synas högre i sökresultaten.",
-      points: [
-        "Strukturerade texter med rätt sökord",
-        "Naturliga rubriker som ökar läsbarheten",
-        "Optimerad textlängd och nyckelordsdensitet",
-      ],
-    },
-  ];
+  const { title, description, benefits, strategies } = generateCitySEOData(cityData.name);
 
   return (
     <>
@@ -249,12 +180,9 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
               {/* SEO Sektion */}
               <div className="text-center">
                 <h2 className="text-3xl leading-tight font-bold text-gray-900 md:text-4xl dark:text-gray-100">
-                  SEO {getPreposition(cityData.name)} {cityData.name} – Maximera din synlighet och kundtillväxt
+                  {title}
                 </h2>
-                <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
-                  Behöver du fler kunder från Google? Vi hjälper dig att få mer synlighet, trafik och affärer genom
-                  strategisk SEO.
-                </p>
+                <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-700 dark:text-gray-300">{description}</p>
               </div>
 
               {/* SEO Fördelar - Kortlayout */}
@@ -286,23 +214,69 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                     <h2 className="text-4xl leading-tight font-bold text-gray-900 md:text-5xl dark:text-gray-100">
                       Vill du ranka högre på Google {getPreposition(cityData.name)} {cityData.name}?
                     </h2>
+
                     <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
-                      För att synas högre i sökresultaten krävs mer än bara sökord. En framgångsrik SEO-strategi
-                      inkluderar optimering av innehåll, tekniska justeringar och strategisk länkbyggnad. Vi hjälper dig
-                      att förbättra alla dessa aspekter, så att du kan attrahera fler lokala kunder och växa din
-                      verksamhet.
+                      {cityCategory === "large"
+                        ? `I en konkurrensutsatt marknad som ${cityData.name} är SEO inte längre en lyx – det är en absolut nödvändighet. Stora företag i ${cityData.name} investerar enorma summor i digital marknadsföring, och om din hemsida inte är optimerad för Google kommer du att förlora potentiella kunder till dina konkurrenter.`
+                        : cityCategory === "growing"
+                        ? `SEO i ${cityData.name} ger dig en unik möjlighet att positionera ditt företag digitalt innan konkurrensen blir för hård. Allt fler företag i området börjar förstå vikten av sökmotoroptimering – genom att agera nu kan du skapa en stark digital närvaro innan marknaden blir mättad.`
+                        : `I ${cityData.name} har många företag ännu inte anpassat sig till digital marknadsföring. Detta ger dig en stor fördel! Med en genomtänkt SEO-strategi kan du snabbt dominera lokala sökresultat och säkerställa att ditt företag är det första kunder ser när de söker efter dina tjänster.`}
                     </p>
+
                     <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-                      Många tror att SEO bara handlar om sökord, men en välgjord strategi täcker allt från sidstruktur
-                      och laddningshastighet till lokal synlighet och backlinks.
+                      {cityCategory === "large"
+                        ? `Vi optimerar allt från teknisk SEO, som laddningshastighet och mobilanpassning, till strategisk innehållsplanering och backlink-building. Vår SEO-strategi ser till att din hemsida inte bara rankar högt utan också konverterar besökare till faktiska kunder.`
+                        : cityCategory === "growing"
+                        ? `För att etablera dig digitalt i ${cityData.name} behöver du en SEO-strategi som kombinerar smart innehållsoptimering, teknisk SEO och lokal sökordsanpassning. Vi hjälper dig att implementera en strategi som både ökar din synlighet och stärker ditt varumärke online.`
+                        : `SEO är inte komplicerat när det görs rätt. Vi hjälper småföretag i ${cityData.name} att enkelt förbättra sin ranking genom beprövade metoder såsom optimerade sidtitlar, strukturerade data och mobilvänlig design.`}
                     </p>
+
+                    <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+                      {cityCategory === "large"
+                        ? `Visste du att 75% av användarna aldrig scrollar förbi den första sidan på Google? Om din hemsida inte syns bland de toppresultaten i ${cityData.name}, går du miste om potentiella affärer varje dag.`
+                        : cityCategory === "growing"
+                        ? `SEO är den mest kostnadseffektiva metoden för att driva in nya kunder i ${cityData.name}. Till skillnad från betald annonsering ger SEO långsiktig, gratis trafik som bygger upp din digitala närvaro på ett hållbart sätt.`
+                        : `Fler och fler kunder letar efter lokala företag online. Om din hemsida inte är optimerad för Google kommer potentiella kunder istället att välja konkurrenter som syns högre i sökresultaten.`}
+                    </p>
+
                     <p className="mt-4 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                      Här är några av de viktigaste faktorerna som påverkar din ranking:
+                      {cityCategory === "large"
+                        ? "Här är några av de viktigaste SEO-faktorerna som gör att företag i stora städer som ${cityData.name} lyckas:"
+                        : cityCategory === "growing"
+                        ? `Dessa SEO-strategier hjälper företag i ${cityData.name} att ta ledningen på Google:`
+                        : `SEO-faktorerna som gör att småföretag i ${cityData.name} snabbt kan synas på Google:`}
                     </p>
+
+                    <ul className="mt-4 space-y-2 text-lg">
+                      <li className="flex items-center text-gray-700 dark:text-gray-300">
+                        <span className="mr-2 text-green-500">✓</span>{" "}
+                        {cityCategory === "large"
+                          ? "Teknisk SEO: Optimering av laddningshastighet, mobilanpassning och strukturerad data."
+                          : cityCategory === "growing"
+                          ? `Lokal SEO: Synas i Google Maps och optimering av 'SEO ${cityData.name}' söktermer.`
+                          : "On-page SEO: Optimerade sidtitlar, meta-beskrivningar och rätt sökord."}
+                      </li>
+                      <li className="flex items-center text-gray-700 dark:text-gray-300">
+                        <span className="mr-2 text-green-500">✓</span>{" "}
+                        {cityCategory === "large"
+                          ? "Avancerad innehållsstrategi: Skapa SEO-anpassade blogginlägg och landningssidor."
+                          : cityCategory === "growing"
+                          ? "Snabbindexering: Se till att Google indexerar din hemsida korrekt och snabbt."
+                          : "Strukturerade data: Se till att Google förstår din webbplats innehåll bättre."}
+                      </li>
+                      <li className="flex items-center text-gray-700 dark:text-gray-300">
+                        <span className="mr-2 text-green-500">✓</span>{" "}
+                        {cityCategory === "large"
+                          ? "Länkstrategi: Skapa kvalitativa backlinks för ökad domänauktoritet."
+                          : cityCategory === "growing"
+                          ? "SEO-anpassade landningssidor: Optimering för lokala söktermer."
+                          : "Kundrecensioner och omdömen: Stärker din trovärdighet online."}
+                      </li>
+                    </ul>
                   </div>
                 </div>
 
-                {/* SEO Strategier - Korta boxar direkt under texten */}
+                {/* SEO Strategies - Grid Section */}
                 <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
                   {strategies.map((strategy, index) => {
                     const Icon = strategy.icon;
@@ -315,7 +289,13 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                           <Icon className="text-4xl text-primary" />
                           <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{strategy.title}</h3>
                         </div>
-                        <p className="text-lg text-gray-700 dark:text-gray-300">{strategy.description}</p>
+                        <p className="text-lg text-gray-700 dark:text-gray-300">
+                          {cityCategory === "large"
+                            ? `${strategy.description} Detta är särskilt viktigt i en stad som ${cityData.name}, där konkurrensen om toppositionerna är hög.`
+                            : cityCategory === "growing"
+                            ? `${strategy.description} I ${cityData.name} har företag som satsat på SEO redan sett en markant ökning av sina digitala leads.`
+                            : `${strategy.description} Med rätt strategi kan ditt företag i ${cityData.name} enkelt dominera Google-sökningar lokalt.`}
+                        </p>
                         <ul className="mt-4 space-y-2 text-lg">
                           {strategy.points.map((point, i) => (
                             <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
@@ -331,11 +311,28 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
 
               {/* CTA Sektion - Avslut med en bred block */}
               <div className="mt-16 rounded-xl bg-primary-hover p-6 text-center text-background shadow-md md:p-12 dark:bg-purple-900">
-                <h2 className="text-4xl leading-14 font-bold md:text-5xl">
-                  Vill du synas högst på Google? Börja din SEO-resa idag!
+                <h2 className="text-3xl leading-14 font-bold md:text-4xl">
+                  {cityCategory === "large"
+                    ? `Vill du slå dina konkurrenter ${getPreposition(cityData.name)} ${cityData.name} från Google?`
+                    : cityCategory === "growing"
+                    ? `Vill du synas på Google innan konkurrensen ökar ${getPreposition(cityData.name)} ${
+                        cityData.name
+                      }?`
+                    : `Vill du dominera Google ${getPreposition(cityData.name)} ${cityData.name}? Börja idag!`}
                 </h2>
+
                 <p className="mx-auto mt-4 max-w-3xl text-xl">
-                  Vill du veta hur din hemsida presterar? Boka en gratis SEO-analys och få konkreta förbättringsförslag.
+                  {cityCategory === "large"
+                    ? `SEO är inte bara en strategi – det är en nödvändighet ${getPreposition(cityData.name)} ${
+                        cityData.name
+                      }. Företag som rankar högst på Google får flest kunder. Vi hjälper dig att optimera din webbplats, driva mer trafik och öka din försäljning genom beprövade SEO-metoder.`
+                    : cityCategory === "growing"
+                    ? `SEO ${getPreposition(cityData.name)} ${
+                        cityData.name
+                      } ger dig en unik möjlighet att ta ledningen online innan konkurrensen hårdnar. Genom att optimera din webbplats idag kan du säkerställa en stabil och långsiktig tillväxt.`
+                    : `Konkurrensen ${getPreposition(cityData.name)} ${
+                        cityData.name
+                      } är låg – vilket betyder att du snabbt kan klättra i Google-sökningar och ta över marknaden. SEO är den mest kostnadseffektiva metoden för att locka nya kunder online.`}
                 </p>
 
                 {/* Knappar - Mobilvänlig layout */}
@@ -344,7 +341,11 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
                     href="/kontakt"
                     className="text-md rounded-full bg-background px-8 py-3 font-medium text-primary shadow-md transition-all hover:bg-gray-200"
                   >
-                    Boka en gratis SEO-analys
+                    {cityCategory === "large"
+                      ? "Boka en expertanalys"
+                      : cityCategory === "growing"
+                      ? "Få en gratis SEO-analys"
+                      : "Börja synas idag"}
                   </Link>
                   <Link
                     href="/services"
