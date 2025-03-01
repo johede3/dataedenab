@@ -53,8 +53,8 @@ export function getFullCity(city: string): string {
   return citiesWithPa.includes(city) ? `på ${city}` : `i ${city}`;
 }
 
-const largeBusinessCities = ["Göteborg", "Borås", "Trollhättan", "Skövde", "Uddevalla"];
-const growingCities = [
+export const largeBusinessCities = ["Göteborg", "Borås", "Trollhättan", "Skövde", "Uddevalla"];
+export const growingCities = [
   "Kungsbacka",
   "Mölndal",
   "Partille",
@@ -66,12 +66,22 @@ const growingCities = [
   "Mariestad",
   "Alingsås",
 ];
-const smallLocalCities = ["Orust", "Tjörn", "Lysekil", "Strömstad", "Falkoping", "Hjo", "Ulricehamn", "Munkedal"];
+
+export const smallLocalCities = [
+  "Orust",
+  "Tjörn",
+  "Lysekil",
+  "Strömstad",
+  "Falkoping",
+  "Hjo",
+  "Ulricehamn",
+  "Munkedal",
+];
 
 export const getCTAContent = (slug: string) => {
   if (largeBusinessCities.includes(slug)) {
     return {
-      title: "Vill du ha en skräddarsydd digital lösning?",
+      title: "Vill du ha en unik digital lösning?",
       button: "Kontakta oss för ett premiumförslag",
     };
   }
@@ -122,4 +132,11 @@ export const getFeaturesByCityType = (slug: string) => {
     title: `Varför behöver företag i ${slug} en professionell hemsida?`,
     description: `Vi skapar moderna, mobilanpassade och SEO-optimerade webbplatser som gör att företag i ${slug} syns på Google och lockar fler kunder.`,
   };
+};
+
+export const getCityCategory = (city: string) => {
+  if (largeBusinessCities.includes(city)) return "large";
+  if (growingCities.includes(city)) return "growing";
+  if (smallLocalCities.includes(city)) return "small";
+  return "default";
 };

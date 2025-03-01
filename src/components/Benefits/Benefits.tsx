@@ -1,4 +1,4 @@
-import { benefits } from "../../app/data/benefits";
+import { getBenefits } from "../../app/data/benefits";
 import { getPreposition } from "../../app/utils";
 import BenefitSection from "./BenefitSection";
 
@@ -11,6 +11,7 @@ type BenefitsProps = {
 };
 
 const Benefits: React.FC<BenefitsProps> = ({ city }) => {
+  const benefits = getBenefits(city ?? "");
   return (
     <div className="mt-10 space-y-16">
       {benefits.map((item, index) => (

@@ -158,34 +158,39 @@ export async function generateMetadata({
     title: cityData.title,
     description: cityData.description,
     keywords: [
+      `Webbyrå ${cityData.name}`,
+      `Hemsida företag ${cityData.name}`,
       `Webbutveckling ${cityData.name}`,
-      `Hemsidor småföretag ${cityData.name}`,
+      `SEO byrå ${cityData.name}`,
+      `Sökmotoroptimering ${cityData.name}`,
       `Webbdesign ${cityData.name}`,
       `Apputveckling ${cityData.name}`,
-      `App ${cityData.name}`,
       `Skapa hemsida ${cityData.name}`,
-      `Webbyrå ${cityData.name}`,
-      `Bästa webbyrån ${getPreposition(cityData.name)} ${cityData.name}`,
-      `Synas på Google ${getPreposition(cityData.name)} ${cityData.name}`,
+      `Köpa hemsida ${cityData.name}`,
+      `Synas på Google ${cityData.name}`,
     ],
     openGraph: {
       url: `https://dataeden.se/${city}`,
-      title: cityData.title,
-      description: cityData.description,
+      title: `Webbutveckling & SEO ${getPreposition(cityData.name)} ${cityData.name} – Dataeden`,
+      description: `Söker du en webbyrå ${getPreposition(cityData.name)} ${
+        cityData.name
+      }? Vi skapar moderna hemsidor, appar & SEO-strategier för företag som vill synas online.`,
       siteName: "Dataeden",
       images: [
         {
           width: 1200,
           height: 630,
           url: "https://dataeden.se/images/logo.png",
-          alt: `Webbutveckling ${getPreposition(cityData.name)} ${cityData.name}`,
+          alt: `Webbutveckling & SEO ${cityData.name}`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: cityData.title,
-      description: cityData.description,
+      title: `Webbutveckling & SEO ${getPreposition(cityData.name)} ${cityData.name} – Dataeden`,
+      description: `Behöver ditt företag en hemsida eller bättre synlighet på Google? Dataeden hjälper företag ${getPreposition(
+        cityData.name,
+      )} ${cityData.name} att växa digitalt.`,
       images: ["https://dataeden.se/images/logo.png"],
     },
   };
@@ -225,7 +230,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
                 }}
               />
             )}
-            {section.id === "pricing" && <Pricing />}
+            {section.id === "pricing" && <Pricing city={cityData.name} />}
             {section.id === "projects" && (
               <div className="w-full overflow-x-hidden">
                 <Projects />

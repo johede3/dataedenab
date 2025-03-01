@@ -1,9 +1,9 @@
-import { Metadata } from "next"
-import { FiCheckCircle, FiCode, FiGlobe, FiShield, FiSmartphone, FiTrendingUp } from "react-icons/fi"
-import CTA from "../../components/CTA/CTA"
-import Section from "../../components/Section/Section"
-import HeroServices from "../../components/Services/Hero"
-import Container from "../../components/UI/Container/Container"
+import { Metadata } from "next";
+import { FiCheckCircle, FiCode, FiGlobe, FiShield, FiSmartphone, FiTrendingUp } from "react-icons/fi";
+import CTA from "../../components/CTA/CTA";
+import Section from "../../components/Section/Section";
+import HeroServices from "../../components/Services/Hero";
+import Container from "../../components/UI/Container/Container";
 
 const services = [
   {
@@ -72,7 +72,7 @@ const services = [
     ],
     icon: <FiShield size={28} className="text-gray-700" />,
   },
-]
+];
 
 export const metadata: Metadata = {
   title: "Webbutveckling & Apputveckling – Skräddarsydda lösningar | Dataeden",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
       "Behöver du en modern hemsida eller app? Vi skapar skräddarsydda lösningar som är snabba, mobilvänliga och SEO-optimerade.",
     images: [{ width: 1200, height: 630, url: "https://dataeden.se/favi/android-chrome-512x512.png" }],
   },
-}
+};
 
 export default function Services() {
   return (
@@ -175,5 +175,5 @@ export default function Services() {
         <CTA />
       </Container>
     </>
-  )
+  );
 }

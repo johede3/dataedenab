@@ -16,30 +16,32 @@ import Container from "../components/UI/Container/Container";
 import { getCTAContent } from "./utils";
 
 export const metadata: Metadata = {
-  title: " Webbutveckling & Digitala Lösningar i Västra Götaland – Dataeden",
+  title: "Webbutveckling, SEO & Apputveckling – Dataeden | Webbyrå i Sverige",
   description:
-    "Vi hjälper småföretag i Göteborg, Kungälv, Kungsbacka och hela Västra Götaland att växa online med moderna hemsidor och appar.",
+    "Dataeden är en webbyrå som hjälper företag i Sverige med professionell webbutveckling, SEO och apputveckling. Unika lösningar för företag som vill växa online.",
   keywords: [
-    `Webbutveckling `,
-    `Hemsida småföretag`,
-    `Webbdesign`,
-    "Webbapplikationer",
     `Webbyrå`,
-    "Egen hemsida",
+    `Webbdesign`,
+    `Webbutveckling`,
     `Apputveckling`,
+    "sökmotoroptimering",
+    "SEO byrå",
+    "hemsida företag",
+    "köpa hemsida",
+    "UX design",
     `Skapa hemsida`,
-    `Synas på Google `,
   ],
   twitter: {
     card: "summary_large_image",
     site: "@dataeden",
-    title: "Dataeden – Professionell Webbutveckling i Västra Götaland",
-    description: "Från hemsidor till appar – vi hjälper småföretag att lyckas online.",
+    title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar i Sverige",
+    description: "Vi skapar moderna hemsidor och appar för företag i hela Sverige.",
   },
   openGraph: {
     url: "https://dataeden.se/",
-    title: "Dataeden – Webbutveckling för Småföretag i Västra Götaland",
-    description: "Skräddarsydda hemsidor & appar för företag i Göteborg, Kungälv, Kungsbacka och fler orter.",
+    title: "Dataeden – Webbutveckling & SEO för Företag i Sverige",
+    description:
+      "Unika hemsidor, appar och SEO-lösningar för företag som vill växa digitalt. Vi erbjuder webbutveckling och digital strategi i hela Sverige.",
     images: [
       {
         width: 1200,
@@ -78,7 +80,7 @@ export default function Web() {
                 }}
               />
             )}
-            {section.id === "pricing" && <Pricing />}
+            {section.id === "pricing" && <Pricing city={""} />}
             {section.id === "projects" && (
               <div className="w-full overflow-x-hidden">
                 <Projects />

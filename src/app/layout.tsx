@@ -10,18 +10,20 @@ const manrope = Manrope({ subsets: ["latin"], display: "swap" });
 const sourceSans = Source_Sans_3({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
-  title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar",
+  title: "Dataeden – Professionell Webbutveckling & SEO i Sverige",
   description:
-    "Skräddarsydda hemsidor, apputveckling och SEO-optimerade webblösningar för företag. Vi hjälper dig att synas på Google och nå fler kunder online.",
+    "Behöver du en snabb, mobilvänlig och SEO-optimerad hemsida? Vi hjälper företag att synas på Google och växa digitalt med modern webbutveckling & SEO-strategier.",
   keywords: [
+    "Webbyrå",
     "Webbutveckling",
-    "Hemsidor småföretag",
-    "Skräddarsydda webblösningar",
-    "Webbdesign",
-    "SEO optimering",
-    "Webbapplikationer",
+    "SEO-tjänster",
+    "Skapa hemsida",
+    "Köpa hemsida",
+    "E-handel utveckling",
+    "Apputveckling",
+    "UX design",
+    "Digital marknadsföring",
     "Mobilanpassade hemsidor",
-    "E-handelslösningar",
   ],
   authors: [
     {
@@ -33,23 +35,23 @@ export const metadata = {
     type: "website",
     locale: "sv_SE",
     url: siteDetails.siteUrl,
-    title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar",
+    title: "Dataeden – Webbutveckling & SEO för Företag i Sverige",
     description:
-      "Skräddarsydda hemsidor och digitala lösningar för företag. Vi bygger snabba, mobilvänliga och SEO-optimerade webbplatser.",
+      "Vi bygger skräddarsydda hemsidor, appar och SEO-strategier för företag som vill dominera den digitala marknaden.",
     siteName: "Dataeden",
     images: [
       {
         url: "https://dataeden.se/favi/android-chrome-512x512.png",
         width: 512,
         height: 512,
-        alt: "Dataeden – Professionell webbutveckling och SEO",
+        alt: "Dataeden – Webbutveckling & SEO för företag",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar",
-    description: "Skräddarsydda hemsidor och SEO-optimering för företag som vill växa online.",
+    title: "Dataeden – Webbutveckling & SEO för Företag i Sverige",
+    description: "Snabba och optimerade hemsidor som gör att ditt företag syns online och når fler kunder.",
     images: ["https://dataeden.se/favi/android-chrome-512x512.png"],
   },
   icons: {

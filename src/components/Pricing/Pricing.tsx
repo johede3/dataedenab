@@ -1,11 +1,15 @@
-import Link from "next/link"
-import { pricingDetails, pricingPlans } from "../../app/data/pricing"
+import Link from "next/link";
+import { getPricingPlans, pricingDetails } from "../../app/data/pricing";
 
-const Pricing: React.FC = () => {
+type PricingProps = {
+  city: string;
+};
+
+const Pricing: React.FC<PricingProps> = ({ city }) => {
   return (
     <>
       <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
-        {pricingPlans.map((plan, index) => (
+        {getPricingPlans(city).map((plan, index) => (
           <div
             key={index}
             className="mx-auto w-full max-w-sm rounded-xl border border-gray-200 bg-white p-6 shadow-lg dark:bg-gray-800"
@@ -30,7 +34,7 @@ const Pricing: React.FC = () => {
         </Link>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Pricing
+export default Pricing;

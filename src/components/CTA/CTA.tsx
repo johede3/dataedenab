@@ -10,7 +10,11 @@ type HeroProps = {
   city?: string;
 };
 
-const CTA: React.FC<HeroProps> = ({ city, title, buttonText }) => {
+const CTA: React.FC<HeroProps> = ({
+  city,
+  title = "Bygg en modern, snabb och SEO-optimerad hemsida för ditt företag.",
+  buttonText = "Boka gratis konsultation",
+}) => {
   return (
     <section id="cta" className="mt-10 mb-5 lg:my-20">
       <div className="relative z-10 mx-auto h-full w-full py-12 sm:py-20">
