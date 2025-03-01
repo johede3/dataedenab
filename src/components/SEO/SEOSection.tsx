@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { FiGlobe, FiSearch, FiTrendingUp } from "react-icons/fi"
-import { getPreposition } from "../../app/utils"
+import Link from "next/link";
+import { FiGlobe, FiSearch, FiTrendingUp } from "react-icons/fi";
+import { getPreposition } from "../../app/utils";
 
 const seoBenefits = [
   {
@@ -18,13 +18,13 @@ const seoBenefits = [
     description: "Snabba och användarvänliga sidor konverterar fler besökare till kunder.",
     icon: <FiSearch size={26} />,
   },
-]
+];
 
 type SEOSectionProps = {
-  city?: string
-}
+  city?: string;
+};
 
-const SEOSection: React.FC<SEOSectionProps> = ({ city = "Göteborg med omnejd" }) => {
+const SEOSection: React.FC<SEOSectionProps> = ({ city = "" }) => {
   return (
     <div className="mx-auto max-w-5xl px-6 text-center">
       {/* SEO Benefits Grid */}
@@ -48,7 +48,7 @@ const SEOSection: React.FC<SEOSectionProps> = ({ city = "Göteborg med omnejd" }
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SEOSection
+export default SEOSection;

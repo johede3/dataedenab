@@ -1,14 +1,13 @@
-import { GoogleAnalytics } from "@next/third-parties/google"
-import { Manrope, Source_Sans_3 } from "next/font/google"
-import Script from "next/script"
-import "styles/tailwind.css"
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Manrope, Source_Sans_3 } from "next/font/google";
+import "styles/tailwind.css";
 
-import Footer from "../components/UI/Shared/Footer"
-import Header from "../components/UI/Shared/Header"
-import { siteDetails } from "./data/siteDetails"
+import Footer from "../components/UI/Shared/Footer";
+import Header from "../components/UI/Shared/Header";
+import { siteDetails } from "./data/siteDetails";
 
-const manrope = Manrope({ subsets: ["latin"], display: "swap" })
-const sourceSans = Source_Sans_3({ subsets: ["latin"], display: "swap" })
+const manrope = Manrope({ subsets: ["latin"], display: "swap" });
+const sourceSans = Source_Sans_3({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Dataeden – Webbutveckling, SEO & Digitala Lösningar",
@@ -65,7 +64,7 @@ export const metadata = {
     shortcut: "/favicon.ico",
   },
   metadataBase: new URL(siteDetails.siteUrl),
-}
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -73,10 +72,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preload" href="/images/BSHsmall.webp" as="image" type="image/webp" />
         {/* Schema Markup för Google */}
-        <Script
-          id="structured-data"
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -100,11 +97,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${manrope.className} ${sourceSans.className} antialiased`}>
-        {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
+        <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />
         <Header />
         <main>{children}</main>
         <Footer />
       </body>
     </html>
-  )
+  );
 }

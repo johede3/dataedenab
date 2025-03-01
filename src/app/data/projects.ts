@@ -25,8 +25,8 @@ export const projects = [
   },
   {
     name: "Dataeden.se",
-    description: "Min egen hemsida, skapad för att hjälpa företag med modern webbutveckling och SEO.",
+    description: "Vår egna hemsida, skapad för att hjälpa företag med modern webbutveckling och SEO.",
     img: "/images/projects/dataeden.png",
     url: "https://dataeden.se",
   },
-]
+];

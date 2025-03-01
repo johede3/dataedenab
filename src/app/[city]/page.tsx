@@ -1,149 +1,158 @@
-import { Metadata } from "next"
-import { notFound } from "next/navigation"
-import About from "../../components/About/About"
-import Benefits, { replaceCityPlaceholder } from "../../components/Benefits/Benefits"
-import CTA from "../../components/CTA/CTA"
-import Hero from "../../components/Hero/Hero"
-import { ItemScroll } from "../../components/Idea/ItemScroll"
-import Pricing from "../../components/Pricing/Pricing"
-import { Projects } from "../../components/Projects/Projects"
-import Section from "../../components/Section/Section"
-import SEOSection from "../../components/SEO/SEOSection"
-import Container from "../../components/UI/Container/Container"
-import { landingSections } from "../data/landing"
-import { getPreposition } from "../utils"
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import About from "../../components/About/About";
+import Benefits, { replaceCityPlaceholder } from "../../components/Benefits/Benefits";
+import CTA from "../../components/CTA/CTA";
+import FAQ from "../../components/FAQ/FAQ";
+import Hero from "../../components/Hero/Hero";
+import { ItemScroll } from "../../components/Idea/ItemScroll";
+import Pricing from "../../components/Pricing/Pricing";
+import { Projects } from "../../components/Projects/Projects";
+import Section from "../../components/Section/Section";
+import SEOSection from "../../components/SEO/SEOSection";
+import Container from "../../components/UI/Container/Container";
+import { landingSections } from "../data/landing";
+import { getCTAContent, getPreposition } from "../utils";
 
 const cities = {
   goteborg: {
     name: "Göteborg",
-    title: "Dataeden – Webbutveckling i Göteborg",
-    description: "Skräddarsydda hemsidor & appar för företag i Göteborg.",
+    title: "SEO Göteborg – Webbutveckling & Sökmotoroptimering | Dataeden",
+    description:
+      "Dataeden är en webbyrå i Göteborg som bygger SEO-optimerade hemsidor för företag. Skapa en snabb & mobilvänlig hemsida idag!",
   },
   kungalv: {
     name: "Kungälv",
-    title: "Dataeden – Webbutveckling i Kungälv",
-    description: "Hemsidor & appar för företag i Kungälv – vi bygger din digitala framtid.",
+    title: "Webbyrå i Kungälv – Skapa Hemsida & SEO-tjänster | Dataeden",
+    description: "Få en snygg, snabb & SEO-optimerad hemsida i Kungälv. Vi hjälper företag att ranka högre på Google.",
   },
   orust: {
     name: "Orust",
-    title: "Dataeden – Webbutveckling på Orust",
-    description: "Vi hjälper företag på Orust att etablera sig online med professionella hemsidor.",
+    title: "Webbutveckling på Orust – SEO & Hemsidor | Dataeden",
+    description: "Dataeden skapar moderna, SEO-optimerade hemsidor för företag på Orust. Kontakta oss för en offert!",
   },
   kungsbacka: {
     name: "Kungsbacka",
-    title: "Dataeden – Webbutveckling i Kungsbacka",
-    description: "Vi hjälper företag i Kungsbacka att etablera sig online med professionella hemsidor.",
+    title: "Webbyrå i Kungsbacka – Sökmotoroptimering & Hemsidor | Dataeden",
+    description:
+      "Behöver du en hemsida? Vi skapar SEO-optimerade webbplatser som får företag i Kungsbacka att synas online.",
   },
   molndal: {
     name: "Mölndal",
-    title: "Dataeden – Webbutveckling i Mölndal",
-    description: "Vi skapar moderna webbplatser för företag i Mölndal och Västra Götaland.",
+    title: "Webbutveckling i Mölndal – Skapa Hemsida som Syns | Dataeden",
+    description: "Bygg en snabb, responsiv & SEO-optimerad hemsida i Mölndal. Vi hjälper företag att lyckas digitalt!",
   },
   partille: {
     name: "Partille",
-    title: "Dataeden – Webbutveckling i Partille",
-    description: "Hemsidor och digitala lösningar för företag i Partille.",
+    title: "Webbyrå i Partille – SEO-optimerade Hemsidor | Dataeden",
+    description: "Få en mobilvänlig hemsida i Partille. Våra SEO-experter hjälper dig att synas högre på Google.",
   },
   lerum: {
     name: "Lerum",
-    title: "Dataeden – Webbutveckling i Lerum",
-    description: "Vi bygger skräddarsydda hemsidor och appar för företag i Lerum.",
+    title: "Webbutveckling i Lerum – SEO-optimerade Hemsidor | Dataeden",
+    description:
+      "Vi skapar snabba, mobilvänliga och SEO-optimerade hemsidor för företag i Lerum. Öka din synlighet på Google!",
   },
   ale: {
     name: "Ale",
-    title: "Dataeden – Webbutveckling i Ale",
-    description: "SEO-optimerade hemsidor för företag i Ale och Västra Götaland.",
+    title: "SEO byrå i Ale – Sökmotoroptimering & Webbutveckling | Dataeden",
+    description: "Behöver du en SEO-optimerad hemsida? Vi hjälper företag i Ale att skapa bättre synlighet på Google.",
   },
   stenungsund: {
     name: "Stenungsund",
-    title: "Dataeden – Webbutveckling i Stenungsund",
-    description: "Professionell webbutveckling och SEO-tjänster för företag i Stenungsund.",
+    title: "Webbutveckling i Stenungsund – SEO & Sökmotoroptimering | Dataeden",
+    description:
+      "Få fler kunder online med en SEO-optimerad hemsida och webbutveckling i Stenungsund. Kontakta oss idag!",
   },
   tjorn: {
     name: "Tjörn",
-    title: "Dataeden – Webbutveckling på Tjörn",
-    description: "Vi hjälper företag på Tjörn att bygga snygga och funktionella webbplatser.",
+    title: "SEO Tjörn – Webbutveckling & Digital Marknadsföring | Dataeden",
+    description:
+      "Vi hjälper företag på Tjörn att bygga snygga, responsiva och SEO-anpassade hemsidor för bättre synlighet online.",
   },
   boras: {
     name: "Borås",
-    title: "Dataeden – Webbutveckling i Borås",
-    description: "Moderna, mobilanpassade hemsidor för företag i Borås.",
+    title: "Webbyrå i Borås – Skapa en SEO-optimerad Hemsida | Dataeden",
+    description:
+      "Behöver du en ny hemsida i Borås? Vi bygger sökmotorvänliga och mobilanpassade webbplatser för företag.",
   },
   trollhattan: {
     name: "Trollhättan",
-    title: "Dataeden – Webbutveckling i Trollhättan",
-    description: "Skräddarsydda webblösningar för företag i Trollhättan.",
+    title: "Webbutveckling i Trollhättan – SEO & Hemsida Pris | Dataeden",
+    description: "Vill du ha en ny hemsida i Trollhättan? Vi bygger SEO-optimerade hemsidor till transparenta priser.",
   },
   uddevalla: {
     name: "Uddevalla",
-    title: "Dataeden – Webbutveckling i Uddevalla",
-    description: "Professionell webbutveckling och SEO-optimerade hemsidor i Uddevalla.",
+    title: "SEO Uddevalla – Webbutveckling & Sökmotoroptimering | Dataeden",
+    description:
+      "Bygg en professionell hemsida i Uddevalla med smart SEO. Vi hjälper dig att öka din synlighet online.",
   },
   alingsas: {
     name: "Alingsås",
-    title: "Dataeden – Webbutveckling i Alingsås",
-    description: "Vi hjälper företag i Alingsås att digitalisera sin verksamhet med moderna webbplatser.",
+    title: "Webbutveckling i Alingsås – SEO & Digital Marknadsföring | Dataeden",
+    description:
+      "Dataeden skapar SEO-optimerade webbplatser som hjälper företag i Alingsås att synas bättre på Google.",
   },
   skovde: {
     name: "Skövde",
-    title: "Dataeden – Webbutveckling i Skövde",
-    description: "Vi skapar moderna och SEO-optimerade hemsidor för företag i Skövde.",
+    title: "SEO Skövde – Webbutveckling & Sökmotoroptimering | Dataeden",
+    description: "Vill du synas bättre på Google? Vi erbjuder webbutveckling och SEO-tjänster i Skövde.",
   },
   vanersborg: {
     name: "Vänersborg",
-    title: "Dataeden – Webbutveckling i Vänersborg",
-    description: "Skräddarsydd webbutveckling och digitala lösningar för företag i Vänersborg.",
+    title: "Webbutveckling i Vänersborg – SEO & Hemsidor | Dataeden",
+    description: "Dataeden skapar SEO-optimerade hemsidor för företag i Vänersborg. Kontakta oss för en offert.",
   },
   lidkoping: {
     name: "Lidköping",
-    title: "Dataeden – Webbutveckling i Lidköping",
-    description: "Professionella hemsidor och digitala lösningar för företag i Lidköping.",
+    title: "SEO Lidköping – Webbutveckling & Digital Marknadsföring | Dataeden",
+    description: "Bygg en hemsida i Lidköping som rankar högt på Google. SEO & webbutveckling för företag.",
   },
   mariestad: {
     name: "Mariestad",
-    title: "Dataeden – Webbutveckling i Mariestad",
-    description: "SEO-optimerade hemsidor och digitala lösningar för företag i Mariestad.",
+    title: "SEO Mariestad – Webbutveckling & Sökmotoroptimering | Dataeden",
+    description: "Få en SEO-optimerad hemsida i Mariestad och förbättra din digitala synlighet med Dataeden.",
   },
   lysekil: {
     name: "Lysekil",
-    title: "Dataeden – Webbutveckling på Lysekil",
-    description: "Vi bygger mobilanpassade och SEO-optimerade hemsidor för företag på Lysekil.",
+    title: "Webbutveckling på Lysekil – SEO & Digital Marknadsföring | Dataeden",
+    description: "Vi skapar snabba, mobilvänliga hemsidor för företag på Lysekil. SEO-optimerade för bästa synlighet!",
   },
   stromstad: {
     name: "Strömstad",
-    title: "Dataeden – Webbutveckling i Strömstad",
-    description: "Få fler kunder online med en modern och sökmotorvänlig hemsida i Strömstad.",
+    title: "SEO Strömstad – Webbutveckling & Hemsidor | Dataeden",
+    description: "Få fler kunder med en modern och sökmotorvänlig hemsida i Strömstad. Vi hjälper dig synas online.",
   },
   falkoping: {
     name: "Falköping",
-    title: "Dataeden – Webbutveckling i Falköping",
-    description: "Skräddarsydda hemsidor för företag i Falköping – optimerade för både desktop och mobil.",
+    title: "Webbutveckling i Falköping – SEO & Mobilanpassade Hemsidor | Dataeden",
+    description: "Bygg en modern hemsida i Falköping. SEO-optimerade för både desktop och mobil.",
   },
   hjo: {
     name: "Hjo",
-    title: "Dataeden – Webbutveckling på Hjo",
-    description: "Bygg en stark digital närvaro med en professionell hemsida för ditt företag i Hjo.",
+    title: "Webbutveckling i Hjo – Skapa Hemsida med SEO | Dataeden",
+    description: "Dataeden skapar moderna, SEO-optimerade hemsidor för företag i Hjo. Kontakta oss idag!",
   },
   ulricehamn: {
     name: "Ulricehamn",
-    title: "Dataeden – Webbutveckling i Ulricehamn",
-    description: "SEO-optimerade och konverteringsvänliga hemsidor för företag i Ulricehamn.",
+    title: "SEO Ulricehamn – Webbutveckling & Digital Marknadsföring | Dataeden",
+    description: "Vill du synas högre på Google? Vi erbjuder SEO & webbutveckling i Ulricehamn.",
   },
   munkedal: {
     name: "Munkedal",
-    title: "Dataeden – Webbutveckling i Munkedal",
-    description: "Vi hjälper företag i Munkedal att synas online med moderna och snabba hemsidor.",
+    title: "Webbutveckling i Munkedal – SEO-optimerade Hemsidor | Dataeden",
+    description: "Bygg en snygg och snabb hemsida i Munkedal. SEO-optimerad för bättre ranking på Google.",
   },
-}
+};
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ city: keyof typeof cities }>
+  params: Promise<{ city: keyof typeof cities }>;
 }): Promise<Metadata> {
-  const { city } = await params
-  const cityData = cities[city]
-  if (!cityData) return notFound()
+  const { city } = await params;
+  const cityData = cities[city];
+  if (!cityData) return notFound();
 
   return {
     title: cityData.title,
@@ -180,26 +189,29 @@ export async function generateMetadata({
       description: cityData.description,
       images: ["https://dataeden.se/images/logo.png"],
     },
-  }
+  };
 }
 
 export default async function CityPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
-  const { city } = await params
-  const cityData = cities[city]
-  if (!cityData) return notFound()
+  const { city } = await params;
+  const cityData = cities[city];
+  if (!cityData) return notFound();
+
+  const sections = landingSections(cityData.name);
+  const cta = getCTAContent(cityData.name);
 
   return (
     <>
       <Hero city={cityData.name} />
       <Container>
-        {landingSections.map((section) => (
+        {sections.map((section) => (
           <Section
             key={section.id}
             id={section.id}
             title={replaceCityPlaceholder(section.title, cityData.name ? getPreposition(cityData.name) : "")}
             description={replaceCityPlaceholder(
               section.description,
-              cityData.name ? getPreposition(cityData.name) : ""
+              cityData.name ? getPreposition(cityData.name) : "",
             )}
           >
             {section.id === "features" && <Benefits city={cityData.name} />}
@@ -224,38 +236,14 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
           </Section>
         ))}
 
-        <section id="faq" className="flex flex-col gap-2">
-          <details className="rounded-lg bg-gray-100 p-4">
-            <summary className="cursor-pointer font-medium">Hur får jag mitt företag att synas på Google?</summary>
-            <p className="mt-2 text-gray-600">
-              För att synas på Google behöver du en hemsida som laddar snabbt, funkar på mobilen och har rätt texter och
-              bilder. Vi hjälper dig att komma högre upp i sökresultaten utan att du behöver betala för annonser.
-            </p>
-          </details>
+        <FAQ city={cityData.name} />
 
-          <details className="rounded-lg bg-gray-100 p-4">
-            <summary className="cursor-pointer font-medium">Måste jag ha SEO på min hemsida?</summary>
-            <p className="mt-2 text-gray-600">
-              Ja, om du vill att folk ska hitta ditt företag på Google. Utan SEO hamnar din hemsida långt ner i
-              sökresultaten och kunderna hittar dina konkurrenter istället. Vi kan hjälpa dig att ranka högre.
-            </p>
-          </details>
-
-          <details className="rounded-lg bg-gray-100 p-4">
-            <summary className="cursor-pointer font-medium">Kan jag göra en hemsida själv?</summary>
-            <p className="mt-2 text-gray-600">
-              Ja, det finns gratis verktyg som Wix och WordPress, men de har begränsningar. En proffsig hemsida byggd av
-              en webbyrå ser bättre ut, laddar snabbare och får fler kunder.
-            </p>
-          </details>
-        </section>
-
-        <CTA city={cityData.name} />
+        <CTA title={cta.title} buttonText={cta.button} city={cityData.name} />
       </Container>
     </>
-  )
+  );
 }
 
 export function generateStaticParams() {
-  return Object.keys(cities).map((city) => ({ city }))
+  return Object.keys(cities).map((city) => ({ city }));
 }
