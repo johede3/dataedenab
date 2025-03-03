@@ -1,8 +1,7 @@
 import Link from "next/link";
 
 import { ctaDetails } from "../../app/data/cta";
-import { getPreposition } from "../../app/utils";
-import { replaceCityPlaceholder } from "../Benefits/Benefits";
+import { getPreposition, replaceCityPlaceholder } from "../../app/utils";
 
 type HeroProps = {
   title?: string;

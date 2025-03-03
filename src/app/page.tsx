@@ -1,19 +1,20 @@
 import { Metadata } from "next";
 
 import About from "../components/About/About";
-import Benefits, { replaceCityPlaceholder } from "../components/Benefits/Benefits";
+
 import CTA from "../components/CTA/CTA";
 import FAQ from "../components/FAQ/FAQ";
 import { landingSections } from "./data/landing";
 
+import Benefits from "../components/Benefits/Benefits";
 import Hero from "../components/Hero/Hero";
 import { ItemScroll } from "../components/Idea/ItemScroll";
 import Pricing from "../components/Pricing/Pricing";
-import { Projects } from "../components/Projects/Projects";
+import Projects from "../components/Projects/Projects";
 import Section from "../components/Section/Section";
 import SEOSection from "../components/SEO/SEOSection";
 import Container from "../components/UI/Container/Container";
-import { getCTAContent } from "./utils";
+import { getCTAContent, replaceCityPlaceholder } from "./utils";
 
 export const metadata: Metadata = {
   title: "Webbutveckling, SEO & Apputveckling – Dataeden | Webbyrå i Sverige",

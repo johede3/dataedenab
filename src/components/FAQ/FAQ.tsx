@@ -4,8 +4,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { faqDetails } from "../../app/data/faq";
 import { faqSection } from "../../app/data/faqSection";
-import { getPreposition } from "../../app/utils";
-import { replaceCityPlaceholder } from "../Benefits/Benefits";
+import { getPreposition, replaceCityPlaceholder } from "../../app/utils";
 import SectionTitle from "../Section/SectionTitle";
 
 type Props = {

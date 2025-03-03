@@ -1,34 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useMemo } from "react";
 
 import { heroDetails } from "../../app/data/hero";
-import { getPreposition } from "../../app/utils";
-import { replaceCityPlaceholder } from "../Benefits/Benefits";
+import { getPreposition, replaceCityPlaceholder } from "../../app/utils";
 
 type HeroProps = {
   city?: string;
 };
 
 const Hero: React.FC<HeroProps> = ({ city }) => {
-  const hero = heroDetails(city ? city : "");
+  const hero = useMemo(() => heroDetails(city || ""), [city]);
+
+  const cityPreposition = useMemo(() => (city ? `${getPreposition(city)} ${city} ` : ""), [city]);
+
   return (
     <section id="hero" className="relative flex items-center justify-center px-5 pt-26 pb-0 md:pt-40">
-      <div className="absolute top-0 bottom-0 left-0 -z-10 w-full">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10">
         <div className="bg-hero-background absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div>
       </div>
 
-      <div className="absolute right-0 bottom-0 left-0 h-40 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)] backdrop-blur-[2px]"></div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)] backdrop-blur-[2px]"></div>
 
+      {/* Content */}
       <div className="text-center">
         <h1 className="text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-4xl md:text-6xl md:leading-tight">
-          {replaceCityPlaceholder(hero.heading, city ? `${getPreposition(city)} ${city} ` : "")}
+          {replaceCityPlaceholder(hero.heading, cityPreposition)}
           <span className="text-primary">{hero.highlight}</span>
           <br />
           {hero.heading2}
         </h1>
         <p className="text-foreground mx-auto mt-4 max-w-lg">{replaceCityPlaceholder(hero.subheading, city)}</p>
-        {/* CTA-knappar */}
+
+        {/* CTA Buttons */}
         <div className="mx-auto mt-6 flex w-fit flex-col items-center gap-2 sm:flex-row sm:gap-4">
           <Link
             href="/kontakt"
@@ -43,16 +49,18 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
             {hero.servicesCTA}
           </Link>
         </div>
-        <Image
-          src={hero.centerImageSrc}
-          width={384}
-          height={340}
-          quality={100}
-          sizes="(max-width: 768px) 100vw, 384px"
-          priority
-          alt="Webb & App Mockup"
-          className={`relative z-10 mx-auto ${city !== "" ? "mt-12" : "mt-4"} md:mt-16`}
-        />
+
+        {/* Hero Image */}
+        <div className="relative z-10 mx-auto mt-12 md:mt-16 max-w-96">
+          <Image
+            src={hero.centerImageSrc}
+            width={891}
+            height={968}
+            priority
+            alt="Webb & App Mockup"
+            className="w-full h-auto"
+          />
+        </div>
       </div>
     </section>
   );

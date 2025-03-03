@@ -65,6 +65,11 @@ export const landingSections = (city: string): ILanding[] => {
           : `Vill du ha fler kunder? Våra SEO-strategier gör att du syns bättre på Google.`,
     },
     {
+      id: "idea",
+      title: "",
+      description: "",
+    },
+    {
       id: "pricing",
       title:
         variation === 0

@@ -5,8 +5,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { footerDetails } from "../../../app/data/footer";
 import { siteDetails } from "../../../app/data/siteDetails";
-import { getPlatformIconByName, getPreposition } from "../../../app/utils";
-import { replaceCityPlaceholder } from "../../Benefits/Benefits";
+import { getPlatformIconByName, getPreposition, replaceCityPlaceholder } from "../../../app/utils";
 
 const Footer: React.FC = () => {
   const pathname = usePathname();

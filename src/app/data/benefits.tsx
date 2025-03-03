@@ -59,7 +59,7 @@ export const getBenefits = (city: string): IBenefit[] => {
           icon: <FiEdit size={26} />,
         },
       ],
-      imageSrc: "/assets/web-development.png",
+      imageSrc: "/assets/web-development.webp",
     },
     {
       title:
@@ -95,7 +95,7 @@ export const getBenefits = (city: string): IBenefit[] => {
           icon: <FiCode size={26} />,
         },
       ],
-      imageSrc: "/assets/app-development.png",
+      imageSrc: "/assets/app-development.webp",
     },
     {
       title:
@@ -133,7 +133,7 @@ export const getBenefits = (city: string): IBenefit[] => {
           icon: <FiMapPin size={26} />,
         },
       ],
-      imageSrc: "/assets/seo-services.png",
+      imageSrc: "/assets/seo-services.webp",
     },
   ];
 };

@@ -1,18 +1,18 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import About from "../../components/About/About";
-import Benefits, { replaceCityPlaceholder } from "../../components/Benefits/Benefits";
+import Benefits from "../../components/Benefits/Benefits";
 import CTA from "../../components/CTA/CTA";
 import FAQ from "../../components/FAQ/FAQ";
 import Hero from "../../components/Hero/Hero";
 import { ItemScroll } from "../../components/Idea/ItemScroll";
 import Pricing from "../../components/Pricing/Pricing";
-import { Projects } from "../../components/Projects/Projects";
+import Projects from "../../components/Projects/Projects";
 import Section from "../../components/Section/Section";
 import SEOSection from "../../components/SEO/SEOSection";
 import Container from "../../components/UI/Container/Container";
 import { landingSections } from "../data/landing";
-import { getCTAContent, getPreposition } from "../utils";
+import { getCTAContent, getPreposition, replaceCityPlaceholder } from "../utils";
 
 const cities = {
   goteborg: {
@@ -203,6 +203,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
 
   const sections = landingSections(cityData.name);
   const cta = getCTAContent(cityData.name);
+  const cityPreposition = getPreposition(cityData.name);
 
   return (
     <>
@@ -212,11 +213,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
           <Section
             key={section.id}
             id={section.id}
-            title={replaceCityPlaceholder(section.title, cityData.name ? getPreposition(cityData.name) : "")}
-            description={replaceCityPlaceholder(
-              section.description,
-              cityData.name ? getPreposition(cityData.name) : "",
-            )}
+            title={replaceCityPlaceholder(section.title, cityPreposition)}
+            description={replaceCityPlaceholder(section.description, cityPreposition)}
           >
             {section.id === "features" && <Benefits city={cityData.name} />}
             {section.id === "seo" && <SEOSection city={cityData.name} />}

@@ -140,3 +140,7 @@ export const getCityCategory = (city: string) => {
   if (smallLocalCities.includes(city)) return "small";
   return "default";
 };
+
+export const replaceCityPlaceholder = (text: string, city = "") => {
+  return text.replace(/{{city}}/g, city);
+};
