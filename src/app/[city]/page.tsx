@@ -89,43 +89,43 @@ const cities = {
   },
   uddevalla: {
     name: "Uddevalla",
-    title: "Webbutveckling Uddevalla – Hemsida Företag med Modern Teknik | Dataeden",
+    title: "Uddevalla Webbutveckling – Modern Teknik | Dataeden",
     description:
       "Vi skapar responsiva och professionella hemsidor för företag i Uddevalla med modern teknik, användarvänlig design och snabba laddtider. Kontakta oss!",
   },
   alingsas: {
     name: "Alingsås",
-    title: "Webbutveckling Alingsås – Hemsida Företag för Stark Digital Närvaro | Dataeden",
+    title: "Webbutveckling Alingsås – Digital Hemsida | Dataeden",
     description:
       "I Alingsås erbjuder vi unika hemsidelösningar som kombinerar modern design med praktisk funktionalitet, för att hjälpa ditt företag nå fler kunder online.",
   },
   skovde: {
     name: "Skövde",
-    title: "Webbyrå Skövde – Hemsida Företag med Fokus på Användarupplevelse | Dataeden",
+    title: "Skövde Webbyrå – Bästa Användarupplevelse | Dataeden",
     description:
       "Vi designar och utvecklar hemsidor i Skövde med responsiv design och enkel navigering, skräddarsydda för att förbättra ditt företags digitala identitet.",
   },
   vanersborg: {
     name: "Vänersborg",
-    title: "Webbutveckling Vänersborg – Hemsidor för Företag med Lokal Förankring | Dataeden",
+    title: "Vänersborg Webbutveckling – Lokal Förankring | Dataeden",
     description:
       "Vi bygger användarvänliga hemsidor i Vänersborg med modern design och optimerad funktionalitet, vilket stärker ditt företags lokala närvaro. Hör av dig!",
   },
   lidkoping: {
     name: "Lidköping",
-    title: "Webbutveckling Lidköping – Hemsida Företag med Kreativ Design | Dataeden",
+    title: "Lidköping Webbutveckling – Kreativ Hemsida | Dataeden",
     description:
       "I Lidköping skapar vi skräddarsydda hemsidor med kreativ design och praktisk funktionalitet, perfekta för företag som vill sticka ut digitalt.",
   },
   mariestad: {
     name: "Mariestad",
-    title: "Webbutveckling Mariestad – Hemsidor för Företag med Modern Stil | Dataeden",
+    title: "Mariestad Webbutveckling – Modern Stil | Dataeden",
     description:
       "Vi erbjuder professionella hemsidor i Mariestad med modern design och tydlig navigering, vilket ger ditt varumärke en stark digital identitet.",
   },
   lysekil: {
     name: "Lysekil",
-    title: "Webbutveckling Lysekil – Hemsida Företag med Användarvänlig Design | Dataeden",
+    title: "Webbutveckling Lysekil – Vänlig Design | Dataeden",
     description:
       "I Lysekil utvecklar vi responsiva hemsidor med modern design och robust funktionalitet, designade för att skapa en stark digital närvaro för ditt företag.",
   },
@@ -137,7 +137,7 @@ const cities = {
   },
   falkoping: {
     name: "Falköping",
-    title: "Webbutveckling Falköping – Hemsida Företag med Funktionell Design | Dataeden",
+    title: "Falköping Webbutveckling – Funktionell Design | Dataeden",
     description:
       "I Falköping erbjuder vi skräddarsydda hemsidor med en funktionell och modern design, anpassade efter ditt företags specifika behov och mål.",
   },
@@ -155,7 +155,7 @@ const cities = {
   },
   munkedal: {
     name: "Munkedal",
-    title: "Webbutveckling Munkedal – Hemsida Företag med Prisvärda Lösningar | Dataeden",
+    title: "Munkedal Webbutveckling – Prisvärda Lösningar | Dataeden",
     description:
       "Vi erbjuder anpassade hemsidor för företag i Munkedal med modern design och god användarvänlighet, levererade till konkurrenskraftiga priser.",
   },
