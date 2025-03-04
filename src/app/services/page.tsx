@@ -80,6 +80,7 @@ export const metadata: Metadata = {
     "Vi bygger snabba, mobilanpassade hemsidor & appar för företag och privatpersoner. SEO-optimerade och anpassade efter dina behov.",
   openGraph: {
     url: "https://dataeden.se/services",
+    type: "website",
     title: "Webbutveckling & Apputveckling – Hemsidor som presterar",
     description:
       "Behöver du en modern hemsida eller app? Vi skapar skräddarsydda lösningar som är snabba, mobilvänliga och SEO-optimerade.",
