@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "https://dataeden.se/",
+    type: "website",
     title: "Dataeden – Webbutveckling & SEO för Företag i Sverige",
     description:
       "Unika hemsidor, appar och SEO-lösningar för företag som vill växa digitalt. Vi erbjuder webbutveckling och digital strategi i hela Sverige.",
