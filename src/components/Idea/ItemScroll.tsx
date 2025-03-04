@@ -12,7 +12,7 @@ export const ItemScroll = React.memo(function ItemScroll({ dict }: { dict?: Reco
 
   const titleComponent = useMemo(
     () => (
-      <h1 className="mb-2 text-4xl font-semibold text-foreground md:mb-10 dark:text-background">
+      <h2 className="mb-2 text-4xl font-semibold text-foreground md:mb-10 dark:text-background">
         {first_text}
         <br />
         <span className="mt-1 text-4xl leading-none font-bold md:text-6xl">
@@ -21,7 +21,7 @@ export const ItemScroll = React.memo(function ItemScroll({ dict }: { dict?: Reco
             <ColourfulText text={combinedText} />
           </span>
         </span>
-      </h1>
+      </h2>
     ),
     [first_text, second_text1, combinedText],
   );

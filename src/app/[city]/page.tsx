@@ -17,131 +17,147 @@ import { getCTAContent, getPreposition, replaceCityPlaceholder } from "../utils"
 const cities = {
   goteborg: {
     name: "Göteborg",
-    title: "SEO Göteborg – Webbutveckling & Sökmotoroptimering | Dataeden",
+    title: "Webbyrå Göteborg – Professionell Hemsida Företag | Dataeden",
     description:
-      "Dataeden är en webbyrå i Göteborg som bygger SEO-optimerade hemsidor för företag. Skapa en snabb & mobilvänlig hemsida idag!",
+      "Dataeden erbjuder unika hemsidor för företag i Göteborg med modern design och robust funktionalitet. Kontakta oss för en offert och ökad digital närvaro.",
   },
   kungalv: {
     name: "Kungälv",
-    title: "Webbyrå i Kungälv – Skapa Hemsida & SEO-tjänster | Dataeden",
-    description: "Få en snygg, snabb & SEO-optimerad hemsida i Kungälv. Vi hjälper företag att ranka högre på Google.",
+    title: "Webbyrå Kungälv – Hemsida Företag för Lokala Aktörer | Dataeden",
+    description:
+      "I Kungälv skapar vi kostnadseffektiva hemsidor som stärker ditt företags digitala närvaro med modern design och enkel navigering. Få en lösning som passar dig!",
   },
   orust: {
     name: "Orust",
-    title: "Webbutveckling på Orust – SEO & Hemsidor | Dataeden",
-    description: "Dataeden skapar moderna, SEO-optimerade hemsidor för företag på Orust. Kontakta oss för en offert!",
+    title: "Webbutveckling Orust – Anpassade Hemsidor för Små Företag | Dataeden",
+    description:
+      "På Orust erbjuder vi unika och prisvärda hemsidelösningar med modern design, snabb laddning och enkel navigering – perfekt för lokala småföretag.",
   },
   kungsbacka: {
     name: "Kungsbacka",
-    title: "Webbyrå i Kungsbacka – Sökmotoroptimering & Hemsidor | Dataeden",
+    title: "Webbyrå Kungsbacka – Hemsida Företag med Lokal Förankring | Dataeden",
     description:
-      "Behöver du en hemsida? Vi skapar SEO-optimerade webbplatser som får företag i Kungsbacka att synas online.",
+      "Vi bygger responsiva hemsidor i Kungsbacka som kombinerar snygg design med praktisk funktionalitet, vilket stärker ditt lokala varumärke. Begär offert idag!",
   },
   molndal: {
     name: "Mölndal",
-    title: "Webbutveckling i Mölndal – Skapa Hemsida som Syns | Dataeden",
-    description: "Bygg en snabb, responsiv & SEO-optimerad hemsida i Mölndal. Vi hjälper företag att lyckas digitalt!",
+    title: "Webbutveckling Mölndal – Hemsidor för Företag i Tillväxt | Dataeden",
+    description:
+      "Vi skapar moderna hemsidor för företag i Mölndal med fokus på användarvänlighet, konvertering och snabb laddning. Låt oss hjälpa dig att växa digitalt.",
   },
   partille: {
     name: "Partille",
-    title: "Webbyrå i Partille – SEO-optimerade Hemsidor | Dataeden",
-    description: "Få en mobilvänlig hemsida i Partille. Våra SEO-experter hjälper dig att synas högre på Google.",
+    title: "Webbyrå Partille – Hemsida Företag med Modern Design | Dataeden",
+    description:
+      "Vi erbjuder skräddarsydda hemsidelösningar i Partille med responsiv design och optimerad funktionalitet, vilket stärker ditt företags digitala identitet.",
   },
   lerum: {
     name: "Lerum",
-    title: "Webbutveckling i Lerum – SEO-optimerade Hemsidor | Dataeden",
+    title: "Webbutveckling Lerum – Prisvärda Hemsidor för Företag | Dataeden",
     description:
-      "Vi skapar snabba, mobilvänliga och SEO-optimerade hemsidor för företag i Lerum. Öka din synlighet på Google!",
+      "I Lerum levererar vi anpassade hemsidor med snygg design och praktisk funktionalitet, ideala för företag som vill öka sin online-närvaro.",
   },
   ale: {
     name: "Ale",
-    title: "SEO byrå i Ale – Sökmotoroptimering & Webbutveckling | Dataeden",
-    description: "Behöver du en SEO-optimerad hemsida? Vi hjälper företag i Ale att skapa bättre synlighet på Google.",
+    title: "Webbyrå Ale – Hemsida Företag med Personlig Touch | Dataeden",
+    description:
+      "Vi utvecklar unika hemsidor för företag i Ale med modern design och användarvänliga lösningar, skräddarsydda efter dina specifika behov.",
   },
   stenungsund: {
     name: "Stenungsund",
-    title: "Webbutveckling i Stenungsund – SEO & Sökmotoroptimering | Dataeden",
+    title: "Webbutveckling Stenungsund – Hemsidor för Lokala Aktörer | Dataeden",
     description:
-      "Få fler kunder online med en SEO-optimerad hemsida och webbutveckling i Stenungsund. Kontakta oss idag!",
+      "Vi bygger professionella hemsidor i Stenungsund med tydlig design och enkel navigering, vilket hjälper ditt företag att stärka sin lokala närvaro.",
   },
   tjorn: {
     name: "Tjörn",
-    title: "SEO Tjörn – Webbutveckling & Digital Marknadsföring | Dataeden",
+    title: "Webbutveckling Tjörn – Funktionella Hemsidor för Företag | Dataeden",
     description:
-      "Vi hjälper företag på Tjörn att bygga snygga, responsiva och SEO-anpassade hemsidor för bättre synlighet online.",
+      "På Tjörn skapar vi eleganta och funktionella hemsidor som kombinerar modern design med praktiska lösningar för att driva din verksamhet framåt.",
   },
   boras: {
     name: "Borås",
-    title: "Webbyrå i Borås – Skapa en SEO-optimerad Hemsida | Dataeden",
+    title: "Webbyrå Borås – Hemsida Företag för Tillväxt och Synlighet | Dataeden",
     description:
-      "Behöver du en ny hemsida i Borås? Vi bygger sökmotorvänliga och mobilanpassade webbplatser för företag.",
+      "I Borås designar vi skräddarsydda hemsidor med modern layout och god användarupplevelse, anpassade för företag som vill växa och synas bättre online.",
   },
   trollhattan: {
     name: "Trollhättan",
-    title: "Webbutveckling i Trollhättan – SEO & Hemsida Pris | Dataeden",
-    description: "Vill du ha en ny hemsida i Trollhättan? Vi bygger SEO-optimerade hemsidor till transparenta priser.",
+    title: "Webbyrå Trollhättan – Hemsida Företag med Lokal Expertis | Dataeden",
+    description:
+      "Vi levererar skräddarsydda hemsidor i Trollhättan med fokus på både design och funktionalitet – en lösning för företag som vill stärka sin lokala marknad.",
   },
   uddevalla: {
     name: "Uddevalla",
-    title: "SEO Uddevalla – Webbutveckling & Sökmotoroptimering | Dataeden",
+    title: "Webbutveckling Uddevalla – Hemsida Företag med Modern Teknik | Dataeden",
     description:
-      "Bygg en professionell hemsida i Uddevalla med smart SEO. Vi hjälper dig att öka din synlighet online.",
+      "Vi skapar responsiva och professionella hemsidor för företag i Uddevalla med modern teknik, användarvänlig design och snabba laddtider. Kontakta oss!",
   },
   alingsas: {
     name: "Alingsås",
-    title: "Webbutveckling i Alingsås – SEO & Digital Marknadsföring | Dataeden",
+    title: "Webbutveckling Alingsås – Hemsida Företag för Stark Digital Närvaro | Dataeden",
     description:
-      "Dataeden skapar SEO-optimerade webbplatser som hjälper företag i Alingsås att synas bättre på Google.",
+      "I Alingsås erbjuder vi unika hemsidelösningar som kombinerar modern design med praktisk funktionalitet, för att hjälpa ditt företag nå fler kunder online.",
   },
   skovde: {
     name: "Skövde",
-    title: "SEO Skövde – Webbutveckling & Sökmotoroptimering | Dataeden",
-    description: "Vill du synas bättre på Google? Vi erbjuder webbutveckling och SEO-tjänster i Skövde.",
+    title: "Webbyrå Skövde – Hemsida Företag med Fokus på Användarupplevelse | Dataeden",
+    description:
+      "Vi designar och utvecklar hemsidor i Skövde med responsiv design och enkel navigering, skräddarsydda för att förbättra ditt företags digitala identitet.",
   },
   vanersborg: {
     name: "Vänersborg",
-    title: "Webbutveckling i Vänersborg – SEO & Hemsidor | Dataeden",
-    description: "Dataeden skapar SEO-optimerade hemsidor för företag i Vänersborg. Kontakta oss för en offert.",
+    title: "Webbutveckling Vänersborg – Hemsidor för Företag med Lokal Förankring | Dataeden",
+    description:
+      "Vi bygger användarvänliga hemsidor i Vänersborg med modern design och optimerad funktionalitet, vilket stärker ditt företags lokala närvaro. Hör av dig!",
   },
   lidkoping: {
     name: "Lidköping",
-    title: "SEO Lidköping – Webbutveckling & Digital Marknadsföring | Dataeden",
-    description: "Bygg en hemsida i Lidköping som rankar högt på Google. SEO & webbutveckling för företag.",
+    title: "Webbutveckling Lidköping – Hemsida Företag med Kreativ Design | Dataeden",
+    description:
+      "I Lidköping skapar vi skräddarsydda hemsidor med kreativ design och praktisk funktionalitet, perfekta för företag som vill sticka ut digitalt.",
   },
   mariestad: {
     name: "Mariestad",
-    title: "SEO Mariestad – Webbutveckling & Sökmotoroptimering | Dataeden",
-    description: "Få en SEO-optimerad hemsida i Mariestad och förbättra din digitala synlighet med Dataeden.",
+    title: "Webbutveckling Mariestad – Hemsidor för Företag med Modern Stil | Dataeden",
+    description:
+      "Vi erbjuder professionella hemsidor i Mariestad med modern design och tydlig navigering, vilket ger ditt varumärke en stark digital identitet.",
   },
   lysekil: {
     name: "Lysekil",
-    title: "Webbutveckling på Lysekil – SEO & Digital Marknadsföring | Dataeden",
-    description: "Vi skapar snabba, mobilvänliga hemsidor för företag på Lysekil. SEO-optimerade för bästa synlighet!",
+    title: "Webbutveckling Lysekil – Hemsida Företag med Användarvänlig Design | Dataeden",
+    description:
+      "I Lysekil utvecklar vi responsiva hemsidor med modern design och robust funktionalitet, designade för att skapa en stark digital närvaro för ditt företag.",
   },
   stromstad: {
     name: "Strömstad",
-    title: "SEO Strömstad – Webbutveckling & Hemsidor | Dataeden",
-    description: "Få fler kunder med en modern och sökmotorvänlig hemsida i Strömstad. Vi hjälper dig synas online.",
+    title: "Webbutveckling Strömstad – Hemsida Företag med Lokal Känsla | Dataeden",
+    description:
+      "Vi skapar anpassade hemsidor för företag i Strömstad där modern design möter lokal insikt, vilket ger ditt företag en tydlig digital identitet.",
   },
   falkoping: {
     name: "Falköping",
-    title: "Webbutveckling i Falköping – SEO & Mobilanpassade Hemsidor | Dataeden",
-    description: "Bygg en modern hemsida i Falköping. SEO-optimerade för både desktop och mobil.",
+    title: "Webbutveckling Falköping – Hemsida Företag med Funktionell Design | Dataeden",
+    description:
+      "I Falköping erbjuder vi skräddarsydda hemsidor med en funktionell och modern design, anpassade efter ditt företags specifika behov och mål.",
   },
   hjo: {
     name: "Hjo",
-    title: "Webbutveckling i Hjo – Skapa Hemsida med SEO | Dataeden",
-    description: "Dataeden skapar moderna, SEO-optimerade hemsidor för företag i Hjo. Kontakta oss idag!",
+    title: "Webbutveckling Hjo – Hemsida Företag med Enkel Navigering | Dataeden",
+    description:
+      "Vi utvecklar användarvänliga hemsidor för företag i Hjo med tydlig design och praktisk funktionalitet, idealiska för små lokala aktörer.",
   },
   ulricehamn: {
     name: "Ulricehamn",
-    title: "SEO Ulricehamn – Webbutveckling & Digital Marknadsföring | Dataeden",
-    description: "Vill du synas högre på Google? Vi erbjuder SEO & webbutveckling i Ulricehamn.",
+    title: "Webbyrå Ulricehamn – Hemsida Företag med Modern Teknik | Dataeden",
+    description:
+      "I Ulricehamn skapar vi professionella hemsidor med modern design och robust funktionalitet, optimerade för företag som vill växa digitalt.",
   },
   munkedal: {
     name: "Munkedal",
-    title: "Webbutveckling i Munkedal – SEO-optimerade Hemsidor | Dataeden",
-    description: "Bygg en snygg och snabb hemsida i Munkedal. SEO-optimerad för bättre ranking på Google.",
+    title: "Webbutveckling Munkedal – Hemsida Företag med Prisvärda Lösningar | Dataeden",
+    description:
+      "Vi erbjuder anpassade hemsidor för företag i Munkedal med modern design och god användarvänlighet, levererade till konkurrenskraftiga priser.",
   },
 };
 
@@ -171,6 +187,7 @@ export async function generateMetadata({
     ],
     openGraph: {
       url: `https://dataeden.se/${city}`,
+      type: "website",
       title: `Webbutveckling & SEO ${getPreposition(cityData.name)} ${cityData.name} – Dataeden`,
       description: `Söker du en webbyrå ${getPreposition(cityData.name)} ${
         cityData.name

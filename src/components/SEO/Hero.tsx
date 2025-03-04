@@ -9,6 +9,7 @@ type HeroSEOProps = {
 };
 
 const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
+  const isNoCity = city.trim() === "";
   useEffect(() => {
     const setVh = () => {
       document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
@@ -18,31 +19,43 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
     return () => window.removeEventListener("resize", setVh);
   }, []);
 
-  const cityCategory = getCityCategory(city);
-
-  const heroTitle =
-    cityCategory === "large"
-      ? `SEO ${getPreposition(city)} ${city} –`
-      : cityCategory === "growing"
-      ? `SEO ${getPreposition(city)} ${city} – Ta ledningen online`
-      : `SEO ${getPreposition(city)} ${city} –`;
-
-  const heroHighlight =
-    cityCategory === "large"
-      ? ` Dominera Google`
-      : cityCategory === "growing"
-      ? ` innan konkurrensen`
-      : ` Få fler kunder`;
-
-  const heroHeading2 =
-    cityCategory === "large" ? ` & slå konkurrenterna.` : cityCategory === "growing" ? `` : ` från Google lokalt`;
-
-  const heroDescription =
-    cityCategory === "large"
-      ? `Behöver du fler kunder i ${city}? Vi hjälper företag att ranka högre och stärka sitt varumärke online genom avancerade SEO-strategier.`
-      : cityCategory === "growing"
-      ? `SEO är en nyckel för tillväxt i ${city}. Vi hjälper företag att optimera sina hemsidor och ta en ledande position innan konkurrensen hårdnar.`
-      : `SEO i ${city} hjälper småföretag att synas på Google, locka fler kunder och växa online med minimal konkurrens.`;
+  let heroTitle, heroHighlight, heroHeading2, heroDescription, ctaText;
+  if (isNoCity) {
+    heroTitle = "SEO – Stärk din digitala närvaro";
+    heroHighlight = "";
+    heroHeading2 = "";
+    heroDescription =
+      "Vi hjälper företag att optimera sina hemsidor med strategier som ökar din synlighet på Google och genererar fler kunder.";
+    ctaText = "Boka en kostnadsfri konsultation";
+  } else {
+    const cityCategory = getCityCategory(city);
+    heroTitle =
+      cityCategory === "large"
+        ? `SEO ${getPreposition(city)} ${city} –`
+        : cityCategory === "growing"
+        ? `SEO ${getPreposition(city)} ${city} – Ta ledningen online`
+        : `SEO ${getPreposition(city)} ${city} –`;
+    heroHighlight =
+      cityCategory === "large"
+        ? ` Dominera Google`
+        : cityCategory === "growing"
+        ? ` innan konkurrensen`
+        : ` Få fler kunder`;
+    heroHeading2 =
+      cityCategory === "large" ? ` & slå konkurrenterna.` : cityCategory === "growing" ? `` : ` från Google lokalt`;
+    heroDescription =
+      cityCategory === "large"
+        ? `Behöver du fler kunder i ${city}? Vi hjälper företag att ranka högre och stärka sitt varumärke online genom avancerade SEO-strategier.`
+        : cityCategory === "growing"
+        ? `SEO är en nyckel för tillväxt i ${city}. Vi hjälper företag att optimera sina hemsidor och ta en ledande position innan konkurrensen hårdnar.`
+        : `SEO i ${city} hjälper småföretag att synas på Google, locka fler kunder och växa online med minimal konkurrens.`;
+    ctaText =
+      cityCategory === "large"
+        ? "Boka en expertanalys"
+        : cityCategory === "growing"
+        ? "Ta din webbplats till toppen"
+        : "Se hur du kan synas bättre";
+  }
 
   return (
     <section
@@ -56,7 +69,7 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
 
       <div className="absolute right-0 bottom-0 left-0 h-20 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)] backdrop-blur-[1px]"></div>
 
-      {/* Innehåll */}
+      {/* Content */}
       <div className="max-w-3xl text-center">
         <h1 className="text-foreground mx-auto text-3xl font-bold md:text-5xl md:leading-tight">
           {heroTitle}
@@ -66,17 +79,13 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
 
         <p className="mx-auto mt-4 text-lg leading-relaxed text-gray-700 md:text-xl">{heroDescription}</p>
 
-        {/* CTA-knappar */}
+        {/* CTA Buttons */}
         <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="/kontakt"
             className="rounded-full bg-primary px-6 py-3 text-lg font-medium text-background shadow-lg transition-all hover:bg-primary-hover"
           >
-            {cityCategory === "large"
-              ? "Boka en expertanalys"
-              : cityCategory === "growing"
-              ? "Ta din webbplats till toppen"
-              : "Se hur du kan synas bättre"}
+            {ctaText}
           </Link>
           <Link
             href="#seo-content"
@@ -87,7 +96,7 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
         </div>
       </div>
 
-      {/* Scroll-indikator */}
+      {/* Scroll Indicator */}
       <Link
         href="#seo-content"
         className="absolute bottom-6 animate-[shake_0.5s_ease-in-out_0.5s_1] transition-transform duration-300 hover:scale-110"
@@ -95,7 +104,7 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
         <FiChevronDown className="text-gray-600 hover:text-primary" size={48} />
       </Link>
 
-      {/* Shake-animation */}
+      {/* Shake Animation */}
       <style jsx>{`
         @keyframes shake {
           0%,

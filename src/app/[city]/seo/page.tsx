@@ -9,128 +9,147 @@ import { getCityCategory, getPreposition } from "../../utils";
 const cities = {
   goteborg: {
     name: "Göteborg",
-    title: "SEO i Göteborg – Få fler kunder via Google | Dataeden",
-    description: "Letar du efter SEO i Göteborg? Vi optimerar hemsidor så att du rankar högre och når fler kunder.",
+    title: "SEO byrå Göteborg – Öka din synlighet & kundbas | Dataeden",
+    description:
+      "Vi erbjuder strategisk SEO i Göteborg med beprövade metoder. Få bättre ranking på Google och nå rätt målgrupp. Kontakta oss idag!",
   },
   kungalv: {
     name: "Kungälv",
-    title: "SEO i Kungälv – Rank högre & väx online | Dataeden",
+    title: "SEO i Kungälv – Dominera lokala sökresultat | Dataeden",
     description:
-      "Behöver du synas bättre på Google i Kungälv? Vi skapar SEO-optimerade hemsidor för långsiktig tillväxt.",
+      "Vi hjälper företag i Kungälv att nå högre placeringar på Google med skräddarsydda SEO-strategier. Bli den självklara lokala aktören.",
   },
   orust: {
     name: "Orust",
-    title: "SEO på Orust – Syns där dina kunder söker | Dataeden",
+    title: "SEO på Orust – Syns där kunderna söker | Dataeden",
     description:
-      "Vill du bli hittad av fler kunder på Orust? Vi hjälper dig att få bättre synlighet och fler besökare från Google.",
+      "Dataeden erbjuder SEO-tjänster för Orust med anpassade lösningar. Få din hemsida att synas bättre på Google och nå rätt målgrupp.",
   },
   kungsbacka: {
     name: "Kungsbacka",
-    title: "SEO i Kungsbacka – Ta din webbplats till toppen | Dataeden",
-    description: "Få fler kunder från Google i Kungsbacka. Vi skapar snabba, mobilvänliga och SEO-optimerade hemsidor.",
+    title: "SEO i Kungsbacka – Bli ledande med våra strategier | Dataeden",
+    description:
+      "Vi hjälper företag i Kungsbacka att förbättra sin Google-ranking med effektiva SEO-lösningar. Öka din synlighet och få fler kunder.",
   },
   molndal: {
     name: "Mölndal",
-    title: "SEO i Mölndal – Få fler besökare & leads | Dataeden",
+    title: "SEO i Mölndal – Optimera din digitala närvaro | Dataeden",
     description:
-      "Optimera din hemsida för Google i Mölndal. Vi ser till att du rankar högre och attraherar fler kunder.",
+      "Få fler besökare och högre placeringar på Google. Våra SEO-tjänster i Mölndal är designade för att driva tillväxt och synlighet.",
   },
   partille: {
     name: "Partille",
-    title: "SEO i Partille – Mer trafik, fler affärer | Dataeden",
+    title: "SEO i Partille – Skräddarsydd optimering för lokala företag | Dataeden",
     description:
-      "Vill du synas högre i Google-sökningar i Partille? Vi hjälper dig att förbättra din SEO och öka trafiken.",
+      "Dataeden hjälper företag i Partille att ranka högre på Google med anpassade SEO-strategier. Förbättra din digitala närvaro idag.",
   },
   lerum: {
     name: "Lerum",
-    title: "SEO i Lerum – Digital synlighet för företag | Dataeden",
-    description: "Vi optimerar hemsidor i Lerum för att synas bättre på Google och attrahera fler kunder.",
+    title: "SEO i Lerum – Stärk din lokala digitala närvaro | Dataeden",
+    description:
+      "Vi optimerar hemsidor i Lerum för att öka synligheten på Google. Få fler kunder genom lokalt anpassade SEO-tjänster.",
   },
   ale: {
     name: "Ale",
-    title: "SEO i Ale – Syns bättre lokalt & nationellt | Dataeden",
-    description: "Få en SEO-optimerad hemsida i Ale som hjälper dig att ranka högre på Google och få fler besökare.",
+    title: "SEO i Ale – Kombinera lokal & nationell synlighet | Dataeden",
+    description:
+      "Dataeden erbjuder SEO-lösningar i Ale som ökar din ranking både lokalt och nationellt. Få fler kunder med strategisk optimering.",
   },
   stenungsund: {
     name: "Stenungsund",
-    title: "SEO i Stenungsund – Öka din synlighet online | Dataeden",
-    description: "Vill du ranka högre på Google i Stenungsund? Vi bygger hemsidor som optimeras för att synas bättre.",
+    title: "SEO i Stenungsund – Maximera din synlighet på Google | Dataeden",
+    description:
+      "Vi optimerar din hemsida för att nå högre placeringar i Stenungsund. Få fler besökare och omvandla dem till kunder med våra tjänster.",
   },
   tjorn: {
     name: "Tjörn",
-    title: "SEO på Tjörn – Fler besökare, bättre placering | Dataeden",
-    description: "Få fler kunder på Tjörn genom SEO-optimerad webbutveckling. Vi skapar hemsidor som rankar högre.",
+    title: "SEO på Tjörn – Öka din digitala räckvidd med Dataeden",
+    description:
+      "Få fler besökare och bättre ranking på Google i Tjörn med våra skräddarsydda SEO-strategier. Driv din digitala framgång med oss.",
   },
   boras: {
     name: "Borås",
-    title: "SEO i Borås – Bli synlig i sökresultaten | Dataeden",
-    description: "Öka din digitala närvaro i Borås med en SEO-optimerad hemsida som lockar fler kunder.",
+    title: "SEO i Borås – Dominera lokala sökresultat med Dataeden",
+    description:
+      "Vi erbjuder SEO-tjänster i Borås som förbättrar din Google-ranking och ökar synligheten. Bli den självklara aktören i din bransch.",
   },
   trollhattan: {
     name: "Trollhättan",
-    title: "SEO i Trollhättan – Få fler kunder via Google | Dataeden",
+    title: "SEO i Trollhättan – Förbättra din ranking & nå fler kunder | Dataeden",
     description:
-      "Vill du ranka högre på Google i Trollhättan? Vi bygger sökmotorvänliga hemsidor för bättre synlighet.",
+      "Dataeden skapar SEO-strategier för Trollhättan som hjälper dig att synas bättre på Google. Öka din digitala närvaro idag.",
   },
   uddevalla: {
     name: "Uddevalla",
-    title: "SEO i Uddevalla – Rank högre & konvertera bättre | Dataeden",
-    description: "Vi optimerar hemsidor i Uddevalla så att du får fler besökare och kunder från Google.",
+    title: "SEO i Uddevalla – Strategisk optimering för tillväxt | Dataeden",
+    description:
+      "Vi optimerar din hemsida för Google i Uddevalla med anpassade SEO-lösningar. Få bättre placeringar och fler kunder med Dataeden.",
   },
   alingsas: {
     name: "Alingsås",
-    title: "SEO i Alingsås – Mer synlighet, fler kunder | Dataeden",
-    description: "Behöver du synas bättre i Alingsås? Vi optimerar din hemsida så att fler hittar dig via Google.",
+    title: "SEO i Alingsås – Bättre ranking, fler kunder med Dataeden",
+    description:
+      "Våra SEO-tjänster i Alingsås ökar din synlighet på Google och hjälper dig att nå rätt målgrupp. Optimera din digitala strategi med oss.",
   },
   skovde: {
     name: "Skövde",
-    title: "SEO i Skövde – Fler besökare & bättre ranking | Dataeden",
-    description: "Vi hjälper företag i Skövde att synas bättre på Google med optimerade hemsidor och smart SEO.",
+    title: "SEO i Skövde – Få din hemsida att synas bättre | Dataeden",
+    description:
+      "Dataeden erbjuder SEO-lösningar för företag i Skövde som vill nå högre placeringar på Google. Få fler kunder med rätt strategi.",
   },
   vanersborg: {
     name: "Vänersborg",
-    title: "SEO i Vänersborg – Ta din webbplats till toppen | Dataeden",
-    description: "Få fler kunder via Google i Vänersborg med en SEO-anpassad hemsida som konverterar.",
+    title: "SEO i Vänersborg – Förbättra din Google-ranking med Dataeden",
+    description:
+      "Vi hjälper företag i Vänersborg att nå högre positioner på Google med effektiva SEO-strategier. Öka din digitala närvaro idag.",
   },
   lidkoping: {
     name: "Lidköping",
     title: "SEO i Lidköping – Syns där dina kunder söker | Dataeden",
-    description: "Vi skapar moderna, snabba och SEO-optimerade hemsidor för företag i Lidköping.",
+    description:
+      "Dataeden optimerar hemsidor i Lidköping för bättre Google-ranking. Få fler kunder med våra beprövade SEO-metoder och strategier.",
   },
   mariestad: {
     name: "Mariestad",
-    title: "SEO i Mariestad – Bli hittad på Google | Dataeden",
-    description: "Optimera din digitala närvaro i Mariestad med en hemsida som rankar högt och konverterar.",
+    title: "SEO i Mariestad – Maximera din synlighet och kundbas | Dataeden",
+    description:
+      "Vi erbjuder SEO-tjänster i Mariestad som ökar din ranking på Google. Få fler besökare och konvertera dem till kunder med våra lösningar.",
   },
   lysekil: {
     name: "Lysekil",
-    title: "SEO på Lysekil – Öka din synlighet online | Dataeden",
-    description: "Fler kunder och bättre placeringar på Google för företag på Lysekil med SEO-optimerade hemsidor.",
+    title: "SEO på Lysekil – Syns bättre på Google med Dataeden",
+    description:
+      "Optimera din digitala närvaro i Lysekil med våra SEO-tjänster. Få en bättre Google-ranking och fler potentiella kunder.",
   },
   stromstad: {
     name: "Strömstad",
-    title: "SEO i Strömstad – Bli synlig i Google-sökningar | Dataeden",
-    description: "Vill du ha fler kunder i Strömstad? Vi hjälper dig att synas bättre i Google-sökningar.",
+    title: "SEO i Strömstad – Öka din synlighet & nå fler kunder | Dataeden",
+    description:
+      "Dataeden skapar SEO-strategier för Strömstad som förbättrar din Google-ranking. Bli den ledande aktören med våra optimerade lösningar.",
   },
   falkoping: {
     name: "Falköping",
-    title: "SEO i Falköping – Mer trafik, fler affärer | Dataeden",
-    description: "SEO-anpassade hemsidor i Falköping – optimala för företag som vill växa digitalt.",
+    title: "SEO i Falköping – Stärk din digitala närvaro med Dataeden",
+    description:
+      "Vi erbjuder SEO-tjänster i Falköping som ökar din ranking på Google och förbättrar din digitala synlighet. Kontakta oss för en offert.",
   },
   hjo: {
     name: "Hjo",
-    title: "SEO på Hjo – Synlighet och fler kunder | Dataeden",
-    description: "Få en SEO-optimerad hemsida på Hjo som gör att fler hittar dig online.",
+    title: "SEO på Hjo – Optimera din hemsida för bättre synlighet | Dataeden",
+    description:
+      "Våra SEO-lösningar för Hjo förbättrar din Google-ranking och hjälper dig att nå fler lokala kunder. Ta din digitala närvaro till nästa nivå.",
   },
   ulricehamn: {
     name: "Ulricehamn",
-    title: "SEO i Ulricehamn – Få fler besökare & leads | Dataeden",
-    description: "Vi optimerar hemsidor i Ulricehamn för att maximera synlighet och konverteringar.",
+    title: "SEO i Ulricehamn – Effektiv optimering för lokala företag | Dataeden",
+    description:
+      "Vi erbjuder SEO-tjänster i Ulricehamn som höjer din ranking på Google. Få fler kunder med en strategisk och anpassad optimering.",
   },
   munkedal: {
     name: "Munkedal",
-    title: "SEO i Munkedal – Digital närvaro & högre ranking | Dataeden",
-    description: "Behöver du bättre placering på Google i Munkedal? Vi skapar optimerade hemsidor för ökad synlighet.",
+    title: "SEO i Munkedal – Öka din digitala synlighet med Dataeden",
+    description:
+      "Få bättre Google-ranking i Munkedal med våra SEO-strategier. Vi optimerar din hemsida så att du når rätt målgrupp och får fler kunder.",
   },
 };
 
@@ -142,12 +161,12 @@ export async function generateMetadata({
   const { city } = await params;
   const cityData = cities[city];
   if (!cityData) return notFound();
-
   return {
     title: cityData.title,
     description: cityData.description,
     openGraph: {
       url: `https://dataeden.se/${cityData.name}/seo`,
+      type: "website",
       title: `SEO i ${cityData.name} – Få fler besökare & kunder online`,
       description: `Vill du synas bättre på Google i ${cityData.name}? Vi bygger snabba, mobilvänliga hemsidor med SEO-struktur för högre ranking.`,
       images: [
