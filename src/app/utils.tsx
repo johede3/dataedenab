@@ -9,6 +9,7 @@ import {
   FaXTwitter,
   FaYoutube,
 } from "react-icons/fa6";
+import { sitemapCities } from "./sitemap";
 
 export const getPlatformIconByName = (platformName: string): JSX.Element | null => {
   switch (platformName) {
@@ -143,4 +144,46 @@ export const getCityCategory = (city: string) => {
 
 export const replaceCityPlaceholder = (text: string, city = "") => {
   return text.replace(/{{city}}/g, city);
+};
+
+export function getNearbyCities(currentSlug: string, count = 4) {
+  const otherCities = sitemapCities.filter((city) => city.slug !== currentSlug);
+  // Shuffle + pick first N
+  const shuffled = otherCities.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+// utils/cityClusters.ts
+export const cityClusters: Record<string, { main: string; nearby: string[] }> = {
+  // Göteborgsregionen
+  goteborg: { main: "Göteborg", nearby: ["molndal", "partille", "lerum", "ale", "kungalv", "kungsbacka"] },
+  molndal: { main: "Mölndal", nearby: ["goteborg", "partille", "kungsbacka"] },
+  partille: { main: "Partille", nearby: ["goteborg", "molndal", "lerum"] },
+  lerum: { main: "Lerum", nearby: ["goteborg", "partille", "ale"] },
+  ale: { main: "Ale", nearby: ["goteborg", "kungalv", "lerum"] },
+  kungalv: { main: "Kungälv", nearby: ["goteborg", "ale", "stenungsund"] },
+  kungsbacka: { main: "Kungsbacka", nearby: ["goteborg", "molndal"] },
+
+  // Norra Bohuslän & Västkusten
+  stromstad: { main: "Strömstad", nearby: ["munkedal", "lysekil", "uddevalla"] },
+  lysekil: { main: "Lysekil", nearby: ["uddevalla", "stromstad", "munkedal"] },
+  munkedal: { main: "Munkedal", nearby: ["uddevalla", "stromstad", "lysekil"] },
+  uddevalla: { main: "Uddevalla", nearby: ["munkedal", "stenungsund", "lysekil"] },
+  stenungsund: { main: "Stenungsund", nearby: ["kungalv", "tjorn", "uddevalla"] },
+  tjorn: { main: "Tjörn", nearby: ["stenungsund", "orust"] },
+  orust: { main: "Orust", nearby: ["tjorn", "stenungsund"] },
+
+  // Sjuhärad / Boråsregionen
+  boras: { main: "Borås", nearby: ["ulricehamn", "alingsas"] },
+  ulricehamn: { main: "Ulricehamn", nearby: ["boras", "alingsas"] },
+  alingsas: { main: "Alingsås", nearby: ["boras", "lerum", "ulricehamn"] },
+
+  // Skaraborg
+  skovde: { main: "Skövde", nearby: ["falkoping", "mariestad", "lidkoping"] },
+  mariestad: { main: "Mariestad", nearby: ["skovde", "lidkoping", "falkoping"] },
+  falkoping: { main: "Falköping", nearby: ["skovde", "mariestad", "hjo"] },
+  hjo: { main: "Hjo", nearby: ["falkoping", "skovde"] },
+  lidkoping: { main: "Lidköping", nearby: ["mariestad", "vanersborg", "skovde"] },
+  vanersborg: { main: "Vänersborg", nearby: ["trollhattan", "lidkoping"] },
+  trollhattan: { main: "Trollhättan", nearby: ["vanersborg", "uddevalla"] },
 };

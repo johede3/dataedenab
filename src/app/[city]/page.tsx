@@ -6,6 +6,7 @@ import CTA from "../../components/CTA/CTA";
 import FAQ from "../../components/FAQ/FAQ";
 import Hero from "../../components/Hero/Hero";
 import { ItemScroll } from "../../components/Idea/ItemScroll";
+import NearbyCities from "../../components/NearbyCities";
 import Pricing from "../../components/Pricing/Pricing";
 import Projects from "../../components/Projects/Projects";
 import Section from "../../components/Section/Section";
@@ -202,6 +203,9 @@ export async function generateMetadata({
         },
       ],
     },
+    alternates: {
+      canonical: `https://dataeden.se/${city}`,
+    },
     twitter: {
       card: "summary_large_image",
       title: `Webbutveckling & SEO ${getPreposition(cityData.name)} ${cityData.name} – Dataeden`,
@@ -258,6 +262,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
         <FAQ city={cityData.name} />
 
         <CTA title={cta.title} buttonText={cta.button} city={cityData.name} />
+
+        <NearbyCities currentSlug={city} />
       </Container>
     </>
   );
