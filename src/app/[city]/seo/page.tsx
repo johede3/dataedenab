@@ -165,7 +165,7 @@ export async function generateMetadata({
     title: cityData.title,
     description: cityData.description,
     openGraph: {
-      url: `https://dataeden.se/${cityData.name}/seo`,
+      url: `https://dataeden.se/${city}/seo`,
       type: "website",
       title: `SEO i ${cityData.name} – Få fler besökare & kunder online`,
       description: `Vill du synas bättre på Google i ${cityData.name}? Vi bygger snabba, mobilvänliga hemsidor med SEO-struktur för högre ranking.`,
@@ -191,6 +191,66 @@ export default async function SEOPage({ params }: { params: Promise<{ city: keyo
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Hem",
+                item: "https://dataeden.se/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: `SEO i ${cityData.name}`,
+                item: `https://dataeden.se/${city}/seo`,
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Hur kommer min hemsida högre upp på Google?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: `SEO-optimering ${getPreposition(cityData.name)} ${
+                    cityData.name
+                  }: rätt sökord, snabb laddning, mobilvänlighet och bra innehåll.`,
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Hur lång tid tar det innan SEO fungerar?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "SEO är långsiktigt. Tydliga resultat syns ofta efter 3–6 månader.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Behöver mitt företag SEO om jag redan har en hemsida?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Ja, utan SEO hamnar du ofta lägre i resultaten än konkurrenter.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <HeroSEO city={cityData.name} />
       <Container>
         <section id="seo-content">

@@ -59,6 +59,40 @@ export default function Web() {
   const cta = getCTAContent("Göteborg");
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [{ "@type": "ListItem", position: 1, name: "Hem", item: "https://dataeden.se/" }],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Vad kostar en hemsida?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "En enklare företagshemsida börjar från 9 900 kr. Pris beror på design, funktioner och SEO.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Hur snabbt kan ni leverera?",
+                acceptedAnswer: { "@type": "Answer", text: "En grundläggande hemsida kan vara klar inom 7–14 dagar." },
+              },
+            ],
+          }),
+        }}
+      />
       <Hero city={""} />
 
       <Container>

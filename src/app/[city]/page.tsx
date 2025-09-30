@@ -12,155 +12,186 @@ import Projects from "../../components/Projects/Projects";
 import Section from "../../components/Section/Section";
 import SEOSection from "../../components/SEO/SEOSection";
 import Container from "../../components/UI/Container/Container";
+import { faqSection } from "../data/faqSection";
 import { landingSections } from "../data/landing";
-import { getCTAContent, getPreposition, replaceCityPlaceholder } from "../utils";
+import { getCityCategory, getCTAContent, getPreposition, replaceCityPlaceholder } from "../utils";
 
 const cities = {
   goteborg: {
     name: "Göteborg",
-    title: "Webbyrå Göteborg – Professionell Hemsida Företag | Dataeden",
+    title: "Webbutveckling Göteborg – Klar på 7 dagar",
     description:
-      "Dataeden erbjuder unika hemsidor för företag i Göteborg med modern design och robust funktionalitet. Kontakta oss för en offert och ökad digital närvaro.",
+      "Webbutveckling i Göteborg för företag. Snabb leverans, SEO-struktur och premiumstöd. Boka gratis rådgivning idag.",
   },
   kungalv: {
     name: "Kungälv",
-    title: "Webbyrå Kungälv – Hemsida Företag för Lokala Aktörer | Dataeden",
+    title: "Webbutveckling Kungälv – Fast pris från 9 900 kr",
     description:
-      "I Kungälv skapar vi kostnadseffektiva hemsidor som stärker ditt företags digitala närvaro med modern design och enkel navigering. Få en lösning som passar dig!",
+      "Webbutveckling i Kungälv med tydliga paket och priser. Mobilvänlig, snabb och SEO-optimerad. Få en gratis offert idag.",
   },
   orust: {
     name: "Orust",
-    title: "Webbutveckling Orust – Anpassade Hemsidor för Små Företag | Dataeden",
+    title: "Webbutveckling Orust – Lokalt fokus & snabba sidor",
     description:
-      "På Orust erbjuder vi unika och prisvärda hemsidelösningar med modern design, snabb laddning och enkel navigering – perfekt för lokala småföretag.",
+      "Webbutveckling på Orust för lokala företag. Snabb leverans, Google-vänlig struktur och tydliga priser. Begär en gratis offert.",
   },
   kungsbacka: {
     name: "Kungsbacka",
-    title: "Webbyrå Kungsbacka – Hemsida Företag med Lokal Förankring | Dataeden",
+    title: "Webbutveckling Kungsbacka – Snabb, SEO-optimerad hemsida",
     description:
-      "Vi bygger responsiva hemsidor i Kungsbacka som kombinerar snygg design med praktisk funktionalitet, vilket stärker ditt lokala varumärke. Begär offert idag!",
+      "Webbutveckling i Kungsbacka som ger fler kunder. Snabb, mobilvänlig och SEO-klar. Boka gratis rådgivning – start inom 7 dagar.",
   },
   molndal: {
     name: "Mölndal",
-    title: "Webbutveckling Mölndal – Hemsidor för Företag i Tillväxt | Dataeden",
+    title: "Webbutveckling Mölndal – Start klart på 7 dagar",
     description:
-      "Vi skapar moderna hemsidor för företag i Mölndal med fokus på användarvänlighet, konvertering och snabb laddning. Låt oss hjälpa dig att växa digitalt.",
+      "Webbutveckling i Mölndal för företag. Snabb leverans, hög prestanda och SEO-struktur som konverterar. Få en gratis offert.",
   },
   partille: {
     name: "Partille",
-    title: "Webbyrå Partille – Hemsida Företag med Modern Design | Dataeden",
+    title: "Webbutveckling Partille – Tydliga paket & priser",
     description:
-      "Vi erbjuder skräddarsydda hemsidelösningar i Partille med responsiv design och optimerad funktionalitet, vilket stärker ditt företags digitala identitet.",
+      "Webbutveckling i Partille. Snygg design, snabb laddning och lokalt anpassad SEO. Begär offert – vi startar snabbt.",
   },
   lerum: {
     name: "Lerum",
-    title: "Webbutveckling Lerum – Prisvärda Hemsidor för Företag | Dataeden",
+    title: "Webbutveckling Lerum – Modern, mobilvänlig design",
     description:
-      "I Lerum levererar vi anpassade hemsidor med snygg design och praktisk funktionalitet, ideala för företag som vill öka sin online-närvaro.",
+      "Webbutveckling i Lerum som syns på Google. Modern design, mobilvänlighet och tydliga priser. Boka gratis rådgivning idag.",
   },
   ale: {
     name: "Ale",
-    title: "Webbyrå Ale – Hemsida Företag med Personlig Touch | Dataeden",
+    title: "Webbutveckling Ale – Prisvärd kvalitet för företag",
     description:
-      "Vi utvecklar unika hemsidor för företag i Ale med modern design och användarvänliga lösningar, skräddarsydda efter dina specifika behov.",
+      "Webbutveckling i Ale med fokus på konvertering. Snabba, SEO-optimerade sidor till rätt pris. Få en gratis offert nu.",
   },
   stenungsund: {
     name: "Stenungsund",
-    title: "Webbutveckling Stenungsund – Hemsidor för Lokala Aktörer | Dataeden",
+    title: "Webbutveckling Stenungsund – Google Maps & lokala leads",
     description:
-      "Vi bygger professionella hemsidor i Stenungsund med tydlig design och enkel navigering, vilket hjälper ditt företag att stärka sin lokala närvaro.",
+      "Webbutveckling i Stenungsund som driver lokala sökningar. Snabb, mobilvänlig och SEO-klar. Kontakta oss för gratis rådgivning.",
   },
   tjorn: {
     name: "Tjörn",
-    title: "Webbutveckling Tjörn – Funktionella Hemsidor för Företag | Dataeden",
+    title: "Webbutveckling Tjörn – Snabb leverans & support",
     description:
-      "På Tjörn skapar vi eleganta och funktionella hemsidor som kombinerar modern design med praktiska lösningar för att driva din verksamhet framåt.",
+      "Webbutveckling på Tjörn för företag. Snabb leverans, tydliga priser och lokalt anpassad SEO. Få en kostnadsfri offert.",
   },
   boras: {
     name: "Borås",
-    title: "Webbyrå Borås – Hemsida Företag för Tillväxt och Synlighet | Dataeden",
+    title: "Webbutveckling Borås – B2B-fokus som konverterar",
     description:
-      "I Borås designar vi skräddarsydda hemsidor med modern layout och god användarupplevelse, anpassade för företag som vill växa och synas bättre online.",
+      "Webbutveckling i Borås för företag. Hög prestanda, SEO-struktur och mätbara resultat. Boka gratis rådgivning idag.",
   },
   trollhattan: {
     name: "Trollhättan",
-    title: "Webbyrå Trollhättan – Hemsida Företag med Lokal Expertis | Dataeden",
+    title: "Webbutveckling Trollhättan – Resultatdriven SEO-struktur",
     description:
-      "Vi levererar skräddarsydda hemsidor i Trollhättan med fokus på både design och funktionalitet – en lösning för företag som vill stärka sin lokala marknad.",
+      "Webbutveckling i Trollhättan som rankar och konverterar. Snabba, mobilvänliga sidor med lokal SEO. Få en gratis offert.",
   },
   uddevalla: {
     name: "Uddevalla",
-    title: "Uddevalla Webbutveckling – Modern Teknik | Dataeden",
+    title: "Webbutveckling Uddevalla – Hastighet & konvertering",
     description:
-      "Vi skapar responsiva och professionella hemsidor för företag i Uddevalla med modern teknik, användarvänlig design och snabba laddtider. Kontakta oss!",
+      "Webbutveckling i Uddevalla för företag. Snabb laddning, modern design och SEO som ger fler kunder. Kontakta oss för offert.",
   },
   alingsas: {
     name: "Alingsås",
-    title: "Webbutveckling Alingsås – Digital Hemsida | Dataeden",
+    title: "Webbutveckling Alingsås – Smarta paket, tydliga priser",
     description:
-      "I Alingsås erbjuder vi unika hemsidelösningar som kombinerar modern design med praktisk funktionalitet, för att hjälpa ditt företag nå fler kunder online.",
+      "Webbutveckling i Alingsås som ger resultat. Mobilvänlig, SEO-optimerad och snabb leverans. Boka gratis rådgivning.",
   },
   skovde: {
     name: "Skövde",
-    title: "Skövde Webbyrå – Bästa Användarupplevelse | Dataeden",
+    title: "Webbutveckling Skövde – Prestanda & SEO i toppklass",
     description:
-      "Vi designar och utvecklar hemsidor i Skövde med responsiv design och enkel navigering, skräddarsydda för att förbättra ditt företags digitala identitet.",
+      "Webbutveckling i Skövde för företag. Hög prestanda, säker teknik och SEO-struktur. Få en gratis offert – start snabbt.",
   },
   vanersborg: {
     name: "Vänersborg",
-    title: "Vänersborg Webbutveckling – Lokal Förankring | Dataeden",
+    title: "Webbutveckling Vänersborg – Syns lokalt, väx online",
     description:
-      "Vi bygger användarvänliga hemsidor i Vänersborg med modern design och optimerad funktionalitet, vilket stärker ditt företags lokala närvaro. Hör av dig!",
+      "Webbutveckling i Vänersborg som driver lokala sökningar. Snabba, snygga och SEO-optimerade sidor. Kontakta oss för offert.",
   },
   lidkoping: {
     name: "Lidköping",
-    title: "Lidköping Webbutveckling – Kreativ Hemsida | Dataeden",
+    title: "Webbutveckling Lidköping – Design som ger fler kunder",
     description:
-      "I Lidköping skapar vi skräddarsydda hemsidor med kreativ design och praktisk funktionalitet, perfekta för företag som vill sticka ut digitalt.",
+      "Webbutveckling i Lidköping. Snygg design, snabba laddtider och tydliga priser. Boka gratis rådgivning i dag.",
   },
   mariestad: {
     name: "Mariestad",
-    title: "Mariestad Webbutveckling – Modern Stil | Dataeden",
+    title: "Webbutveckling Mariestad – Snygg, snabb & SEO-klar",
     description:
-      "Vi erbjuder professionella hemsidor i Mariestad med modern design och tydlig navigering, vilket ger ditt varumärke en stark digital identitet.",
+      "Webbutveckling i Mariestad för företag. Mobilvänlig, snabb och byggd för Google. Få en gratis offert – vi startar snabbt.",
   },
   lysekil: {
     name: "Lysekil",
-    title: "Webbutveckling Lysekil – Vänlig Design | Dataeden",
+    title: "Webbutveckling Lysekil – Lokala referenser & resultat",
     description:
-      "I Lysekil utvecklar vi responsiva hemsidor med modern design och robust funktionalitet, designade för att skapa en stark digital närvaro för ditt företag.",
+      "Webbutveckling i Lysekil som syns lokalt. Snabba, SEO-optimerade sidor som konverterar. Kontakta oss för gratis rådgivning.",
   },
   stromstad: {
     name: "Strömstad",
-    title: "Webbutveckling Strömstad – Hemsida Företag med Lokal Känsla | Dataeden",
+    title: "Webbutveckling Strömstad – Byggd för lokala sökningar",
     description:
-      "Vi skapar anpassade hemsidor för företag i Strömstad där modern design möter lokal insikt, vilket ger ditt företag en tydlig digital identitet.",
+      "Webbutveckling i Strömstad. Mobilvänlig design, lokal SEO och snabba leveranser. Begär en kostnadsfri offert idag.",
   },
   falkoping: {
     name: "Falköping",
-    title: "Falköping Webbutveckling – Funktionell Design | Dataeden",
+    title: "Webbutveckling Falköping – Prisvärd, snabb leverans",
     description:
-      "I Falköping erbjuder vi skräddarsydda hemsidor med en funktionell och modern design, anpassade efter ditt företags specifika behov och mål.",
+      "Webbutveckling i Falköping för företag. Snabb leverans, tydliga priser och SEO som ger fler kunder. Få en gratis offert.",
   },
   hjo: {
     name: "Hjo",
-    title: "Webbutveckling Hjo – Hemsida Företag med Enkel Navigering | Dataeden",
+    title: "Webbutveckling Hjo – Enkel, effektiv & mobilvänlig",
     description:
-      "Vi utvecklar användarvänliga hemsidor för företag i Hjo med tydlig design och praktisk funktionalitet, idealiska för små lokala aktörer.",
+      "Webbutveckling i Hjo som gör skillnad. Snabba, mobilvänliga sidor med SEO-struktur. Kontakta oss för gratis rådgivning.",
   },
   ulricehamn: {
     name: "Ulricehamn",
-    title: "Webbyrå Ulricehamn – Hemsida Företag med Modern Teknik | Dataeden",
+    title: "Webbutveckling Ulricehamn – Modern teknik & SEO",
     description:
-      "I Ulricehamn skapar vi professionella hemsidor med modern design och robust funktionalitet, optimerade för företag som vill växa digitalt.",
+      "Webbutveckling i Ulricehamn. Modern teknik, trygg drift och SEO-optimering. Begär offert – start inom 7 dagar.",
   },
   munkedal: {
     name: "Munkedal",
-    title: "Munkedal Webbutveckling – Prisvärda Lösningar | Dataeden",
+    title: "Webbutveckling Munkedal – Fast pris & snabb start",
     description:
-      "Vi erbjuder anpassade hemsidor för företag i Munkedal med modern design och god användarvänlighet, levererade till konkurrenskraftiga priser.",
+      "Webbutveckling i Munkedal för företag. Tydliga paket, snabb leverans och lokal SEO. Få en gratis offert idag.",
   },
 };
+
+function getABVariant(slug: string): "A" | "B" {
+  let sum = 0;
+  for (let i = 0; i < slug.length; i++) sum += slug.charCodeAt(i);
+  return sum % 2 === 0 ? "A" : "B";
+}
+
+function getVariantUSP(variant: "A" | "B"): string {
+  return variant === "A" ? "Klar på 7 dagar" : "Fast pris från 9\u00A0900 kr";
+}
+
+function buildTitle(cityName: string, slug: string): string {
+  const usp = getVariantUSP(getABVariant(slug));
+  return `Webbutveckling ${cityName} – ${usp}`;
+}
+
+function buildDescription(cityName: string): string {
+  const prep = getPreposition(cityName);
+  const category = getCityCategory(cityName);
+  if (category === "large") {
+    return `Webbutveckling ${prep} ${cityName} för företag. Snabb leverans, SEO-struktur och premiumstöd. Boka gratis rådgivning idag.`;
+  }
+  if (category === "growing") {
+    return `Webbutveckling ${prep} ${cityName} för företag. Snabb leverans, SEO-struktur och tydliga priser. Boka gratis rådgivning idag.`;
+  }
+  if (category === "small") {
+    return `Webbutveckling ${prep} ${cityName} för företag. Mobilvänlig, snabb och SEO-optimerad. Få en gratis offert idag.`;
+  }
+  return `Webbutveckling ${prep} ${cityName} för företag. Snabb, mobilvänlig och SEO-optimerad. Kontakta oss för gratis rådgivning.`;
+}
 
 export async function generateMetadata({
   params,
@@ -171,9 +202,15 @@ export async function generateMetadata({
   const cityData = cities[city];
   if (!cityData) return notFound();
 
+  const manualTitle = cityData.title && cityData.title.trim().length > 0 ? cityData.title : null;
+  const manualDescription =
+    cityData.description && cityData.description.trim().length > 0 ? cityData.description : null;
+  const resolvedTitle = manualTitle || buildTitle(cityData.name, city);
+  const resolvedDescription = manualDescription || buildDescription(cityData.name);
+
   return {
-    title: cityData.title,
-    description: cityData.description,
+    title: resolvedTitle,
+    description: resolvedDescription,
     keywords: [
       `Webbyrå ${cityData.name}`,
       `Hemsida företag ${cityData.name}`,
@@ -189,17 +226,15 @@ export async function generateMetadata({
     openGraph: {
       url: `https://dataeden.se/${city}`,
       type: "website",
-      title: `Webbutveckling & SEO ${getPreposition(cityData.name)} ${cityData.name} – Dataeden`,
-      description: `Söker du en webbyrå ${getPreposition(cityData.name)} ${
-        cityData.name
-      }? Vi skapar moderna hemsidor, appar & SEO-strategier för företag som vill synas online.`,
+      title: resolvedTitle,
+      description: resolvedDescription,
       siteName: "Dataeden",
       images: [
         {
           width: 1200,
           height: 630,
-          url: "https://dataeden.se/images/logo.png",
-          alt: `Webbutveckling & SEO ${cityData.name}`,
+          url: "https://dataeden.se/favi/android-chrome-512x512.png",
+          alt: `Webbutveckling ${cityData.name}`,
         },
       ],
     },
@@ -208,11 +243,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `Webbutveckling & SEO ${getPreposition(cityData.name)} ${cityData.name} – Dataeden`,
-      description: `Behöver ditt företag en hemsida eller bättre synlighet på Google? Dataeden hjälper företag ${getPreposition(
-        cityData.name,
-      )} ${cityData.name} att växa digitalt.`,
-      images: ["https://dataeden.se/images/logo.png"],
+      title: resolvedTitle,
+      description: resolvedDescription,
+      images: ["https://dataeden.se/favi/android-chrome-512x512.png"],
     },
   };
 }
@@ -225,11 +258,76 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
   const sections = landingSections(cityData.name);
   const cta = getCTAContent(cityData.name);
   const cityPreposition = getPreposition(cityData.name);
+  const variantUSP = getVariantUSP(getABVariant(city));
+  const faqEntities = faqSection(cityData.name).map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  }));
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Hem",
+                item: "https://dataeden.se/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: `Webbutveckling ${cityPreposition} ${cityData.name}`,
+                item: `https://dataeden.se/${city}`,
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Webbutveckling",
+            serviceType: "Webbutveckling",
+            areaServed: { "@type": "City", name: cityData.name },
+            provider: { "@type": "Organization", name: "Dataeden", url: "https://dataeden.se" },
+            offers: {
+              "@type": "Offer",
+              price: "9900",
+              priceCurrency: "SEK",
+              priceSpecification: { "@type": "PriceSpecification", price: 9900, priceCurrency: "SEK" },
+              availability: "https://schema.org/InStock",
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqEntities,
+          }),
+        }}
+      />
       <Hero city={cityData.name} />
       <Container>
+        <div className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-700 dark:text-gray-300">
+          {`Webbutveckling ${cityPreposition} ${cityData.name}. ${variantUSP}. Snabb, mobilvänlig och SEO-optimerad – boka gratis rådgivning.`}
+        </div>
         {sections.map((section) => (
           <Section
             key={section.id}

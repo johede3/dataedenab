@@ -91,6 +91,46 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Hem", item: "https://dataeden.se/" },
+              { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://dataeden.se/services" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Kan ni koppla bokningar och betalningar?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Ja, vi integrerar Stripe, Klarna, Swish och bokningssystem.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Vad ingår i SEO-optimering?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Teknisk SEO, Core Web Vitals, struktur och innehållsoptimering för bättre ranking.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       {/* 🔥 HERO SECTION */}
       <HeroServices />
 

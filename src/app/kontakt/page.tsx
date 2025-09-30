@@ -66,6 +66,25 @@ function ContactForm() {
 const ContactPage: React.FC = () => {
   return (
     <div className="mx-auto mt-4 max-w-3xl px-6 py-20 text-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Hem", item: "https://dataeden.se/" },
+              { "@type": "ListItem", position: 2, name: "Kontakt", item: "https://dataeden.se/kontakt" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({ "@context": "https://schema.org", "@type": "ContactPage" }),
+        }}
+      />
       <h1 className="text-4xl font-bold text-gray-900">Kontakta oss</h1>
       <p className="mt-3 text-lg text-gray-600">Har du frågor? Fyll i formuläret så återkommer vi till dig.</p>
 

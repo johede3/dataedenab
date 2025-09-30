@@ -83,12 +83,18 @@ export const landingSections = (city: string): ILanding[] => {
           : `Webbyrå ${getPreposition(city)} ${city} – Priser & lösningar`,
       description:
         cityCategory === "large"
-          ? `Företag i ${city} investerar i SEO-optimerade hemsidor för att få bättre digital synlighet. Se våra prisplaner och vad som ingår.`
+          ? `Företag i ${city} investerar i SEO-optimerade hemsidor för att få bättre digital synlighet. Från 9\u202F900 kr – tydliga paket och snabb leverans ${getPreposition(
+              city,
+            )} ${city}. Se våra prisplaner och vad som ingår.`
           : cityCategory === "growing"
-          ? `Vi erbjuder prisvärda webblösningar för företag. Se våra paket och anpassa din hemsida efter dina behov.`
+          ? `Prisvärda webblösningar för företag. Från 9\u202F900 kr – tydliga paket och snabb leverans ${getPreposition(
+              city,
+            )} ${city}. Se våra paket och anpassa efter dina behov.`
           : cityCategory === "small"
-          ? `En hemsida behöver inte vara dyr! Vi bygger lokalanpassade hemsidor för företag till rimliga priser.`
-          : `Vad påverkar priset på en hemsida? Se våra olika alternativ och välj en lösning som passar ditt företag.`,
+          ? `En hemsida behöver inte vara dyr! Från 9\u202F900 kr – lokalanpassade hemsidor med snabb leverans ${getPreposition(
+              city,
+            )} ${city}.`
+          : `Vad påverkar priset på en hemsida? Från 9\u202F900 kr – se våra alternativ och välj en lösning som passar ditt företag.`,
     },
     {
       id: "projects",
