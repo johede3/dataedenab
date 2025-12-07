@@ -11,6 +11,7 @@ import Hero from "../components/Hero/Hero";
 import { ItemScroll } from "../components/Idea/ItemScroll";
 import Pricing from "../components/Pricing/Pricing";
 import Projects from "../components/Projects/Projects";
+import RestaurantDemoSection from "../components/RestaurantDemoSection";
 import Section from "../components/Section/Section";
 import SEOSection from "../components/SEO/SEOSection";
 import Container from "../components/UI/Container/Container";
@@ -125,7 +126,8 @@ export default function Web() {
             {section.id === "about" && <About />}
           </Section>
         ))}
-
+        <RestaurantDemoSection />
+        <About />
         <FAQ city="" />
         <CTA title={cta.title} buttonText={cta.button} />
       </Container>

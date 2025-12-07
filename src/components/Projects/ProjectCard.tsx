@@ -1,41 +1,31 @@
 import Image from "next/image";
-import Link from "next/link";
-import { cn } from "../UI/utils/cn";
 
-const ProjectCard = ({
-  name,
-  description,
-  url,
-  img,
-}: {
+interface Props {
   name: string;
   description: string;
-  url: string;
   img: string;
-}) => {
-  return (
-    <Link href={url} target="_blank" rel="noopener noreferrer">
-      <div
-        className={cn(
-          "relative w-70 cursor-pointer overflow-hidden rounded-xl border p-4 transition hover:shadow-lg",
-          "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-          "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-        )}
-      >
-        <div className="flex flex-col items-center">
-          <Image
-            src={img}
-            alt={name}
-            width={120}
-            height={120}
-            className="h-[120px] w-[120px] rounded-md object-cover"
-          />
+  url: string;
+}
 
-          <h3 className="mt-4 text-lg font-semibold">{name}</h3>
-          <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">{description}</p>
-        </div>
-      </div>
-    </Link>
+const ProjectCard = ({ name, description, img, url }: Props) => {
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+      <figure className="bg-background group relative h-64 w-64 cursor-pointer overflow-hidden rounded-xl border p-4">
+        <div className="absolute inset-0 z-10 h-full w-full bg-gradient-to-b from-transparent from-40% to-black" />
+        <Image
+          className="pointer-events-none absolute left-0 top-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+          alt={name}
+          src={img}
+          width={256}
+          height={256}
+          loading="lazy"
+        />
+        <figcaption className="absolute bottom-4 left-4 z-20">
+          <h1 className="text-lg font-bold text-white">{name}</h1>
+          <p className="text-sm text-gray-300">{description}</p>
+        </figcaption>
+      </figure>
+    </a>
   );
 };
 

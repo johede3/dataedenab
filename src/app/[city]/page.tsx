@@ -170,7 +170,7 @@ function getABVariant(slug: string): "A" | "B" {
 }
 
 function getVariantUSP(variant: "A" | "B"): string {
-  return variant === "A" ? "Klar på 7 dagar" : "Fast pris från 9\u00A0900 kr";
+  return variant === "A" ? "Klar på 7 dagar" : "Fast pris från 9 900 kr";
 }
 
 function buildTitle(cityName: string, slug: string): string {
@@ -305,9 +305,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
             provider: { "@type": "Organization", name: "Dataeden", url: "https://dataeden.se" },
             offers: {
               "@type": "Offer",
-              price: "9900",
-              priceCurrency: "SEK",
-              priceSpecification: { "@type": "PriceSpecification", price: 9900, priceCurrency: "SEK" },
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "SEK",
+                minPrice: 9900,
+                maxPrice: 59900,
+              },
               availability: "https://schema.org/InStock",
             },
           }),

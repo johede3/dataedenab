@@ -7,12 +7,18 @@ import { faqSection } from "../../app/data/faqSection";
 import { getPreposition, replaceCityPlaceholder } from "../../app/utils";
 import SectionTitle from "../Section/SectionTitle";
 
-type Props = {
-  city?: string;
+type FAQItem = {
+  question: string;
+  answer: string;
 };
 
-const FAQ: React.FC<Props> = ({ city }) => {
-  const faqs = faqSection(city ?? "");
+type Props = {
+  city?: string;
+  faqItems?: FAQItem[];
+};
+
+const FAQ: React.FC<Props> = ({ city, faqItems }) => {
+  const faqs = faqItems || faqSection(city ?? "");
   return (
     <section id="faq" className="py-10 lg:py-20">
       <div className="flex flex-col gap-10 lg:flex-row">

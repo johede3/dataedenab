@@ -3,7 +3,7 @@ import Link from "next/link";
 const About: React.FC = () => {
   return (
     <div className="mx-auto max-w-3xl text-center">
-      <div className="text-lg text-gray-600">
+      <div className="text-lg text-gray-600 dark:text-gray-300">
         <strong>Dataeden</strong> är en webbyrå som brinner för att hjälpa småföretag synas online. Vi skapar moderna,
         skräddarsydda hemsidor och digitala lösningar som är snabba, användarvänliga och anpassade efter dina behov.
         <br /> <br /> Vi tror att kombinationen av <strong>snygg design och intuitiv UX</strong> är nyckeln till att
