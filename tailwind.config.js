@@ -49,7 +49,9 @@ export const theme = {
       },
       marquee: {
         from: { transform: "translateX(0)" },
-        to: { transform: "translateX(calc(-50% - var(--gap)/2))" },
+        // Move a full track width (plus the gap) so the duplicated content
+        // lines up when the animation loops, preventing a visible jump.
+        to: { transform: "translateX(calc(-100% - var(--gap)))" },
       },
       "marquee-vertical": {
         from: { transform: "translateY(0)" },
