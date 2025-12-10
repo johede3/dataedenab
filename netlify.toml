@@ -1,0 +1,11 @@
+[build]
+  command = "pnpm run build"
+  publish = ".next"
+
+[functions]
+  directory = ""        # <- disables Netlify functions completely
+  node_bundler = "none"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  inputs = { disable_next_runtime = true }

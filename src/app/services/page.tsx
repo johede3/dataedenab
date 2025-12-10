@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+export const dynamic = "force-static";
 import { FiCheckCircle, FiCode, FiGlobe, FiShield, FiSmartphone, FiTrendingUp } from "react-icons/fi";
 import CTA from "../../components/CTA/CTA";
 import Section from "../../components/Section/Section";
@@ -74,7 +74,7 @@ const services = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Webbutveckling & Apputveckling – Skräddarsydda lösningar | Dataeden",
   description:
     "Vi bygger snabba, mobilanpassade hemsidor & appar för företag och privatpersoner. SEO-optimerade och anpassade efter dina behov.",

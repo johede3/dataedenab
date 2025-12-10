@@ -1,5 +1,3 @@
-import { Metadata } from "next";
-
 import About from "../components/About/About";
 
 import CTA from "../components/CTA/CTA";
@@ -17,7 +15,7 @@ import SEOSection from "../components/SEO/SEOSection";
 import Container from "../components/UI/Container/Container";
 import { getCTAContent, replaceCityPlaceholder } from "./utils";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Webbutveckling, SEO & Apputveckling – Dataeden | Webbyrå i Sverige",
   description:
     "Dataeden är en webbyrå som hjälper företag i Sverige med professionell webbutveckling, SEO och apputveckling. Unika lösningar för företag som vill växa online.",

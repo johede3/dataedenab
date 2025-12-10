@@ -1,5 +1,5 @@
 export const dynamic = "force-static";
-
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import About from "../../components/About/About";
 import Benefits from "../../components/Benefits/Benefits";
@@ -194,8 +194,12 @@ function buildDescription(cityName: string): string {
   return `Webbutveckling ${prep} ${cityName} för företag. Snabb, mobilvänlig och SEO-optimerad. Kontakta oss för gratis rådgivning.`;
 }
 
-export function generateMetadata({ params }: { params: { city: keyof typeof cities } }) {
-  const { city } = params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ city: keyof typeof cities }>;
+}): Promise<Metadata> {
+  const { city } = await params;
   const cityData = cities[city];
   if (!cityData) return notFound();
 
@@ -247,8 +251,8 @@ export function generateMetadata({ params }: { params: { city: keyof typeof citi
   };
 }
 
-export default function CityPage({ params }: { params: { city: keyof typeof cities } }) {
-  const { city } = params;
+export default async function CityPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
+  const { city } = await params;
   const cityData = cities[city];
   if (!cityData) return notFound();
 

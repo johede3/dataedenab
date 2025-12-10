@@ -154,9 +154,11 @@ const cities = {
   },
 };
 
-export function generateMetadata({ params }: { params: { city: keyof typeof cities } }) {
-  const { city } = params;
-  const cityData = cities[city];
+type CityKey = keyof typeof cities;
+
+export function generateMetadata({ params }: { params: Promise<{ city: CityKey }> }) {
+  const city = (params as unknown as { city?: CityKey })?.city;
+  const cityData = city ? cities[city] : null;
   if (!cityData) return notFound();
   return {
     title: cityData.title,
@@ -177,9 +179,9 @@ export function generateMetadata({ params }: { params: { city: keyof typeof citi
   };
 }
 
-export default async function SEOPage({ params }: { params: { city: keyof typeof cities } }) {
-  const { city } = params;
-  const cityData = cities[city];
+export default function SEOPage({ params }: { params: Promise<{ city: CityKey }> }) {
+  const city = (params as unknown as { city?: CityKey })?.city;
+  const cityData = city ? cities[city] : null;
   if (!cityData) return notFound();
 
   const cityCategory = getCityCategory(cityData.name);
