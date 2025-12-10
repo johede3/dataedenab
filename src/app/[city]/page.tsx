@@ -1,4 +1,5 @@
-import { Metadata } from "next";
+export const dynamic = "force-static";
+
 import { notFound } from "next/navigation";
 import About from "../../components/About/About";
 import Benefits from "../../components/Benefits/Benefits";
@@ -193,12 +194,8 @@ function buildDescription(cityName: string): string {
   return `Webbutveckling ${prep} ${cityName} för företag. Snabb, mobilvänlig och SEO-optimerad. Kontakta oss för gratis rådgivning.`;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ city: keyof typeof cities }>;
-}): Promise<Metadata> {
-  const { city } = await params;
+export function generateMetadata({ params }: { params: { city: keyof typeof cities } }) {
+  const { city } = params;
   const cityData = cities[city];
   if (!cityData) return notFound();
 
@@ -250,8 +247,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function CityPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
-  const { city } = await params;
+export default function CityPage({ params }: { params: { city: keyof typeof cities } }) {
+  const { city } = params;
   const cityData = cities[city];
   if (!cityData) return notFound();
 

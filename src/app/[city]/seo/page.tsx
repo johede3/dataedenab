@@ -1,4 +1,5 @@
-import { Metadata } from "next";
+export const dynamic = "force-static";
+
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import HeroSEO from "../../../components/SEO/Hero";
@@ -153,12 +154,8 @@ const cities = {
   },
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ city: keyof typeof cities }>;
-}): Promise<Metadata> {
-  const { city } = await params;
+export function generateMetadata({ params }: { params: { city: keyof typeof cities } }) {
+  const { city } = params;
   const cityData = cities[city];
   if (!cityData) return notFound();
   return {
@@ -180,8 +177,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function SEOPage({ params }: { params: Promise<{ city: keyof typeof cities }> }) {
-  const { city } = await params;
+export default async function SEOPage({ params }: { params: { city: keyof typeof cities } }) {
+  const { city } = params;
   const cityData = cities[city];
   if (!cityData) return notFound();
 
