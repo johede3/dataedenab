@@ -6,3 +6,7 @@
   directory = ""
   node_bundler = "none"
 
+[[edge_functions]]
+  path = "/*"
+  function = "bots"
+
