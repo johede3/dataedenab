@@ -519,6 +519,17 @@ export default function SEOPage({ params }: { params: Promise<{ city: CityKey }>
                   </details>
 
                   <details className="rounded-lg bg-gray-100 p-4">
+                    <summary className="cursor-pointer font-medium">Vad kostar SEO i {cityData.name}?</summary>
+                    <p className="mt-2 text-gray-600">
+                      Kostnaden för SEO beror på hur stor konkurrensen är i din bransch. Läs gärna vår guide{" "}
+                      <Link href="/blog/vad-kostar-seo-i-sverige" className="text-primary hover:underline">
+                        Vad kostar SEO i Sverige?
+                      </Link>{" "}
+                      för en genomgång av priser och modeller.
+                    </p>
+                  </details>
+
+                  <details className="rounded-lg bg-gray-100 p-4">
                     <summary className="cursor-pointer font-medium">Hur vet jag om SEO fungerar?</summary>
                     <p className="mt-2 text-gray-600">
                       Vi mäter dina SEO-resultat genom Google Analytics och sökordsrapporter. Du kan se hur många fler

@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-hero-background text-foreground py-10">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-4">
         {/* Logo & Description */}
         <div>
           <Link href="/" className="flex items-center">
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
           <h3 className="mb-4 text-lg font-semibold">{footerDetails.quickLinksHeader}</h3>
           <ul className="text-foreground-accent">
             {footerDetails.quickLinks.map((link) => {
-              const href = city ? `/${city}${link.url}` : `/${link.url}`;
+              const href = link.url.startsWith("/") ? link.url : city ? `/${city}${link.url}` : `/${link.url}`;
               return (
                 <li key={link.text} className="mb-2">
                   <Link href={href} prefetch={false} className="hover:text-foreground">
@@ -40,6 +40,20 @@ const Footer: React.FC = () => {
                 </li>
               );
             })}
+          </ul>
+        </div>
+
+        {/* Resources */}
+        <div>
+          <h3 className="mb-4 text-lg font-semibold">{footerDetails.resourcesHeader}</h3>
+          <ul className="text-foreground-accent">
+            {footerDetails.resources.map((link) => (
+              <li key={link.text} className="mb-2">
+                <Link href={link.url} prefetch={false} className="hover:text-foreground">
+                  {link.text}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

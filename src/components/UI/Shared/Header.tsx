@@ -37,7 +37,7 @@ const Header: React.FC = () => {
           {/* Desktop Menu */}
           <ul className="hidden space-x-6 md:flex">
             {menuItems.map((link) => {
-              const href = city ? `/${city}${link.url}` : `/${link.url}`;
+              const href = link.url.startsWith("/") ? link.url : city ? `/${city}${link.url}` : `/${link.url}`;
               return (
                 <li key={link.text}>
                   <Link
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
         <div id="mobile-menu" className="bg-background shadow-lg md:hidden">
           <ul className="flex flex-col space-y-4 px-6 pt-1 pb-6">
             {menuItems.map((item) => {
-              const href = city ? `/${city}${item.url}` : `/${item.url}`;
+              const href = item.url.startsWith("/") ? item.url : city ? `/${city}${item.url}` : `/${item.url}`;
 
               return (
                 <li key={item.text}>

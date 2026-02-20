@@ -353,7 +353,19 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
                 }}
               />
             )}
-            {section.id === "pricing" && <Pricing city={cityData.name} />}
+            {section.id === "pricing" && (
+              <>
+                <Pricing city={cityData.name} />
+                <div className="mt-8 text-center">
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Vill du veta mer om SEO-priser?{" "}
+                    <Link href="/blog/vad-kostar-seo-i-sverige" className="text-primary font-semibold hover:underline">
+                      Läs vår ärliga guide för företagare här.
+                    </Link>
+                  </p>
+                </div>
+              </>
+            )}
             {section.id === "projects" && (
               <div className="w-full overflow-x-hidden">
                 <Projects />

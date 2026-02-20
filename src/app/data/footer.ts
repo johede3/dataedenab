@@ -9,6 +9,8 @@ export const footerDetails: {
   socials: ISocials;
   contactHeader: string;
   quickLinksHeader: string;
+  resourcesHeader: string;
+  resources: IMenuItem[];
   locations: typeof sitemapCities;
   locationsHeader: string;
 } = {
@@ -20,6 +22,9 @@ export const footerDetails: {
     { text: "Vanliga frågor", url: `#faq` },
     { text: "Kontakta oss", url: `#cta` },
   ],
+  resources: [
+    { text: "Vad kostar SEO?", url: "/blog/vad-kostar-seo-i-sverige" },
+  ],
   locations: sitemapCities,
   email: "kontakt@dataeden.se",
   socials: {
@@ -27,5 +32,6 @@ export const footerDetails: {
   },
   contactHeader: "Kontaktuppgifter",
   quickLinksHeader: "Snabblänkar",
+  resourcesHeader: "Resurser",
   locationsHeader: "Vi arbetar i dessa områden",
 };

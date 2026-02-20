@@ -136,6 +136,17 @@ export default function SEOPage() {
             <h2 className="text-center text-3xl font-bold">Vanliga frågor om SEO</h2>
             <div className="mt-8 space-y-2">
               <details className="rounded-lg bg-gray-100 p-4">
+                <summary className="cursor-pointer font-medium">Vad kostar SEO i Sverige?</summary>
+                <p className="mt-2 text-gray-600">
+                  Priset för SEO varierar beroende på dina mål, konkurrens och nuvarande situation. Vi har skapat en{" "}
+                  <Link href="/blog/vad-kostar-seo-i-sverige" className="text-primary hover:underline">
+                    ärlig guide om SEO-priser
+                  </Link>{" "}
+                  där vi går igenom allt du behöver veta om kostnader och investeringar.
+                </p>
+              </details>
+
+              <details className="rounded-lg bg-gray-100 p-4">
                 <summary className="cursor-pointer font-medium">Behöver jag SEO för min hemsida?</summary>
                 <p className="mt- text-gray-600">
                   Ja! Utan SEO kommer din hemsida vara svår att hitta på Google. SEO hjälper dig att synas för rätt

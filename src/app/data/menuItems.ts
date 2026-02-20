@@ -5,4 +5,5 @@ export const menuItems: IMenuItem[] = [
   { text: "Varför oss?", url: "#features" },
   { text: "Projekt", url: "#projects" },
   { text: "Priser", url: "#pricing" },
+  { text: "Blogg", url: "/blog/vad-kostar-seo-i-sverige" },
 ]
