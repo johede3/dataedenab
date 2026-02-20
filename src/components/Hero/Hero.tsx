@@ -26,13 +26,11 @@ const Hero: React.FC<HeroProps> = ({ city }) => {
 
       {/* Content */}
       <div className="text-center">
-        <h1 className="text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-4xl md:text-6xl md:leading-tight">
+        <h1 className="text-foreground mx-auto max-w-xl text-4xl font-bold md:max-w-5xl md:text-6xl md:leading-tight">
           {replaceCityPlaceholder(hero.heading, cityPreposition)}
-          <span className="text-primary">{hero.highlight}</span>
-          <br />
-          {hero.heading2}
+          <span className="text-primary">{hero.highlight}</span> {hero.heading2}
         </h1>
-        <p className="text-foreground mx-auto mt-4 max-w-lg">{replaceCityPlaceholder(hero.subheading, city)}</p>
+        <p className="text-foreground mx-auto mt-4 max-w-xl">{replaceCityPlaceholder(hero.subheading, city)}</p>
 
         {/* CTA Buttons */}
         <div className="mx-auto mt-6 flex w-fit flex-col items-center gap-2 sm:flex-row sm:gap-4">

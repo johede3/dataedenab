@@ -14,21 +14,21 @@ export const heroDetails = (city: string) => {
       variation === 0
         ? `Webbyrå ${city} –`
         : variation === 1
-          ? `Webbutveckling ${city} – Webbyrå med`
-          : `Skapa hemsida ${city} –`,
+        ? `Webbutveckling ${city} – Webbyrå med`
+        : `Webbyrå i ${city} –`,
     highlight:
       variation === 0
         ? ` Professionell webbutveckling`
         : variation === 1
-          ? ` prestanda och konvertering`
-          : ` Unika lösningar`,
-    heading2: variation === 0 ? ` för ditt företag` : variation === 1 ? ` i fokus` : ` anpassad efter ditt varumärke`,
+        ? ` prestanda och konvertering`
+        : ` Design som säljer`,
+    heading2: variation === 0 ? ` för ditt företag` : variation === 1 ? ` i fokus` : ` unika lösningar för dig`,
     subheading:
       variation === 0
         ? `Som webbyrå bygger vi responsiva, konverteringsoptimerade och mobilanpassade hemsidor med fokus på UX/UI och SEO.`
         : variation === 1
-          ? `Vi skapar webblösningar för företag som vill ha en snabb, modern och synlig hemsida. UX/UI, webbutveckling och prestanda i ett paket.`
-          : `Behöver du en ny webbplats? Vi bygger skräddarsydda, användarvänliga hemsidor med fokus på affärsnytta och sökmotoroptimering.`,
+        ? `Vi skapar webblösningar för företag som vill ha en snabb, modern och synlig hemsida. UX/UI, webbutveckling och prestanda i ett paket.`
+        : `Behöver du en ny webbplats? Vi bygger skräddarsydda, användarvänliga hemsidor med fokus på affärsnytta och sökmotoroptimering.`,
     offertCTA: "Få en gratis offert",
     servicesCTA: "Se våra tjänster",
     centerImageSrc: "/images/BSHsmall.webp",

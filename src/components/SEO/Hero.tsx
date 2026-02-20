@@ -29,32 +29,43 @@ const HeroSEO: React.FC<HeroSEOProps> = ({ city }) => {
     ctaText = "Boka en kostnadsfri konsultation";
   } else {
     const cityCategory = getCityCategory(city);
-    heroTitle =
-      cityCategory === "large"
-        ? `SEO ${getPreposition(city)} ${city} –`
-        : cityCategory === "growing"
-        ? `SEO ${getPreposition(city)} ${city} – Ta ledningen online`
-        : `SEO ${getPreposition(city)} ${city} –`;
-    heroHighlight =
-      cityCategory === "large"
-        ? ` Dominera Google`
-        : cityCategory === "growing"
-        ? ` innan konkurrensen`
-        : ` Få fler kunder`;
-    heroHeading2 =
-      cityCategory === "large" ? ` & slå konkurrenterna.` : cityCategory === "growing" ? `` : ` från Google lokalt`;
-    heroDescription =
-      cityCategory === "large"
-        ? `Behöver du fler kunder i ${city}? Vi hjälper företag att ranka högre och stärka sitt varumärke online genom avancerade SEO-strategier.`
-        : cityCategory === "growing"
-        ? `SEO är en nyckel för tillväxt i ${city}. Vi hjälper företag att optimera sina hemsidor och ta en ledande position innan konkurrensen hårdnar.`
-        : `SEO i ${city} hjälper småföretag att synas på Google, locka fler kunder och växa online med minimal konkurrens.`;
-    ctaText =
-      cityCategory === "large"
-        ? "Boka en expertanalys"
-        : cityCategory === "growing"
-        ? "Ta din webbplats till toppen"
-        : "Se hur du kan synas bättre";
+    const isKungsbacka = city.toLowerCase() === "kungsbacka";
+
+    heroTitle = isKungsbacka
+      ? "Lokal SEO som Gör Dig Störst"
+      : cityCategory === "large"
+      ? `SEO ${getPreposition(city)} ${city} –`
+      : cityCategory === "growing"
+      ? `SEO ${getPreposition(city)} ${city} – Ta ledningen online`
+      : `SEO ${getPreposition(city)} ${city} –`;
+    heroHighlight = isKungsbacka
+      ? ` i Kungsbacka`
+      : cityCategory === "large"
+      ? ` Dominera Google`
+      : cityCategory === "growing"
+      ? ` innan konkurrensen`
+      : ` Få fler kunder`;
+    heroHeading2 = isKungsbacka
+      ? ""
+      : cityCategory === "large"
+      ? ` & slå konkurrenterna.`
+      : cityCategory === "growing"
+      ? ``
+      : ` från Google lokalt`;
+    heroDescription = isKungsbacka
+      ? "Sluta konkurrera med Göteborg. Dominera din lokala marknad. Vi hjälper dig att bli det självklara valet i Kungsbacka."
+      : cityCategory === "large"
+      ? `Behöver du fler kunder i ${city}? Vi hjälper företag att ranka högre och stärka sitt varumärke online genom avancerade SEO-strategier.`
+      : cityCategory === "growing"
+      ? `SEO är en nyckel för tillväxt i ${city}. Vi hjälper företag att optimera sina hemsidor och ta en ledande position innan konkurrensen hårdnar.`
+      : `SEO i ${city} hjälper småföretag att synas på Google, locka fler kunder och växa online med minimal konkurrens.`;
+    ctaText = isKungsbacka
+      ? "Låt oss ta en kaffe och prata SEO"
+      : cityCategory === "large"
+      ? "Boka en expertanalys"
+      : cityCategory === "growing"
+      ? "Ta din webbplats till toppen"
+      : "Se hur du kan synas bättre";
   }
 
   return (

@@ -1,6 +1,8 @@
 export const dynamic = "force-static";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FaArrowRight } from "react-icons/fa6";
 import About from "../../components/About/About";
 import Benefits from "../../components/Benefits/Benefits";
 import CTA from "../../components/CTA/CTA";
@@ -360,6 +362,27 @@ export default async function CityPage({ params }: { params: Promise<{ city: key
             {section.id === "about" && <About />}
           </Section>
         ))}
+
+        {city === "boras" && (
+          <section className="my-20 rounded-3xl bg-primary/5 p-8 text-center md:p-16 dark:bg-white/5">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
+                Webbyrå i Borås
+              </h2>
+              <p className="mt-6 text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+                Letar du efter en lokal partner som förstår Borås unika marknad? Vi bygger högpresterande hemsidor som driver verklig tillväxt.
+              </p>
+              <div className="mt-10">
+                <Link
+                  href="/boras/webbyra"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-10 py-4 text-xl font-semibold text-background transition-all hover:scale-105 hover:bg-primary-hover shadow-lg"
+                >
+                  Utforska vår webbyrå i Borås <FaArrowRight size={20} />
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
 
         <FAQ city={cityData.name} />
 

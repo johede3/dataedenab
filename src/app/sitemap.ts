@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://dataeden.se";
 
   // Statiska sidor
-  const pages = ["", "kontakt", "services", "search-engine-optimization"];
+  const pages = ["", "kontakt", "services", "search-engine-optimization", "blog/vad-kostar-seo-i-sverige"];
 
   // Generera URLs för alla sidor
   const allPages = [
@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...sitemapCities.flatMap((city) => [
       `${baseUrl}/${city.slug}`, // Stadens huvudsida
       `${baseUrl}/${city.slug}/seo`, // SEO-sidan för staden
+      `${baseUrl}/boras/webbyra`, // Webbyrå-sidan för staden
     ]),
   ];
 

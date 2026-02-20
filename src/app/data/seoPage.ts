@@ -12,6 +12,47 @@ import { getCityCategory, getPreposition } from "../utils";
 export const generateCitySEOData = (city: string) => {
   const cityCategory = getCityCategory(city);
 
+  if (city.toLowerCase() === "kungsbacka") {
+    return {
+      title: "Din lokala fördel i Kungsbacka",
+      description:
+        "Oavsett om du driver en butik i Kungsmässan, ett hantverksföretag i Varla eller en restaurang i innerstaden, börjar 9 av 10 kundresor med en sökning på Google. Vi ser till att de hittar dig.",
+      benefits: [
+        {
+          icon: FaMagnifyingGlass,
+          title: "Syns högre på Google",
+          text: "Vi hittar orden dina kunder använder för att hitta företag som ditt i Kungsbacka.",
+        },
+        {
+          icon: FaChartLine,
+          title: "Dominera lokalt",
+          text: "Stark lokal SEO hjälper dig att fånga lokala kunder innan de söker sig mot Göteborg.",
+        },
+        {
+          icon: FaMoneyBillWave,
+          title: "Kostnadseffektiv tillväxt",
+          text: "SEO ger långsiktig, gratis trafik som bygger upp din närvaro på ett hållbart sätt.",
+        },
+      ],
+      strategies: [
+        {
+          icon: FaWrench,
+          title: "On-page SEO – Strukturerad för Kungsbacka",
+          description:
+            "Vi optimerar din hemsida med fokus på de lokala sökningar som faktiskt driver affärer i Kungsbacka.",
+          points: ["Lokalt anpassade titlar", "Sökordsoptimering för Varla & Kungsmässan", "Mobilvänlig design"],
+        },
+        {
+          icon: FaLocationDot,
+          title: "Lokal SEO & Google Business Profile",
+          description:
+            "Vi ser till att du syns på Google Maps och i 'nära mig'-sökningar när Kungsbackaborna letar efter dina tjänster.",
+          points: ["Google Maps-optimering", "Lokala citeringar", "Recensionshantering"],
+        },
+      ],
+    };
+  }
+
   const seoTitle =
     cityCategory === "large"
       ? `SEO ${getPreposition(city)} ${city} – Stärk ditt varumärke och dominera Google`

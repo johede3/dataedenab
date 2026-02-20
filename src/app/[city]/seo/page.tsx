@@ -28,9 +28,9 @@ const cities = {
   },
   kungsbacka: {
     name: "Kungsbacka",
-    title: "SEO i Kungsbacka – Bli ledande med våra strategier | Dataeden",
+    title: "SEO Kungsbacka – Bli det självklara valet lokalt",
     description:
-      "Vi hjälper företag i Kungsbacka att förbättra sin Google-ranking med effektiva SEO-lösningar. Öka din synlighet och få fler kunder.",
+      "Lokal SEO som gör dig störst i Kungsbacka. Vi hjälper dig att dominera den lokala marknaden och bli det självklara valet för kunderna.",
   },
   molndal: {
     name: "Mölndal",
@@ -289,12 +289,16 @@ export default function SEOPage({ params }: { params: Promise<{ city: CityKey }>
                 <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-1">
                   {/* Text */}
                   <div>
-                    <h2 className="text-4xl leading-tight font-bold text-gray-900 md:text-5xl dark:text-gray-100">
-                      Vill du ranka högre på Google {getPreposition(cityData.name)} {cityData.name}?
+                    <h2 className="text-3xl leading-tight font-bold text-gray-900 md:text-4xl dark:text-gray-100">
+                      {cityData.name.toLowerCase() === "kungsbacka"
+                        ? "Varför lokal SEO är extra viktigt i Kungsbacka"
+                        : `Vill du ranka högre på Google ${getPreposition(cityData.name)} ${cityData.name}?`}
                     </h2>
 
                     <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
-                      {cityCategory === "large"
+                      {cityData.name.toLowerCase() === "kungsbacka"
+                        ? "I Kungsbacka befinner du dig i en unik position, nära en storstadsmarknad som Göteborg. Men för ett lokalt företag i Kungsbacka handlar framgång om att bli det självklara valet på hemmaplan. Genom att optimera för lokal SEO fångar du upp kunderna precis när de letar efter tjänster i sitt närområde – innan de ens hinner överväga alternativ inne i staden."
+                        : cityCategory === "large"
                         ? `I en konkurrensutsatt marknad som ${cityData.name} är SEO inte längre en lyx – det är en absolut nödvändighet. Stora företag i ${cityData.name} investerar enorma summor i digital marknadsföring, och om din hemsida inte är optimerad för Google kommer du att förlora potentiella kunder till dina konkurrenter.`
                         : cityCategory === "growing"
                         ? `SEO i ${cityData.name} ger dig en unik möjlighet att positionera ditt företag digitalt innan konkurrensen blir för hård. Allt fler företag i området börjar förstå vikten av sökmotoroptimering – genom att agera nu kan du skapa en stark digital närvaro innan marknaden blir mättad.`
@@ -302,7 +306,9 @@ export default function SEOPage({ params }: { params: Promise<{ city: CityKey }>
                     </p>
 
                     <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-                      {cityCategory === "large"
+                      {cityData.name.toLowerCase() === "kungsbacka"
+                        ? "Mobiliseringen har ändrat spelplanen. Idag sker de flesta sökningar via mobilen och ofta med en lokal intention. 'SEO Kungsbacka' eller 'Hantverkare nära mig' är sökningar som direkt leder till affärer. Vi hjälper dig att optimera din digitala närvaro så att din verksamhet i Kungsbacka syns när det gäller som mest."
+                        : cityCategory === "large"
                         ? `Vi optimerar allt från teknisk SEO, som laddningshastighet och mobilanpassning, till strategisk innehållsplanering och backlink-building. Vår SEO-strategi ser till att din hemsida inte bara rankar högt utan också konverterar besökare till faktiska kunder.`
                         : cityCategory === "growing"
                         ? `För att etablera dig digitalt i ${cityData.name} behöver du en SEO-strategi som kombinerar smart innehållsoptimering, teknisk SEO och lokal sökordsanpassning. Vi hjälper dig att implementera en strategi som både ökar din synlighet och stärker ditt varumärke online.`
@@ -355,42 +361,53 @@ export default function SEOPage({ params }: { params: Promise<{ city: CityKey }>
                 </div>
 
                 {/* SEO Strategies - Grid Section */}
-                <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-                  {strategies.map((strategy, index) => {
-                    const Icon = strategy.icon;
-                    return (
-                      <div
-                        key={index}
-                        className="flex flex-col gap-4 rounded-lg bg-gray-50 p-8 shadow-lg dark:bg-gray-900"
-                      >
-                        <div className="flex items-center gap-4">
-                          <Icon className="text-4xl text-primary" />
-                          <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{strategy.title}</h3>
+                <div className="mt-16">
+                  {cityData.name.toLowerCase() === "kungsbacka" && (
+                    <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl dark:text-gray-100">
+                      Våra SEO-Tjänster: Syns Där Dina Kunder Letar
+                    </h2>
+                  )}
+                  <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    {strategies.map((strategy, index) => {
+                      const Icon = strategy.icon;
+                      return (
+                        <div
+                          key={index}
+                          className="flex flex-col gap-4 rounded-lg bg-gray-50 p-8 shadow-lg dark:bg-gray-900"
+                        >
+                          <div className="flex items-center gap-4">
+                            <Icon className="text-4xl text-primary" />
+                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+                              {strategy.title}
+                            </h3>
+                          </div>
+                          <p className="text-lg text-gray-700 dark:text-gray-300">
+                            {cityCategory === "large"
+                              ? `${strategy.description} Detta är särskilt viktigt i en stad som ${cityData.name}, där konkurrensen om toppositionerna är hög.`
+                              : cityCategory === "growing"
+                              ? `${strategy.description} I ${cityData.name} har företag som satsat på SEO redan sett en markant ökning av sina digitala leads.`
+                              : `${strategy.description} Med rätt strategi kan ditt företag i ${cityData.name} enkelt dominera Google-sökningar lokalt.`}
+                          </p>
+                          <ul className="mt-4 space-y-2 text-lg">
+                            {strategy.points.map((point, i) => (
+                              <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
+                                <span className="mr-2 text-green-500">✓</span> {point}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <p className="text-lg text-gray-700 dark:text-gray-300">
-                          {cityCategory === "large"
-                            ? `${strategy.description} Detta är särskilt viktigt i en stad som ${cityData.name}, där konkurrensen om toppositionerna är hög.`
-                            : cityCategory === "growing"
-                            ? `${strategy.description} I ${cityData.name} har företag som satsat på SEO redan sett en markant ökning av sina digitala leads.`
-                            : `${strategy.description} Med rätt strategi kan ditt företag i ${cityData.name} enkelt dominera Google-sökningar lokalt.`}
-                        </p>
-                        <ul className="mt-4 space-y-2 text-lg">
-                          {strategy.points.map((point, i) => (
-                            <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
-                              <span className="mr-2 text-green-500">✓</span> {point}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
               {/* CTA Sektion - Avslut med en bred block */}
               <div className="mt-16 rounded-xl bg-primary-hover p-6 text-center text-background shadow-md md:p-12 dark:bg-purple-900">
                 <h2 className="text-3xl leading-14 font-bold md:text-4xl">
-                  {cityCategory === "large"
+                  {cityData.name.toLowerCase() === "kungsbacka"
+                    ? "Låt oss ta en kaffe och prata SEO"
+                    : cityCategory === "large"
                     ? `Vill du slå dina konkurrenter ${getPreposition(cityData.name)} ${cityData.name} från Google?`
                     : cityCategory === "growing"
                     ? `Vill du synas på Google innan konkurrensen ökar ${getPreposition(cityData.name)} ${
@@ -400,7 +417,9 @@ export default function SEOPage({ params }: { params: Promise<{ city: CityKey }>
                 </h2>
 
                 <p className="mx-auto mt-4 max-w-3xl text-xl">
-                  {cityCategory === "large"
+                  {cityData.name.toLowerCase() === "kungsbacka"
+                    ? "Ingen vill slösa pengar på marknadsföring som inte ger resultat. Vi hjälper dig att förstå hur dina kunder letar och hur du kan bli deras förstahandsval. Kom förbi kontoret eller låt oss ses över en kaffe."
+                    : cityCategory === "large"
                     ? `SEO är inte bara en strategi – det är en nödvändighet ${getPreposition(cityData.name)} ${
                         cityData.name
                       }. Företag som rankar högst på Google får flest kunder. Vi hjälper dig att optimera din webbplats, driva mer trafik och öka din försäljning genom beprövade SEO-metoder.`
