@@ -50,6 +50,14 @@ const Header: React.FC = () => {
                 </li>
               );
             })}
+
+            <Link
+              href={"https://blog.dataeden.se"}
+              className="text-foreground hover:text-foreground-accent transition-colors"
+            >
+              Blogg
+            </Link>
+
             <li>
               <Link href="/services" className="text-foreground hover:text-foreground-accent transition-colors">
                 Tjänster
@@ -113,6 +121,12 @@ const Header: React.FC = () => {
                 </li>
               );
             })}
+            <Link
+              href={"https://blog.dataeden.se"}
+              className="text-foreground hover:text-foreground-accent transition-colors"
+            >
+              Blogg
+            </Link>
             <li>
               <Link
                 href="/kontakt"

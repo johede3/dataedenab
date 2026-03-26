@@ -1,9 +1,8 @@
-import { IMenuItem } from "../types"
+import { IMenuItem } from "../types";
 
 export const menuItems: IMenuItem[] = [
   { text: "Om oss", url: "#about" },
   { text: "Varför oss?", url: "#features" },
   { text: "Projekt", url: "#projects" },
   { text: "Priser", url: "#pricing" },
-  { text: "Blogg", url: "/blog/vad-kostar-seo-i-sverige" },
-]
+];

@@ -6,7 +6,7 @@ const childVariants = {
   onscreen: {
     opacity: 1,
     x: 0,
-    transition: { type: "spring", bounce: 0.2, duration: 1 },
+    transition: { type: "spring" as const, bounce: 0.2, duration: 1 },
   },
 };
 
@@ -19,7 +19,7 @@ const BenefitBullet: React.FC<IBenefitBullet> = ({ title, description, icon }: I
       whileInView="onscreen"
       viewport={{ once: true }}
     >
-      <div className="mx-auto mt-3 flex w-fit flex-shrink-0 justify-center lg:mx-0">{icon}</div>
+      <div className="mx-auto mt-3 flex w-fit shrink-0 justify-center lg:mx-0">{icon}</div>
       <div>
         <h3 className="text-lg font-semibold">{title}</h3>
         <p className="text-foreground-accent text-base">{description}</p>

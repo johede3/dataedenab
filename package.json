@@ -22,7 +22,6 @@
     "@next/third-parties": "^15.1.9",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
-    "google": "link:next/font/google",
     "next": "15.1.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
