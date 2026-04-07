@@ -30,7 +30,7 @@ export const projects = [
     url: "https://dataeden.se",
   },
   {
-    name: "Padelmaster",
+    name: "Padelmaster - Appen",
     description:
       "iOS och Android-app till Padelmaster, världens bästa bollmaskin för padel, som hjälper dig att ta ditt spel till nästa nivå.",
     img: "/images/projects/padelmaster.webp",
@@ -42,5 +42,12 @@ export const projects = [
       "En AI-driven plattform för att snabbt och effektivt screena och rangordna CV:n, så att du hittar rätt kandidat på minuter.",
     img: "/images/projects/kandidatkollen.png",
     url: "https://kandidatkollen.se/",
+  },
+  {
+    name: "Rank Lush",
+    description:
+      "Ett SEO-verktyg som hjälper webbplatsägare att analysera och förbättra sin sökmotoroptimering, så att de kan klättra i sökresultaten och driva mer organisk trafik.",
+    img: "/images/projects/ranklush.png",
+    url: "https://ranklush.com/",
   },
 ];
