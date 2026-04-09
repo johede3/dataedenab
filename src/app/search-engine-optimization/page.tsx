@@ -131,6 +131,38 @@ export default function SEOPage() {
           </Link>
         </div>
 
+        <section id="ranklush" className="py-16">
+          <div className="mx-auto max-w-4xl rounded-2xl border border-gray-200 bg-gray-50 p-10 dark:border-gray-700 dark:bg-gray-800">
+            <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
+              <div className="flex-1">
+                <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">Verktyg vi byggt</p>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                  Vill du ha löpande SEO-innehåll, utan att skriva det själv?
+                </h2>
+                <p className="mt-3 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+                  Vi har byggt <strong>Rank Lush</strong>, ett verktyg som automatiskt genererar, granskar och
+                  publicerar blogginlägg anpassade för sökmotorer. Du sätter målen, verktyget sköter innehållet. Vi
+                  använder det själva för den här webbplatsens blogg.
+                </p>
+                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                  Tillgången är begränsad, vi granskar varje ansökan och arbetar bara med varumärken vi faktiskt kan
+                  hjälpa.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <Link
+                  href="https://ranklush.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-full bg-primary px-7 py-3 font-medium text-background shadow-md transition-all hover:bg-primary-hover"
+                >
+                  Ansök om tillgång →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="faq" className="py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-center text-3xl font-bold">Vanliga frågor om SEO</h2>

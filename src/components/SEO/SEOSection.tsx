@@ -29,13 +29,24 @@ const SEOSection: React.FC<SEOSectionProps> = ({ city = "" }) => {
       </div>
 
       {/* CTA Button - Dynamic Link */}
-      <div className="mt-10">
+      <div className="mt-10 flex flex-col items-center gap-4">
         <Link
           href={cityName ? `/${cityName}/seo` : "/search-engine-optimization"}
           className="rounded-full bg-primary px-6 py-3 font-medium text-background shadow-md transition-all hover:bg-primary-hover"
         >
           Läs mer om SEO {getPreposition(city)} {city}
         </Link>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          Vill du ha automatiskt SEO-innehåll?{" "}
+          <Link
+            href="https://ranklush.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-primary hover:underline"
+          >
+            Ansök om tillgång till Rank Lush →
+          </Link>
+        </p>
       </div>
     </div>
   );
