@@ -4,7 +4,7 @@ export const faqDetails = {
   heading: "Vanliga frågor – Hemsidor, Appar & Webbutveckling",
   subheading:
     "Här hittar du svar på vanliga frågor om våra tjänster inom webbutveckling, SEO och digitala lösningar. Hittar du inte det du söker? Kontakta oss!",
-  contactEmail: "kontakt@dataeden.se",
+  contactEmail: "johannes@dataeden.se",
 }
 
 export const faqs: IFAQ[] = [

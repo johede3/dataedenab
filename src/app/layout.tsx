@@ -103,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer support",
-                email: "kontakt@dataeden.se",
+                email: "johannes@dataeden.se",
               },
             }),
           }}

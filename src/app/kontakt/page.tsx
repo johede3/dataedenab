@@ -93,8 +93,8 @@ const ContactPage: React.FC = () => {
       {/* Keep email option visible even after success */}
       <p className="mt-6 text-sm text-gray-600">
         Eller skicka ett mejl direkt till:{" "}
-        <a href="mailto:kontakt@dataeden.se" className="font-medium text-primary hover:underline">
-          kontakt@dataeden.se
+        <a href="mailto:johannes@dataeden.se" className="font-medium text-primary hover:underline">
+          johannes@dataeden.se
         </a>
       </p>
     </div>

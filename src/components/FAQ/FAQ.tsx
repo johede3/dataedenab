@@ -30,7 +30,7 @@ const FAQ: React.FC<Props> = ({ city, faqItems }) => {
           <p className="text-foreground-accent text-center lg:mt-10 lg:text-left">
             {faqDetails.subheading} <br className="hidden md:inline" />
             <a
-              href="mailto:"
+              href={`mailto:${faqDetails.contactEmail}`}
               className="text-secondary mt-3 block text-center text-xl font-semibold hover:underline lg:text-left lg:text-4xl"
             >
               {faqDetails.contactEmail}

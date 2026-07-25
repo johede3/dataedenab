@@ -26,7 +26,7 @@ export const footerDetails: {
     { text: "Vad kostar SEO?", url: "/blog/vad-kostar-seo-i-sverige" },
   ],
   locations: sitemapCities,
-  email: "kontakt@dataeden.se",
+  email: "johannes@dataeden.se",
   socials: {
     linkedin: "https://www.linkedin.com/in/johannesedenholm",
   },
