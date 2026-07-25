@@ -1,5 +1,11 @@
 export const projects = [
   {
+    name: "Saldy",
+    description: "Ett modernt bokföringsprogram för småföretag.",
+    img: "/images/projects/saldy.png",
+    url: "https://www.saldy.se/",
+  },
+  {
     name: "Aiuli",
     description: "En smart plattform som hjälper resenärer att planera multi-city resor och optimera sina stopp.",
     img: "/images/projects/AiuliMain.webp",
