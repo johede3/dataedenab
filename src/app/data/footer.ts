@@ -24,6 +24,9 @@ export const footerDetails: {
   ],
   resources: [
     { text: "Vad kostar SEO?", url: "/blog/vad-kostar-seo-i-sverige" },
+    { text: "Bästa bokföringsprogram för småföretag", url: "/blog/basta-bokforingsprogram-smaforetag" },
+    { text: "Billigt bokföringsprogram för AB", url: "/blog/billigt-bokforingsprogram-aktiebolag" },
+    { text: "Göra bokföringen själv i ett AB", url: "/blog/gora-bokforingen-sjalv-aktiebolag" },
   ],
   locations: sitemapCities,
   email: "johannes@dataeden.se",

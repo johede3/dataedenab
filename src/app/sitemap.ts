@@ -32,7 +32,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://dataeden.se";
 
   // Statiska sidor
-  const pages = ["", "kontakt", "services", "search-engine-optimization", "blog/vad-kostar-seo-i-sverige"];
+  const pages = [
+    "",
+    "kontakt",
+    "services",
+    "search-engine-optimization",
+    "blog/vad-kostar-seo-i-sverige",
+    "blog/basta-bokforingsprogram-smaforetag",
+    "blog/billigt-bokforingsprogram-aktiebolag",
+    "blog/gora-bokforingen-sjalv-aktiebolag",
+  ];
 
   // Generera URLs för alla sidor
   const allPages = [
