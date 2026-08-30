@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "kontakt",
     "services",
     "search-engine-optimization",
+    "blog",
     "blog/vad-kostar-seo-i-sverige",
     "blog/basta-bokforingsprogram-smaforetag",
     "blog/billigt-bokforingsprogram-aktiebolag",

@@ -52,7 +52,7 @@ const Header: React.FC = () => {
             })}
 
             <Link
-              href={"https://blog.dataeden.se"}
+              href={"/blog"}
               className="text-foreground hover:text-foreground-accent transition-colors"
             >
               Blogg
@@ -122,7 +122,7 @@ const Header: React.FC = () => {
               );
             })}
             <Link
-              href={"https://blog.dataeden.se"}
+              href={"/blog"}
               className="text-foreground hover:text-foreground-accent transition-colors"
             >
               Blogg
