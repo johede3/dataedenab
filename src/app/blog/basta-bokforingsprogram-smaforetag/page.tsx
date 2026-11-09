@@ -8,17 +8,17 @@ const faq = [
   {
     question: "Vilket bokföringsprogram är bäst för ett litet företag?",
     answer:
-      "Det beror på vad du väger tyngst. I vår jämförelse har Saldy lägst totalpris för ett litet AB (69 kr/mån där bokföring, fakturering, lön och moms ingår), Fortnox har störst ekosystem och flest integrationer, och Bokio är starkast om du vill ha bank och bokföring hos samma leverantör. Jämför alltid totalpriset för ett helt år vid din volym, inte grundpriset.",
+      "Det beror på vad du väger tyngst. I vår jämförelse har Saldy lägst totalpris för ett litet AB (149 kr/mån, 99 kr första året, där bokföring, fakturering, lön, moms och K2-årsredovisning ingår), Fortnox har störst ekosystem och flest integrationer, och Bokio är starkast om du vill ha bank och bokföring hos samma leverantör. Jämför alltid totalpriset för ett helt år vid din volym, inte grundpriset.",
   },
   {
     question: "Vad kostar ett bokföringsprogram per månad?",
     answer:
-      "Mellan 69 och 549 kr per månad exklusive moms bland programmen i den här jämförelsen. Men månadspriset säger inte allt: lön per lönebesked, tolkning av kvitton efter en fri kvot och årsredovisning som tillägg kan mer än dubbla totalkostnaden. Räkna alltid på tolv månader med dina volymer.",
+      "Mellan 149 och 549 kr per månad exklusive moms till ordinarie pris bland programmen i den här jämförelsen. Men månadspriset säger inte allt: lön per lönebesked, avgift per faktura, tolkning av kvitton efter en fri kvot och årsredovisning som tillägg kan mer än dubbla totalkostnaden. Räkna alltid på tolv månader med dina volymer.",
   },
   {
     question: "Behöver jag automatisk bankkoppling?",
     answer:
-      "Inte nödvändigtvis. Med några få transaktioner i månaden fungerar det bra att klistra in bankrader manuellt, vilket är så till exempel Saldy jobbar. Har du många transaktioner varje dag sparar en automatisk bankkoppling verklig tid – då är Bokio (49 kr/mån extra) eller Fortnox bättre val.",
+      "Inte nödvändigtvis. Med några få transaktioner i månaden fungerar det bra att importera eller klistra in bankraderna, vilket är så till exempel Saldy jobbar. Har du många transaktioner varje dag sparar en automatisk bankkoppling verklig tid – då är Bokio (bankkopplingen ingår i Premium) eller Fortnox bättre val.",
   },
 ];
 
@@ -63,6 +63,7 @@ export default function BestBookkeepingSoftwareBlogPage() {
               logo: { "@type": "ImageObject", url: "https://dataeden.se/logo.png" },
             },
             datePublished: "2026-08-30",
+            dateModified: "2026-11-09",
           }),
         }}
       />
@@ -107,16 +108,17 @@ export default function BestBookkeepingSoftwareBlogPage() {
                 <p className="text-base">
                   <strong className="text-gray-900 dark:text-white">Full transparens:</strong> bokföringsprogrammet Saldy
                   byggs av Dataedens grundare. Vi har därför redovisat alla siffror öppet så att du kan räkna efter själv –
-                  varje pris är kontrollerat mot respektive leverantörs officiella prissida den 30 augusti 2026, exklusive
-                  moms och utan kampanjrabatter.
+                  varje pris är kontrollerat mot respektive leverantörs officiella prissida den 9 november 2026, exklusive
+                  moms och utan kampanjrabatter. Första versionen av jämförelsen publicerades 30 augusti 2026.
                 </p>
               </div>
 
               <h2 className="mb-4 pt-8 text-3xl font-bold text-gray-900 dark:text-white">Årskostnaden – inte månadspriset</h2>
               <p>
-                Vårt räkneexempel: ett litet AB med en person, kundfakturor via mejl eller PDF, en egen lön med
-                arbetsgivardeklaration varje månad, och en K2-årsredovisning via tjänsten Årsredovisning Online
-                (1 795 kr/år) så att alla program jämförs mot samma årsavslut.
+                Vårt räkneexempel: ett litet AB med en person, två kundfakturor i månaden som skickas med e-post, en
+                egen lön med arbetsgivardeklaration varje månad och en K2-årsredovisning. Där årsredovisningen inte
+                ingår i programmet räknar vi med tjänsten Årsredovisning Online (1 795 kr/år), så att alla program
+                jämförs mot samma årsavslut.
               </p>
 
               <div className="overflow-x-auto">
@@ -132,36 +134,49 @@ export default function BestBookkeepingSoftwareBlogPage() {
                   <tbody>
                     <tr className="border-b border-gray-200 dark:border-gray-800">
                       <td className="py-3 pr-4 font-semibold text-gray-900 dark:text-white">Saldy</td>
-                      <td className="py-3 pr-4">69 kr</td>
-                      <td className="py-3 pr-4">2 623 kr</td>
-                      <td className="py-3">Fakturering, lön och moms ingår. Ingen bindningstid. Årsavslut via SIE-export.</td>
+                      <td className="py-3 pr-4">149 kr (99 kr första året*)</td>
+                      <td className="py-3 pr-4">1 788 kr (1 188 kr första året*)</td>
+                      <td className="py-3">
+                        Fakturering, lön, moms, bokslut, K2-årsredovisning och INK2 ingår. Ingen bindningstid.
+                        Årsredovisningen skickar du själv till Bolagsverket.
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-200 dark:border-gray-800">
+                      <td className="py-3 pr-4 font-semibold text-gray-900 dark:text-white">Fortnox Mini</td>
+                      <td className="py-3 pr-4">238 kr (inkl. Access)</td>
+                      <td className="py-3 pr-4">5 237 kr</td>
+                      <td className="py-3">
+                        Fakturor 4,90 kr/st via Fakturaservice. Enkel lön 39 kr/mån. Access-avgiften stiger med antalet
+                        verifikat.
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-200 dark:border-gray-800">
                       <td className="py-3 pr-4 font-semibold text-gray-900 dark:text-white">Bokio Premium</td>
                       <td className="py-3 pr-4">359 kr (årsbetalning)</td>
                       <td className="py-3 pr-4">6 103 kr</td>
-                      <td className="py-3">Fakturering och lön för en person ingår. Bankkoppling kostar 49 kr/mån extra.</td>
+                      <td className="py-3">Fakturering, bankkoppling och lön för en person ingår.</td>
                     </tr>
-                    <tr className="border-b border-gray-200 dark:border-gray-800">
+                    <tr>
                       <td className="py-3 pr-4 font-semibold text-gray-900 dark:text-white">Spiris Driva</td>
                       <td className="py-3 pr-4">349 kr</td>
                       <td className="py-3 pr-4">6 571 kr</td>
                       <td className="py-3">Egen lön 49 kr/lönebesked. Tio kvittotolkningar per månad ingår, sedan 3,90 kr/st.</td>
                     </tr>
-                    <tr>
-                      <td className="py-3 pr-4 font-semibold text-gray-900 dark:text-white">Fortnox Liten</td>
-                      <td className="py-3 pr-4">378 kr (inkl. Access)</td>
-                      <td className="py-3 pr-4">6 799 kr</td>
-                      <td className="py-3">Lön 39 kr/lönebesked. Access-avgiften stiger med antalet verifikat.</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
 
+              <p className="text-base">
+                * Saldys ordinarie pris är 149 kr/mån. Bolag som läggs upp före 1 februari 2027 betalar 99 kr/mån de
+                första tolv betalda månaderna.
+              </p>
+
               <p>
-                Två klassiska fällor syns inte i tabellen. Fortnox Mini (209 kr/mån) låter billigt men innehåller ingen
-                fakturering – det är därför Liten-paketet står ovan. Och Spiris Starta (199 kr/mån) har ett tak på 100
-                verifikat per år plus 19 kr per skickad faktura, vilket gör det dyrare än Driva för de flesta som
+                Två saker syns inte i tabellen. Fortnox Mini saknar Fakturering Plus, men den enklare faktureringen som
+                ingår i Access räcker för några fakturor i månaden: 4,90 kr per faktura via Fakturaservice eller 39 kr
+                om du skickar den själv. Vill du ha Fakturering Plus är det Liten (378 kr/mån inkl. Access) som gäller,
+                och då kostar samma exempel minst 6 799 kr. Och Spiris Starta (199 kr/mån) har 100 verifikat per år, sedan
+                35 kr per verifikat, plus 19 kr per skickad faktura, vilket gör det dyrare än Driva för de flesta som
                 fakturerar varje månad.
               </p>
 
@@ -174,8 +189,9 @@ export default function BestBookkeepingSoftwareBlogPage() {
                   <span>
                     <strong className="text-gray-900 dark:text-white">Litet AB, sköter allt själv, vill betala minst:</strong>{" "}
                     <a href="https://www.saldy.se" className="text-primary hover:underline">Saldy</a>. En plan där allt
-                    ingår, ingen bindningstid. Begränsningen: bankhändelser klistras in manuellt och årsredovisningen görs
-                    i en separat tjänst.
+                    ingår, även bokslut, K2-årsredovisning och INK2, och ingen bindningstid. Begränsningarna: ingen
+                    automatisk bankkoppling, utan bankraderna importeras eller klistras in, och årsredovisningen skickar
+                    du själv till Bolagsverket.
                   </span>
                 </li>
                 <li className="flex items-start gap-4">
@@ -184,7 +200,7 @@ export default function BestBookkeepingSoftwareBlogPage() {
                   </div>
                   <span>
                     <strong className="text-gray-900 dark:text-white">Vill ha bank och bokföring på ett ställe:</strong>{" "}
-                    Bokio, tack vare företagskontot och den automatiska bankkopplingen.
+                    Bokio, tack vare företagskontot och bankkopplingen som ingår i Premium.
                   </span>
                 </li>
                 <li className="flex items-start gap-4">
@@ -193,7 +209,7 @@ export default function BestBookkeepingSoftwareBlogPage() {
                   </div>
                   <span>
                     <strong className="text-gray-900 dark:text-white">Ska växa, anställa eller jobba med byrå:</strong>{" "}
-                    Fortnox. Dyrast i vårt exempel, men störst ekosystem och det system flest redovisningsbyråer jobbar i.
+                    Fortnox. Inte billigast, men störst ekosystem och det system flest redovisningsbyråer jobbar i.
                   </span>
                 </li>
                 <li className="flex items-start gap-4">
